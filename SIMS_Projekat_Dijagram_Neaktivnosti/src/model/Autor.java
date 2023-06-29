@@ -8,14 +8,14 @@ public class Autor {
 	private String prezime;
 	private Date datumRodjenja;
 	private Date datumSmrti = null;
-	private List<Knjiga> knjige;
-	public Autor(String ime, String prezime, Date datumRodjenja, Date datumSmrti, List<Knjiga> knjige) {
+	private List<Knjiga> dela;
+	public Autor(String ime, String prezime, Date datumRodjenja, Date datumSmrti, List<Knjiga> dela) {
 		super();
 		this.ime = ime;
 		this.prezime = prezime;
 		this.datumRodjenja = datumRodjenja;
 		this.datumSmrti = datumSmrti;
-		this.knjige = knjige;
+		this.dela = dela;
 	}
 	public String getIme() {
 		return ime;
@@ -41,16 +41,17 @@ public class Autor {
 	public void setDatumSmrti(Date datumSmrti) {
 		this.datumSmrti = datumSmrti;
 	}
-	public List<Knjiga> getKnjige() {
-		return knjige;
+	public List<Knjiga> getDela() {
+		return dela;
 	}
-	public void setKnjige(List<Knjiga> knjige) {
-		this.knjige = knjige;
+	public void setDela(List<Knjiga> dela) {
+		this.dela = dela;
 	}
 	@Override
 	public String toString() {
 		return "Autor [ime=" + ime + ", prezime=" + prezime + ", datumRodjenja=" + datumRodjenja + ", datumSmrti="
-				+ datumSmrti + ", knjige=" + knjige + "]";
+				+ datumSmrti + ", dela=" + dela + "]";
 	}
+	
 	
 }
