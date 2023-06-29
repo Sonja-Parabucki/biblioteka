@@ -1,0 +1,21 @@
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Compiled output
+bin/
+
+# Dependency directories
+lib/
+libs/
+
+# Eclipse-specific files
+*.swp
+*~
+.metadata/
+
+# IntelliJ-specific files
+.idea/
+*.iml
+out/
