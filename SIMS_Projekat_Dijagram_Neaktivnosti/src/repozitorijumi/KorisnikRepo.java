@@ -1,4 +1,4 @@
-package serijalizacija;
+package repozitorijumi;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -18,9 +18,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import model.Nalog;
 
-
-
-public class Serijalizator {
+public class KorisnikRepo {
 
 	public void sacuvajNaloge(List<Nalog> nalozi) throws IOException {
 		File fajlNalozi = new File("./podaci/nalozi.json");
@@ -59,6 +57,12 @@ public class Serijalizator {
 			isNalozi.close();
 		}
 		return nalozi;			
+	}
+	
+	public void dodajNalog(Nalog nalog) throws IOException {
+		List<Nalog> nalozi = ucitajNaloge();
+		nalozi.add(nalog);
+		sacuvajNaloge(nalozi);
 	}
 	
 }

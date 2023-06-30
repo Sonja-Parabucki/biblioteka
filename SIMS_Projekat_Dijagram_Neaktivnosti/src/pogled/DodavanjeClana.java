@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -35,6 +36,7 @@ public class DodavanjeClana extends JFrame {
 	private TekstPolje tfUlica;
 	private TekstPolje tfBroj;
 	private TekstPolje tfMesto;
+	private TekstPolje tfPTT;
 	
 	//nalog
 	private TekstPolje tfKorIme;
@@ -83,6 +85,9 @@ public class DodavanjeClana extends JFrame {
 		Labela lblMesto = new Labela("Mesto: ", fntLabela, clrForeground);
 		tfMesto = new TekstPolje("", fntTekstPolje, 120, 20);
 		
+		Labela lblPTT = new Labela("Postanski broj: ", fntLabela, clrForeground);
+		tfPTT = new TekstPolje("", fntTekstPolje, 120, 20);
+		
 		Labela lblUlica = new Labela("Ulica: ", fntLabela, clrForeground);
 		tfUlica = new TekstPolje("", fntTekstPolje, 120, 20);
 		
@@ -113,8 +118,9 @@ public class DodavanjeClana extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				try {
-					korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
+					korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
 					JOptionPane.showMessageDialog(null, "Clan je uspesno dodat!");
+					
 				} catch (MissingValueException e) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, e.getMessage());
@@ -124,12 +130,15 @@ public class DodavanjeClana extends JFrame {
 				} catch (UniqueValueException e) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, e.getMessage());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 		});
 		
 		pnlDodavanjeClana.setBackground(clrPrimarna);
-		pnlDodavanjeClana.setLayout(new MigLayout("", "30[][]30", "10[]20[]10[]10[]10[]10[]20[]10[]10[]20[]10[]10[]20[]20[]"));
+		pnlDodavanjeClana.setLayout(new MigLayout("", "30[][]30", "10[]20[]10[]10[]10[]10[]20[]10[]10[]10[]20[]10[]10[]20[]10[]"));
 		
 		pnlDodavanjeClana.add(lblNaslov, "wrap");
 		pnlDodavanjeClana.add(lblIme, "gapleft 30");
@@ -149,6 +158,8 @@ public class DodavanjeClana extends JFrame {
 		pnlDodavanjeClana.add(tfUlica, "wrap, pushx, growx, gapright 30");
 		pnlDodavanjeClana.add(lblBroj, "gapleft 30");
 		pnlDodavanjeClana.add(tfBroj, "wrap, pushx, growx, gapright 30");
+		pnlDodavanjeClana.add(lblPTT, "gapleft 30");
+		pnlDodavanjeClana.add(tfPTT, "wrap, pushx, growx, gapright 30");
 		
 		pnlDodavanjeClana.add(lblKorIme, "gapleft 30");
 		pnlDodavanjeClana.add(tfKorIme, "wrap, pushx, growx, gapright 30");

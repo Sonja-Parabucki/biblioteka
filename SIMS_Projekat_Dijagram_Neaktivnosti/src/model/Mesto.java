@@ -3,6 +3,9 @@ package model;
 public class Mesto {
 	private String naziv;
 	private int pptBroj;
+	
+	public Mesto() {}
+	
 	public Mesto(String naziv, int pptBroj) {
 		super();
 		this.naziv = naziv;

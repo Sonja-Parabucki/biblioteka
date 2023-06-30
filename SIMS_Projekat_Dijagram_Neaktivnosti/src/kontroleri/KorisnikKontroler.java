@@ -1,16 +1,18 @@
 package kontroleri;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
+import java.io.IOException;
 
-import enumeracije.TipClana;
+import enumeracije.TipNaloga;
 import izuzeci.BadCredentialsException;
 import izuzeci.BadFormatException;
 import izuzeci.MissingValueException;
 import izuzeci.UniqueValueException;
 import model.Biblioteka;
 import model.Nalog;
-import util.Bezbednost;
+import model.Adresa;
+import model.Osoba;
+import model.Mesto;
+import repozitorijumi.KorisnikRepo;
 import util.Validacija;
 
 public class KorisnikKontroler {
@@ -44,8 +46,8 @@ public class KorisnikKontroler {
 			return null;
 		}
 		
-		public void registrujClana(String ime, String prezime, String JMBG, String mejl, String telefon, String mesto, String broj, String ulica,
-				String korIme, String lozinka, String clanskaKarta, String tip) throws MissingValueException, BadFormatException, UniqueValueException {
+		public void registrujClana(String ime, String prezime, String JMBG, String mejl, String telefon, String mesto, String postanskiBroj, String broj, String ulica,
+				String korIme, String lozinka, String clanskaKarta, String tip) throws MissingValueException, BadFormatException, UniqueValueException, IOException {
 			
 			Nalog nalog = nadjiNalog(korIme);
 			if (nalog != null) {
@@ -70,6 +72,10 @@ public class KorisnikKontroler {
 				throw new MissingValueException("Nije validno unet ulica.");
 			} else if (Validacija.praznaIliNepostojecaVrednost(broj)) {
 				throw new MissingValueException("Nije validno unet broj.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(postanskiBroj)) {
+				throw new MissingValueException("Nije validno unet broj.");
+			} else if (!Validacija.validanPostanskiBroj(postanskiBroj)) {
+				throw new BadFormatException("Postanski broj može da sadrži samo 5 cifara.");
 			} else if (Validacija.praznaIliNepostojecaVrednost(clanskaKarta)) {
 				throw new MissingValueException("Nije validno unet broj clanske karte.");
 			} else if (!Validacija.validanJMBG(JMBG)) {
@@ -82,8 +88,14 @@ public class KorisnikKontroler {
 				throw new BadFormatException("Lozinka mora da sadrži bar 8 karaktera, od čega bar jedno veliko slovo, malo slovo i broj.");
 			}
 			
-			//dodaj u listu necega
+			Mesto m = new Mesto(mesto, Integer.parseInt(postanskiBroj));
+			Adresa adresa = new Adresa(ulica, broj, m);
+			Osoba osoba = new Osoba(ime, prezime, JMBG, telefon, mejl, adresa);
+			Nalog n = new Nalog(korIme, lozinka, TipNaloga.CLAN, osoba);
+			biblioteka.dodajNalog(n);
 			
+			KorisnikRepo korisnikRepo = new KorisnikRepo();
+			korisnikRepo.dodajNalog(n);
 		}
 
 		private boolean checkIfNullOrEmpty(String input) {

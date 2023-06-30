@@ -21,6 +21,12 @@ public class Validacija {
 		return false;
 	}
 	
+	public static boolean validanPostanskiBroj(String broj) {
+		if (broj.matches("[0-9]+") && broj.length() == 5)
+			return true;
+		return false;
+	}
+	
 	public static boolean validnaLozinka(String lozinka) {
 		if (lozinka.length() >= 8 && proveriLozinku(lozinka)) {
 			return true;

@@ -8,4 +8,23 @@
   "lozinka" : "k",
   "tip" : "VISI_BIBLIOTEKAR",
   "osoba" : null
+}, {
+  "korisnickoIme" : "mi",
+  "lozinka" : "mMmMmM123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "djasldfjspef",
+    "prezime" : "fsdfsdfsf",
+    "jmbg" : "1231231231231",
+    "imejl" : "231923",
+    "telefon" : "sdasda@gmaio.com",
+    "adresa" : {
+      "ulica" : "vdsdf",
+      "broj" : "sdfsdfs",
+      "mesto" : {
+        "naziv" : "dsdcsd",
+        "pptBroj" : 21000
+      }
+    }
+  }
 } ]
