@@ -7,15 +7,13 @@ public class Iznajmljivanje {
 	private Date datumVracanja;
 	private boolean produzen;
 	private Primerak primerak;
-	private Clan clan;
-	public Iznajmljivanje(Date datumIznajmljivanja, Date datumVracanja, boolean produzen, Primerak primerak,
-			Clan clan) {
+	
+	public Iznajmljivanje(Date datumIznajmljivanja, Date datumVracanja, boolean produzen, Primerak primerak) {
 		super();
 		this.datumIznajmljivanja = datumIznajmljivanja;
 		this.datumVracanja = datumVracanja;
 		this.produzen = produzen;
 		this.primerak = primerak;
-		this.clan = clan;
 	}
 	public Date getDatumIznajmljivanja() {
 		return datumIznajmljivanja;
@@ -41,16 +39,10 @@ public class Iznajmljivanje {
 	public void setPrimerak(Primerak primerak) {
 		this.primerak = primerak;
 	}
-	public Clan getClan() {
-		return clan;
-	}
-	public void setClan(Clan clan) {
-		this.clan = clan;
-	}
 	@Override
 	public String toString() {
 		return "Iznajmljivanje [datumIznajmljivanja=" + datumIznajmljivanja + ", datumVracanja=" + datumVracanja
-				+ ", produzen=" + produzen + ", primerak=" + primerak + ", clan=" + clan + "]";
+				+ ", produzen=" + produzen + ", primerak=" + primerak + "]";
 	}
 	
 }
