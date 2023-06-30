@@ -1,12 +1,15 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import enumeracije.TipKoricenja;
 
 public class Izdanje extends Knjiga {
 	
+	private int id;
 	private String opis;
 	private String udk;
 	private String isbn;
@@ -14,9 +17,29 @@ public class Izdanje extends Knjiga {
 	private TipKoricenja koricenje;
 	private Izdavac izdavac;
 	private List<Primerak> primerci;
-	public Izdanje(String naziv, String jezik, List<Autor> autori, String opis, String udk, String isbn,
+	
+	
+	public Izdanje() {
+		super();
+	}
+	
+	public Izdanje(int id, String naziv, String jezik, List<Autor> autori, String opis, String udk, String isbn,
+			Date godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac) {
+		super(naziv, jezik, autori);
+		this.id = id;
+		this.opis = opis;
+		this.udk = udk;
+		this.isbn = isbn;
+		this.godinaIzdanja = godinaIzdanja;
+		this.koricenje = koricenje;
+		this.izdavac = izdavac;
+		this.primerci = new ArrayList<Primerak>();
+	}
+	
+	public Izdanje(int id, String naziv, String jezik, List<Autor> autori, String opis, String udk, String isbn,
 			Date godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
 		super(naziv, jezik, autori);
+		this.id = id;
 		this.opis = opis;
 		this.udk = udk;
 		this.isbn = isbn;
@@ -24,6 +47,14 @@ public class Izdanje extends Knjiga {
 		this.koricenje = koricenje;
 		this.izdavac = izdavac;
 		this.primerci = primerci;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getOpis() {
 		return opis;
@@ -73,4 +104,19 @@ public class Izdanje extends Knjiga {
 				+ ", koricenje=" + koricenje + ", izdavac=" + izdavac + ", primerci=" + primerci + "]";
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Izdanje other = (Izdanje) obj;
+		return Objects.equals(godinaIzdanja, other.godinaIzdanja) && Objects.equals(isbn, other.isbn)
+				&& Objects.equals(izdavac, other.izdavac) && koricenje == other.koricenje
+				&& Objects.equals(autori, other.autori) && Objects.equals(naziv, other.naziv);
+	}
+
+	
 }

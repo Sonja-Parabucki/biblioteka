@@ -1,17 +1,22 @@
 package model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Knjiga {
-	private String naziv;
-	private String jezik;
-	private List<Autor> autori;
+	protected String naziv;
+	protected String jezik;
+	protected List<Autor> autori;
+	
+	public Knjiga() {}
+	
 	public Knjiga(String naziv, String jezik, List<Autor> autori) {
 		super();
 		this.naziv = naziv;
 		this.jezik = jezik;
 		this.autori = autori;
 	}
+	
 	public String getNaziv() {
 		return naziv;
 	}
@@ -34,5 +39,20 @@ public class Knjiga {
 	public String toString() {
 		return "Knjiga [naziv=" + naziv + ", jezik=" + jezik + ", autori=" + autori + "]";
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Knjiga other = (Knjiga) obj;
+		return Objects.equals(autori, other.autori) && Objects.equals(naziv, other.naziv);
+	}
+	
+	
 	
 }
