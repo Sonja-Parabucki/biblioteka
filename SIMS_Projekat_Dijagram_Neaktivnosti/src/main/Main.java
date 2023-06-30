@@ -20,15 +20,14 @@ public class Main {
 			biblioteka.setNalozi(s.ucitajNaloge());
 			
 			Nalog nalog = new Nalog("clan", "clan", TipNaloga.CLAN, null);
+			Nalog nalog1 = new Nalog("k", "k", TipNaloga.VISI_BIBLIOTEKAR, null);
 			List<Nalog> nalozi = new ArrayList<Nalog>();
 			nalozi.add(nalog);
+			nalozi.add(nalog1);
 			s.sacuvajNaloge(nalozi);
 			
 			Prijava prozor = new Prijava(biblioteka);
 			prozor.setVisible(true);
-			
-			
-			//System.out.println(biblioteka);
 			
 			
 		} catch (IOException e) {

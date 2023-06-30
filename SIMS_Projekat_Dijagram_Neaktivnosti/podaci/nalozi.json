@@ -3,4 +3,9 @@
   "lozinka" : "clan",
   "tip" : "CLAN",
   "osoba" : null
+}, {
+  "korisnickoIme" : "k",
+  "lozinka" : "k",
+  "tip" : "VISI_BIBLIOTEKAR",
+  "osoba" : null
 } ]

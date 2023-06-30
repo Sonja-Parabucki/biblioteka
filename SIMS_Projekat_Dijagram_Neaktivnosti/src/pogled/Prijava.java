@@ -74,7 +74,10 @@ public class Prijava extends JFrame{
 			private void otvoriProzor() {
 				switch (biblioteka.getPrijavljeniKorisnik().getTip()) {
 				case OBICAN_BIBLIOTEKAR: break;
-				case VISI_BIBLIOTEKAR: break;
+				case VISI_BIBLIOTEKAR:
+					Meni prozor = new Meni(biblioteka);
+					prozor.setVisible(true);
+					break;
 				case CLAN: break;
 				case ADMIN: break;
 				}
