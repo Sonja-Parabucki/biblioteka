@@ -10,8 +10,12 @@ public class Biblioteka {
 	private List<Naplata> naplate;
 	private List<ZahtevZaProduzenje> zahteviZaProduzenje;
 	private List<Rezervacija> rezervacije;
+	private List<Nalog> nalozi;
+	
+	public Biblioteka() {}
+	
 	public Biblioteka(Nalog prijavljeniKorisnik, List<Propisi> propisi, List<Izdanje> izdanja, List<Ogranak> ogranci,
-			List<Naplata> naplate, List<ZahtevZaProduzenje> zahteviZaProduzenje, List<Rezervacija> rezervacije) {
+			List<Naplata> naplate, List<ZahtevZaProduzenje> zahteviZaProduzenje, List<Rezervacija> rezervacije, List<Nalog> nalozi) {
 		super();
 		this.prijavljeniKorisnik = prijavljeniKorisnik;
 		this.propisi = propisi;
@@ -20,6 +24,7 @@ public class Biblioteka {
 		this.naplate = naplate;
 		this.zahteviZaProduzenje = zahteviZaProduzenje;
 		this.rezervacije = rezervacije;
+		this.nalozi = nalozi;
 	}
 	public Nalog getPrijavljeniKorisnik() {
 		return prijavljeniKorisnik;
@@ -62,6 +67,12 @@ public class Biblioteka {
 	}
 	public void setRezervacije(List<Rezervacija> rezervacije) {
 		this.rezervacije = rezervacije;
+	}
+	public List<Nalog> getNalozi() {
+		return nalozi;
+	}
+	public void setNalozi(List<Nalog> nalozi) {
+		this.nalozi = nalozi;
 	}
 	@Override
 	public String toString() {
