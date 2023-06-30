@@ -198,4 +198,23 @@
       }
     }
   }
+}, {
+  "korisnickoIme" : "sads",
+  "lozinka" : "Ddddddd123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "s",
+    "prezime" : "s",
+    "jmbg" : "1231231231231",
+    "imejl" : "21423434",
+    "telefon" : "sdasd@gm.com",
+    "adresa" : {
+      "ulica" : "asd",
+      "broj" : "asd",
+      "mesto" : {
+        "naziv" : "dsa",
+        "pptBroj" : 21312
+      }
+    }
+  }
 } ]

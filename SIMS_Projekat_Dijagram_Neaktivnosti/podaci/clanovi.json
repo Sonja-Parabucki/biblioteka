@@ -1,18 +1,18 @@
 [ {
-  "ime" : "sad",
-  "prezime" : "sda",
-  "jmbg" : "3453453453453",
-  "imejl" : "dssf@gm.com",
-  "telefon" : "23123",
+  "ime" : "s",
+  "prezime" : "s",
+  "jmbg" : "1231231231231",
+  "imejl" : "sdasd@gm.com",
+  "telefon" : "21423434",
   "adresa" : {
-    "ulica" : "dfsd",
-    "broj" : "dsd",
+    "ulica" : "asd",
+    "broj" : "asd",
     "mesto" : {
-      "naziv" : "dasd",
-      "pptBroj" : 21342
+      "naziv" : "dsa",
+      "pptBroj" : 21312
     }
   },
-  "brojClanskeKarte" : "a",
+  "brojClanskeKarte" : "sda",
   "placenaClanarina" : {
     "year" : 2023,
     "month" : "JULY",
@@ -28,6 +28,6 @@
       "isoBased" : true
     }
   },
-  "tip" : "DETE",
+  "tip" : "PENZIONER",
   "primerci" : [ ]
 } ]
