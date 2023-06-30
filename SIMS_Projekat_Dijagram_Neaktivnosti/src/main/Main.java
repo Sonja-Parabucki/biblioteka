@@ -29,7 +29,7 @@ public class Main {
 		}
 		
 		
-		///
+		/////ovo obrisati kad se nadje bug
 		ClanRepo c;
 		try {
 			c = new ClanRepo();
@@ -38,6 +38,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		/////
 
 	}
 

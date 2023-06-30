@@ -22,7 +22,7 @@ public class ClanRepo {
 	List<Clan> clanovi = new ArrayList<Clan>();
 	
 	public ClanRepo() throws IOException {
-		clanovi = ucitajClanove();
+		ucitajClanove();
 	}
 	
 	public void sacuvajClanove() throws IOException {
@@ -44,24 +44,18 @@ public class ClanRepo {
 		}
 	}
 	
-	public List<Clan> ucitajClanove() throws IOException {
-		List<Clan> clanovi = new ArrayList<Clan>();
-		
+	public void ucitajClanove() throws IOException {
 		File fajlClanovi = new File("./podaci/clanovi.json");
 		
 		InputStream isNalozi = new BufferedInputStream(new FileInputStream(fajlClanovi));
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-		
 		try {
 			clanovi = mapper.readValue(fajlClanovi, new TypeReference<List<Clan>>() {});
-			
-			
 		} finally {
 			isNalozi.close();
-		}
-		return clanovi;			
+		}		
 	}
 	
 	public void dodajClana(Clan clan) throws IOException {
