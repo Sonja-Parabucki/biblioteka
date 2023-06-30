@@ -1,7 +1,7 @@
 package model;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import enumeracije.TipClana;

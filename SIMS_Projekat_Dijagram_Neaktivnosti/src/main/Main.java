@@ -8,14 +8,15 @@ import enumeracije.TipNaloga;
 import model.Biblioteka;
 import model.Nalog;
 import pogled.Prijava;
-import repozitorijumi.KorisnikRepo;
+import repozitorijumi.ClanRepo;
+import repozitorijumi.NalogRepo;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Biblioteka biblioteka = new Biblioteka();
 		
-		KorisnikRepo s = new KorisnikRepo();
+		NalogRepo s = new NalogRepo();
 		try {
 			biblioteka.setNalozi(s.ucitajNaloge());
 			
@@ -24,6 +25,17 @@ public class Main {
 			
 			
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		///
+		ClanRepo c;
+		try {
+			c = new ClanRepo();
+			c.ucitajClanove();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

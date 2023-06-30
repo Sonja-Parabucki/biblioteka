@@ -2,6 +2,7 @@ package kontroleri;
 
 import java.io.IOException;
 
+import enumeracije.TipClana;
 import enumeracije.TipNaloga;
 import izuzeci.BadCredentialsException;
 import izuzeci.BadFormatException;
@@ -12,7 +13,9 @@ import model.Nalog;
 import model.Adresa;
 import model.Osoba;
 import model.Mesto;
-import repozitorijumi.KorisnikRepo;
+import model.Clan;
+import repozitorijumi.NalogRepo;
+import repozitorijumi.ClanRepo;
 import util.Validacija;
 
 public class KorisnikKontroler {
@@ -92,10 +95,14 @@ public class KorisnikKontroler {
 			Adresa adresa = new Adresa(ulica, broj, m);
 			Osoba osoba = new Osoba(ime, prezime, JMBG, telefon, mejl, adresa);
 			Nalog n = new Nalog(korIme, lozinka, TipNaloga.CLAN, osoba);
+			Clan clan = new Clan(ime, prezime, JMBG, mejl, telefon, adresa, clanskaKarta, TipClana.valueOf(tip));
 			biblioteka.dodajNalog(n);
 			
-			KorisnikRepo korisnikRepo = new KorisnikRepo();
+			NalogRepo korisnikRepo = new NalogRepo();
 			korisnikRepo.dodajNalog(n);
+			
+			ClanRepo clanRepo = new ClanRepo();
+			clanRepo.dodajClana(clan);
 		}
 
 		private boolean checkIfNullOrEmpty(String input) {

@@ -1,0 +1,33 @@
+[ {
+  "ime" : "sad",
+  "prezime" : "sda",
+  "jmbg" : "3453453453453",
+  "imejl" : "dssf@gm.com",
+  "telefon" : "23123",
+  "adresa" : {
+    "ulica" : "dfsd",
+    "broj" : "dsd",
+    "mesto" : {
+      "naziv" : "dasd",
+      "pptBroj" : 21342
+    }
+  },
+  "brojClanskeKarte" : "a",
+  "placenaClanarina" : {
+    "year" : 2023,
+    "month" : "JULY",
+    "monthValue" : 7,
+    "dayOfMonth" : 1,
+    "leapYear" : false,
+    "dayOfWeek" : "SATURDAY",
+    "dayOfYear" : 182,
+    "era" : "CE",
+    "chronology" : {
+      "id" : "ISO",
+      "calendarType" : "iso8601",
+      "isoBased" : true
+    }
+  },
+  "tip" : "DETE",
+  "primerci" : [ ]
+} ]

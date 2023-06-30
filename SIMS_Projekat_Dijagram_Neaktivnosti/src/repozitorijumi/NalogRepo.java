@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import model.Nalog;
 
-public class KorisnikRepo {
+public class NalogRepo {
 
 	public void sacuvajNaloge(List<Nalog> nalozi) throws IOException {
 		File fajlNalozi = new File("./podaci/nalozi.json");
