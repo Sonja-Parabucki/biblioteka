@@ -42,8 +42,8 @@ public class Meni extends JFrame{
 		
 		Labela lblNaslov = new Labela("Prijavljeni korisnik: " + biblioteka.getPrijavljeniKorisnik().getKorisnickoIme(), fntLabela, clrForeground);
 		
-		FormaDugme produzavanjeRoka = new FormaDugme("Produzavanje roka", clrPrimarna, clrForeground, 70, 30);
-		produzavanjeRoka.addActionListener(new ActionListener() {
+		FormaDugme prikazIzdanja = new FormaDugme("Prikaz izdanja", clrPrimarna, clrForeground, 70, 30);
+		prikazIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
@@ -88,7 +88,7 @@ public class Meni extends JFrame{
 		pnlPrijava.setLayout(new MigLayout("", "180[]", "20[]30[]20[]20[]20[]30[]"));
 		
 		pnlPrijava.add(lblNaslov, "wrap, align center");
-		pnlPrijava.add(produzavanjeRoka, "wrap, align center");
+		pnlPrijava.add(prikazIzdanja, "wrap, align center");
 		pnlPrijava.add(btnClanovi, "wrap, align center");
 		pnlPrijava.add(btnIzdanja, "wrap, align center");
 		pnlPrijava.add(btnPrimeraka, "wrap, align center");
