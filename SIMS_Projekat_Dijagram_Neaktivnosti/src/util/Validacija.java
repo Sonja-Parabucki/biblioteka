@@ -18,7 +18,6 @@ public class Validacija {
 		if (telefon.matches("[0-9]+")) {
 			return true;
 		}
-		
 		return false;
 	}
 	
@@ -27,6 +26,12 @@ public class Validacija {
 			return true;
 		}
 		
+		return false;
+	}
+	
+	public static boolean validanJMBG(String jmbg) {
+		if (jmbg.length() == 13 && jmbg.matches("[0-9]+"))
+			return true;
 		return false;
 	}
 	

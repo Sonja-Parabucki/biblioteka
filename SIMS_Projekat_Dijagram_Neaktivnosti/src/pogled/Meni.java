@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 import izuzeci.BadCredentialsException;
 import izuzeci.MissingValueException;
-import kontroleri.NaloziKontroler;
+import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
 import model.Nalog;
 import net.miginfocom.swing.MigLayout;

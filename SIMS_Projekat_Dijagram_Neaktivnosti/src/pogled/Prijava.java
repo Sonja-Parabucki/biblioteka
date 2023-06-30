@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 import izuzeci.BadCredentialsException;
 import izuzeci.MissingValueException;
-import kontroleri.NaloziKontroler;
+import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
@@ -24,7 +24,7 @@ public class Prijava extends JFrame{
 	
 	private TekstPolje tfKorIme;
 	private LozinkaPolje tfLozinka;
-	private NaloziKontroler naloziKontroler;
+	private KorisnikKontroler naloziKontroler;
 	
 	public Prijava(Biblioteka biblioteka) {
 		
@@ -34,7 +34,7 @@ public class Prijava extends JFrame{
 		setLocationRelativeTo(null);
 		setResizable(false);
 	
-		this.naloziKontroler = new NaloziKontroler(biblioteka);
+		this.naloziKontroler = new KorisnikKontroler(biblioteka);
 		
 		Font fntNaslov = PogledUtil.getMaliNaslovFont();
 		Font fntLabela = PogledUtil.getLabelaFont();

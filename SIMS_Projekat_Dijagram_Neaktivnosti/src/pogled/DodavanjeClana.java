@@ -7,10 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import enumeracije.TipClana;
 import enumeracije.TipNaloga;
+import izuzeci.BadFormatException;
+import izuzeci.MissingValueException;
+import izuzeci.UniqueValueException;
+import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
@@ -38,12 +43,16 @@ public class DodavanjeClana extends JFrame {
 	//clan
 	private TekstPolje tfClKarta;
 	private PadajucaLista tfTipClanstva;
+	
+	private KorisnikKontroler korisnikKontroler;
 
 	public DodavanjeClana(Biblioteka biblioteka) {
 		setSize(new Dimension(800, 600));
 		setTitle("Dodavanje clana");
 		setLocationRelativeTo(null);
 		setResizable(false);
+		
+		this.korisnikKontroler = new KorisnikKontroler(biblioteka);
 
 		Font fntNaslov = PogledUtil.getMaliNaslovFont();
 		Color clrPrimarna = PogledUtil.getPrimarnaBoja();
@@ -103,7 +112,19 @@ public class DodavanjeClana extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				
+				try {
+					korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
+					JOptionPane.showMessageDialog(null, "Clan je uspesno dodat!");
+				} catch (MissingValueException e) {
+					// TODO Auto-generated catch block
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				} catch (BadFormatException e) {
+					// TODO Auto-generated catch block
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				} catch (UniqueValueException e) {
+					// TODO Auto-generated catch block
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
 			}
 		});
 		
