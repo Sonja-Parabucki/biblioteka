@@ -10,17 +10,17 @@ import enumeracije.TipClana;
 public class Clan extends Osoba {
 	private String brojClanskeKarte;
 	private String placenaClanarina;
-	private List<Iznajmljivanje> iznajmljivanja;
+	private List<Iznajmljivanje> primerci;
 	private TipClana tip;
 	
-	public Clan() {}
+	public Clan() {}	
 	
 	public Clan(String ime, String prezime, String jmbg, String imejl, String telefon, Adresa adresa,
 			String brojClanskeKarte, String placenaClanarina, List<Iznajmljivanje> iznajmljivanje, TipClana tip) {
 		super(ime, prezime, jmbg, imejl, telefon, adresa);
 		this.brojClanskeKarte = brojClanskeKarte;
 		this.placenaClanarina = placenaClanarina;
-		this.iznajmljivanja = iznajmljivanje;
+		this.primerci = iznajmljivanje;
 		this.tip = tip;
 	}
 	
@@ -34,7 +34,7 @@ public class Clan extends Osoba {
 	    String strDate = formatter.format(date);
 		this.placenaClanarina = strDate;
 		
-;		this.iznajmljivanja = new ArrayList<Iznajmljivanje>();
+;		this.primerci = new ArrayList<Iznajmljivanje>();
 		this.tip = tip;
 	}
 	
@@ -51,10 +51,10 @@ public class Clan extends Osoba {
 		this.placenaClanarina = placenaClanarina;
 	}
 	public List<Iznajmljivanje> getPrimerci() {
-		return iznajmljivanja;
+		return primerci;
 	}
 	public void setPrimerci(List<Iznajmljivanje> iznajmljivanje) {
-		this.iznajmljivanja = iznajmljivanje;
+		this.primerci = iznajmljivanje;
 	}
 	public TipClana getTip() {
 		return tip;
@@ -65,7 +65,7 @@ public class Clan extends Osoba {
 	@Override
 	public String toString() {
 		return "Clan [brojClanskeKarte=" + brojClanskeKarte + ", placenaClanarina=" + placenaClanarina + ", iznajmljivanja="
-				+ iznajmljivanja + ", tip=" + tip + "]";
+				+ primerci + ", tip=" + tip + "]";
 	}
 	
 }

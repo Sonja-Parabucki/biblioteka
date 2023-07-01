@@ -53,7 +53,11 @@ public class KorisnikKontroler {
 				String korIme, String lozinka, String clanskaKarta, String tip) throws MissingValueException, BadFormatException, UniqueValueException, IOException {
 			
 			Nalog nalog = nadjiNalog(korIme);
-			if (nalog != null) {
+			ClanRepo cr = new ClanRepo();
+			
+			if (cr.PronadjiPoClanskojKarti(clanskaKarta)) {
+				throw new UniqueValueException("Uneti broj clanske karte je zauzet.");
+			} else if (nalog != null) {
 				throw new UniqueValueException("Uneto korisničko ime je već registrovano.");
 			} else if (Validacija.praznaIliNepostojecaVrednost(ime)) {
 				throw new MissingValueException("Nije validno uneto ime.");
