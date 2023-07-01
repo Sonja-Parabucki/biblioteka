@@ -6,6 +6,7 @@ import enumeracije.StanjePrimerka;
 import izuzeci.BadFormatException;
 import model.Biblioteka;
 import model.Primerak;
+import repozitorijumi.IzdanjaRepo;
 import repozitorijumi.PrimerakRepo;
 import util.Validacija;
 
@@ -28,9 +29,11 @@ public class PrimerakKontroler {
 		
 		Primerak p = new Primerak(pR.generisiInvBroj(), c, StanjePrimerka.DOSTUPAN);
 		
-		this.biblioteka.dodajPrimerak(null, izdanje);
+		this.biblioteka.dodajPrimerak(p, izdanje);
 		pR.dodajPrimerak(p);
-		//TODO: dodati da se izdanja sacuvaju iz biblioteke u fajl
+		
+		IzdanjaRepo iR = new IzdanjaRepo();
+		iR.dodajPrimerak(p, izdanje);
 	}
 	
 }

@@ -1,0 +1,161 @@
+[ {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 1,
+  "opis" : "Veoma lepa knjiga",
+  "udk" : "1234523",
+  "isbn" : "1231231231",
+  "godinaIzdanja" : 2020,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 2,
+  "opis" : "PROBA",
+  "udk" : "sidjalskd",
+  "isbn" : "123123556",
+  "godinaIzdanja" : 2028,
+  "koricenje" : "TVRD_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ {
+    "inventarniBroj" : 6,
+    "nabavnaCena" : 69.0,
+    "stanje" : "DOSTUPAN"
+  } ]
+}, {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Pera",
+    "prezime" : "Peric",
+    "datumRodjenja" : "2000",
+    "datumSmrti" : ""
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 3,
+  "opis" : "proba2",
+  "udk" : "jkdnsmds",
+  "isbn" : "jnkdss",
+  "godinaIzdanja" : 2000,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Horor"
+  } ],
+  "id" : 4,
+  "opis" : "jupi",
+  "udk" : "asfijdkl",
+  "isbn" : "asknfk",
+  "godinaIzdanja" : 1990,
+  "koricenje" : "TVRD_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
+      }
+    }
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "gs g",
+  "jezik" : "drgdrg",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [{
+    "naziv" : "Horor"
+  },{
+    "naziv" : "Triler"
+  }],
+  "id" : 5,
+  "opis" : "Buducnost",
+  "udk" : "dg43453",
+  "isbn" : "23432",
+  "godinaIzdanja" : 2342,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
+      }
+    }
+  },
+  "primerci" : [ {
+    "inventarniBroj" : 7,
+    "nabavnaCena" : 573586.0,
+    "stanje" : "DOSTUPAN"
+  } ]
+} ]

@@ -8,6 +8,7 @@ public class ZahtevZaProduzenje {
 	private Date datumZahteva;
 	private StatusZahteva status;
 	private Iznajmljivanje iznajmljivanje;
+	public ZahtevZaProduzenje() {}
 	public ZahtevZaProduzenje(Date datumZahteva, StatusZahteva status, Iznajmljivanje iznajmljivanje) {
 		super();
 		this.datumZahteva = datumZahteva;

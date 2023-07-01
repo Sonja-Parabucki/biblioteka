@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import izuzeci.BadFormatException;
+import kontroleri.IzdanjaKontroler;
 import kontroleri.PrimerakKontroler;
 import model.Biblioteka;
 import model.Izdanje;
@@ -22,6 +23,7 @@ public class DodavanjePrimerka extends JFrame {
 	private TekstPolje tfCena;
 	private PadajucaLista plIzdanja;
 	
+	private IzdanjaKontroler izdanjaKontroler;
 	private PrimerakKontroler primerakKontroler;
 	public DodavanjePrimerka(Biblioteka biblioteka) {
 		JPanel panel = new JPanel();
@@ -41,12 +43,16 @@ public class DodavanjePrimerka extends JFrame {
 
 		panel.setBackground(clrPrimarna);
 		
-		
+		try {
+			this.izdanjaKontroler = new IzdanjaKontroler(biblioteka);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		
 		String[] izdanja = new String[biblioteka.getIzdanja().size()];
 		for(int i=0; i<biblioteka.getIzdanja().size(); i++) {
-			izdanja[i] = biblioteka.getIzdanja().get(i).getNaziv();
+			izdanja[i] = biblioteka.getIzdanja().get(i).toString();
 		}
 		
 		this.primerakKontroler = new PrimerakKontroler(biblioteka);
@@ -63,7 +69,7 @@ public class DodavanjePrimerka extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					primerakKontroler.dodajPrimerak(tfCena.getText(), plIzdanja.getSelectedIndex());
-					JOptionPane.showMessageDialog(null,  "Uspešno dodat primerak!", "Uspeh", JOptionPane.OK_OPTION);
+					JOptionPane.showMessageDialog(null,  "Uspešno dodat primerak!", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
 				} catch (BadFormatException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getNaslov(), JOptionPane.ERROR_MESSAGE);
 				} catch (IOException e1) {

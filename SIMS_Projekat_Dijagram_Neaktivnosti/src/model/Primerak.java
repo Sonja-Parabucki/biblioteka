@@ -37,10 +37,11 @@ public class Primerak {
 	public void setStanje(StanjePrimerka stanje) {
 		this.stanje = stanje;
 	}
+
 	@Override
 	public String toString() {
-		return "Primerak [inventarniBroj=" + inventarniBroj + ", nabavnaCena=" + nabavnaCena + ", stanje=" + stanje
-				+ "]";
+		return "Primerak [inventarniBroj=" + inventarniBroj + ", nabavnaCena=" + nabavnaCena + ", stanje=" + stanje + "]";
 	}
+
 	
 }

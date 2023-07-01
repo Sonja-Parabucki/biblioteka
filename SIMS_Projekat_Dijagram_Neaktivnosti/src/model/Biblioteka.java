@@ -1,16 +1,17 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Biblioteka {
 	private Nalog prijavljeniKorisnik = null;
-	private List<Propisi> propisi;
-	private List<Izdanje> izdanja;
-	private List<Ogranak> ogranci;
-	private List<Naplata> naplate;
-	private List<ZahtevZaProduzenje> zahteviZaProduzenje;
-	private List<Rezervacija> rezervacije;
-	private List<Nalog> nalozi;
+	private List<Propisi> propisi = new ArrayList<Propisi>();
+	private List<Izdanje> izdanja = new ArrayList<Izdanje>();
+	private List<Ogranak> ogranci = new ArrayList<Ogranak>();
+	private List<Naplata> naplate = new ArrayList<Naplata>();
+	private List<ZahtevZaProduzenje> zahteviZaProduzenje = new ArrayList<ZahtevZaProduzenje>();
+	private List<Rezervacija> rezervacije = new ArrayList<Rezervacija>();
+	private List<Nalog> nalozi = new ArrayList<Nalog>();
 	
 	public Biblioteka() {}
 	
@@ -74,6 +75,11 @@ public class Biblioteka {
 	public void setNalozi(List<Nalog> nalozi) {
 		this.nalozi = nalozi;
 	}
+	
+	public void dodajNalog(Nalog nalog) {
+		this.nalozi.add(nalog);
+	}
+	
 	@Override
 	public String toString() {
 		return "Biblioteka [prijavljeniKorisnik=" + prijavljeniKorisnik + ", propisi=" + propisi + ", izdanja="
@@ -82,6 +88,10 @@ public class Biblioteka {
 	}
 	public void dodajPrimerak(Primerak p, int i) {
 		this.izdanja.get(i).dodajPrimerak(p);
+	}
+	
+	public void dodajIzdanje(Izdanje izdanje) {
+		izdanja.add(izdanje);
 	}
 	
 }

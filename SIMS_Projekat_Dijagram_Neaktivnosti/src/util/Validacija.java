@@ -20,7 +20,12 @@ public class Validacija {
 		if (telefon.matches("[0-9]+")) {
 			return true;
 		}
-		
+		return false;
+	}
+	
+	public static boolean validanPostanskiBroj(String broj) {
+		if (broj.matches("[0-9]+") && broj.length() == 5)
+			return true;
 		return false;
 	}
 	
@@ -29,6 +34,12 @@ public class Validacija {
 			return true;
 		}
 		
+		return false;
+	}
+	
+	public static boolean validanJMBG(String jmbg) {
+		if (jmbg.length() == 13 && jmbg.matches("[0-9]+"))
+			return true;
 		return false;
 	}
 	

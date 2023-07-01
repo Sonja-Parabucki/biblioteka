@@ -3,6 +3,9 @@ package model;
 public class Mesto {
 	private String naziv;
 	private int pptBroj;
+	
+	public Mesto() {}
+	
 	public Mesto(String naziv, int pptBroj) {
 		super();
 		this.naziv = naziv;
@@ -22,6 +25,6 @@ public class Mesto {
 	}
 	@Override
 	public String toString() {
-		return "Mesto [naziv=" + naziv + ", pptBroj=" + pptBroj + "]";
+		return naziv + ", " + pptBroj;
 	}
 }

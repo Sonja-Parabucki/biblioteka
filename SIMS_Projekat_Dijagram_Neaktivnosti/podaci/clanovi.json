@@ -1,0 +1,55 @@
+[ {
+  "ime" : "df",
+  "prezime" : "df",
+  "jmbg" : "1231231231231",
+  "imejl" : "dfsdfs@gmia.com",
+  "telefon" : "4382479",
+  "adresa" : {
+    "ulica" : "dfksj",
+    "broj" : "fjsd",
+    "mesto" : {
+      "naziv" : "fks",
+      "pptBroj" : 12312
+    }
+  },
+  "brojClanskeKarte" : "dfsdf",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "DETE"
+}, {
+  "ime" : "dfsdf",
+  "prezime" : "sdfsd",
+  "jmbg" : "1231231231231",
+  "imejl" : "dsfdf@gm.ocm",
+  "telefon" : "8374923847",
+  "adresa" : {
+    "ulica" : "dklsfjdlsf",
+    "broj" : "kdjslkfjd",
+    "mesto" : {
+      "naziv" : "fjskdkf",
+      "pptBroj" : 37648
+    }
+  },
+  "brojClanskeKarte" : "fgjsdkghl ",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "ODRASLA_OSOBA"
+}, {
+  "ime" : "Clhj",
+  "prezime" : "af wesf",
+  "jmbg" : "1029384785637",
+  "imejl" : "grd@gsd.td",
+  "telefon" : "102934857",
+  "adresa" : {
+    "ulica" : "fse",
+    "broj" : "3sfe3",
+    "mesto" : {
+      "naziv" : "IAWD",
+      "pptBroj" : 23543
+    }
+  },
+  "brojClanskeKarte" : "AAAAAAAAAAAAA",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "PENZIONER"
+} ]

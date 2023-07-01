@@ -6,6 +6,8 @@ public class InventarnaKnjiga {
 	private int broj;
 	private String naziv;
 	private List<Primerak> primerci;
+	
+	public InventarnaKnjiga() {}
 	public InventarnaKnjiga(int broj, String naziv, List<Primerak> primerci) {
 		super();
 		this.broj = broj;

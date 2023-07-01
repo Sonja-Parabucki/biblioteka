@@ -3,6 +3,7 @@ package model;
 public class Zanr {
 	private String naziv;
 
+	public Zanr() {}
 	public Zanr(String naziv) {
 		super();
 		this.naziv = naziv;
@@ -18,7 +19,11 @@ public class Zanr {
 
 	@Override
 	public String toString() {
-		return "Zanr [naziv=" + naziv + "]";
+		return naziv;
 	}
-	
+	@Override
+	public boolean equals(Object obj) {
+		Zanr z = (Zanr)obj;
+		return z.naziv.equals(naziv);
+	}
 }

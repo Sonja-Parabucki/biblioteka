@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -13,7 +14,7 @@ import javax.swing.JPanel;
 
 import izuzeci.BadCredentialsException;
 import izuzeci.MissingValueException;
-import kontroleri.NaloziKontroler;
+import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
 import model.Nalog;
 import net.miginfocom.swing.MigLayout;
@@ -42,11 +43,12 @@ public class Meni extends JFrame{
 		
 		Labela lblNaslov = new Labela("Prijavljeni korisnik: " + biblioteka.getPrijavljeniKorisnik().getKorisnickoIme(), fntLabela, clrForeground);
 		
-		FormaDugme prikazIzdanja = new FormaDugme("Prikaz izdanja", clrPrimarna, clrForeground, 70, 30);
+		FormaDugme prikazIzdanja = new FormaDugme("Prikaz knjiga", clrPrimarna, clrForeground, 70, 30);
 		prikazIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				PrikazKnjiga prikaz = new PrikazKnjiga(biblioteka);
+				prikaz.setVisible(true);
 			}
 		});
 		
@@ -63,7 +65,8 @@ public class Meni extends JFrame{
 		btnIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				JDialog prozor = new FormaIzdanje(biblioteka);
+				prozor.setVisible(true);
 			}
 		});
 		
@@ -72,7 +75,8 @@ public class Meni extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				DodavanjeClana prikaz = new DodavanjeClana(biblioteka);
+				prikaz.setVisible(true);
 			}
 		});
 		
