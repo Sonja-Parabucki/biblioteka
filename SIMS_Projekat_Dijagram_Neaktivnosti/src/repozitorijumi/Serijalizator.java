@@ -1,4 +1,4 @@
-package serijalizacija;
+package repozitorijumi;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

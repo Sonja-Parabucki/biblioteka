@@ -1,18 +1,23 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+
 import enumeracije.StanjePrimerka;
 
+@JsonAutoDetect(fieldVisibility = Visibility.ANY)
 public class Primerak {
 	private int inventarniBroj;
 	private double nabavnaCena;
 	private StanjePrimerka stanje;
-	private Izdanje izdanje;
-	public Primerak(int inventarniBroj, double nabavnaCena, StanjePrimerka stanje, Izdanje izdanje) {
+	
+	public Primerak() {}
+	
+	public Primerak(int inventarniBroj, double nabavnaCena, StanjePrimerka stanje) {
 		super();
 		this.inventarniBroj = inventarniBroj;
 		this.nabavnaCena = nabavnaCena;
 		this.stanje = stanje;
-		this.izdanje = izdanje;
 	}
 	public int getInventarniBroj() {
 		return inventarniBroj;
@@ -32,16 +37,10 @@ public class Primerak {
 	public void setStanje(StanjePrimerka stanje) {
 		this.stanje = stanje;
 	}
-	public Izdanje getIzdanje() {
-		return izdanje;
-	}
-	public void setIzdanje(Izdanje izdanje) {
-		this.izdanje = izdanje;
-	}
 	@Override
 	public String toString() {
 		return "Primerak [inventarniBroj=" + inventarniBroj + ", nabavnaCena=" + nabavnaCena + ", stanje=" + stanje
-				+ ", izdanje=" + izdanje + "]";
+				+ "]";
 	}
 	
 }

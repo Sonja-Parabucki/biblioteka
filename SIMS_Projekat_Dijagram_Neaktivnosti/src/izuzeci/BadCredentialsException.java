@@ -10,7 +10,7 @@ public class BadCredentialsException extends Exception {
 	
 	public BadCredentialsException(String message) {
 		super(message);
-		naslov = "Pogreöni kredencijali";
+		naslov = "Pogre≈°ni kredencijali";
 	}
 	
 	public String getNaslov() {

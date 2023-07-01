@@ -72,5 +72,7 @@ public class Izdanje extends Knjiga {
 		return "Izdanje [opis=" + opis + ", udk=" + udk + ", isbn=" + isbn + ", godinaIzdanja=" + godinaIzdanja
 				+ ", koricenje=" + koricenje + ", izdavac=" + izdavac + ", primerci=" + primerci + "]";
 	}
-
+	public void dodajPrimerak(Primerak p) {
+		this.primerci.add(p);
+	}
 }

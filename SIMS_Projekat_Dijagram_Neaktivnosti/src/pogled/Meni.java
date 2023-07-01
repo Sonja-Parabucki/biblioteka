@@ -54,7 +54,8 @@ public class Meni extends JFrame{
 		btnPrimeraka.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				DodavanjePrimerka prozor = new DodavanjePrimerka(biblioteka);
+				prozor.setVisible(true);
 			}
 		});
 		

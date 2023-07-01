@@ -1,0 +1,17 @@
+[ {
+  "inventarniBroj" : 1,
+  "nabavnaCena" : 56.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 2,
+  "nabavnaCena" : 34.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 3,
+  "nabavnaCena" : 34.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 4,
+  "nabavnaCena" : 3423.0,
+  "stanje" : "DOSTUPAN"
+} ]
