@@ -1,33 +1,19 @@
 [ {
-  "ime" : "s",
-  "prezime" : "s",
+  "ime" : "asd",
+  "prezime" : "asd",
   "jmbg" : "1231231231231",
-  "imejl" : "sdasd@gm.com",
-  "telefon" : "21423434",
+  "imejl" : "dsdsds@gmail.com",
+  "telefon" : "1234354",
   "adresa" : {
-    "ulica" : "asd",
-    "broj" : "asd",
+    "ulica" : "d",
+    "broj" : "d",
     "mesto" : {
-      "naziv" : "dsa",
+      "naziv" : "d",
       "pptBroj" : 21312
     }
   },
-  "brojClanskeKarte" : "sda",
-  "placenaClanarina" : {
-    "year" : 2023,
-    "month" : "JULY",
-    "monthValue" : 7,
-    "dayOfMonth" : 1,
-    "leapYear" : false,
-    "dayOfWeek" : "SATURDAY",
-    "dayOfYear" : 182,
-    "era" : "CE",
-    "chronology" : {
-      "id" : "ISO",
-      "calendarType" : "iso8601",
-      "isoBased" : true
-    }
-  },
-  "tip" : "PENZIONER",
+  "brojClanskeKarte" : "asd",
+  "placenaClanarina" : "01/07/2023",
+  "tip" : "DETE",
   "primerci" : [ ]
 } ]

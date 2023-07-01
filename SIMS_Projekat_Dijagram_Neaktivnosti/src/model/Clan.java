@@ -1,30 +1,38 @@
 package model;
 
 import java.util.List;
-import java.time.LocalDate;
+import java.util.Date;
+import java.text.SimpleDateFormat;  
 import java.util.ArrayList;
 
 import enumeracije.TipClana;
 
 public class Clan extends Osoba {
 	private String brojClanskeKarte;
-	private LocalDate placenaClanarina;
-	private List<Iznajmljivanje> iznajmljivanje;
+	private String placenaClanarina;
+	private List<Iznajmljivanje> iznajmljivanja;
 	private TipClana tip;
+	
 	public Clan(String ime, String prezime, String jmbg, String imejl, String telefon, Adresa adresa,
-			String brojClanskeKarte, LocalDate placenaClanarina, List<Iznajmljivanje> iznajmljivanje, TipClana tip) {
+			String brojClanskeKarte, String placenaClanarina, List<Iznajmljivanje> iznajmljivanje, TipClana tip) {
 		super(ime, prezime, jmbg, imejl, telefon, adresa);
 		this.brojClanskeKarte = brojClanskeKarte;
 		this.placenaClanarina = placenaClanarina;
-		this.iznajmljivanje = iznajmljivanje;
+		this.iznajmljivanja = iznajmljivanje;
 		this.tip = tip;
 	}
+	
 	public Clan(String ime, String prezime, String jmbg, String imejl, String telefon, Adresa adresa,
 	String brojClanskeKarte, TipClana tip) {
 		super(ime, prezime, jmbg, imejl, telefon, adresa);
 		this.brojClanskeKarte = brojClanskeKarte;
-		this.placenaClanarina = LocalDate.now();
-;		this.iznajmljivanje = new ArrayList<Iznajmljivanje>();
+		
+		Date date = new Date();  
+	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+	    String strDate = formatter.format(date);
+		this.placenaClanarina = strDate;
+		
+;		this.iznajmljivanja = new ArrayList<Iznajmljivanje>();
 		this.tip = tip;
 	}
 	
@@ -34,17 +42,17 @@ public class Clan extends Osoba {
 	public void setBrojClanskeKarte(String brojClanskeKarte) {
 		this.brojClanskeKarte = brojClanskeKarte;
 	}
-	public LocalDate getPlacenaClanarina() {
+	public String getPlacenaClanarina() {
 		return placenaClanarina;
 	}
-	public void setPlacenaClanarina(LocalDate placenaClanarina) {
+	public void setPlacenaClanarina(String placenaClanarina) {
 		this.placenaClanarina = placenaClanarina;
 	}
 	public List<Iznajmljivanje> getPrimerci() {
-		return iznajmljivanje;
+		return iznajmljivanja;
 	}
 	public void setPrimerci(List<Iznajmljivanje> iznajmljivanje) {
-		this.iznajmljivanje = iznajmljivanje;
+		this.iznajmljivanja = iznajmljivanje;
 	}
 	public TipClana getTip() {
 		return tip;
@@ -54,8 +62,8 @@ public class Clan extends Osoba {
 	}
 	@Override
 	public String toString() {
-		return "Clan [brojClanskeKarte=" + brojClanskeKarte + ", placenaClanarina=" + placenaClanarina + ", primerci="
-				+ iznajmljivanje + ", tip=" + tip + "]";
+		return "Clan [brojClanskeKarte=" + brojClanskeKarte + ", placenaClanarina=" + placenaClanarina + ", iznajmljivanja="
+				+ iznajmljivanja + ", tip=" + tip + "]";
 	}
 	
 }

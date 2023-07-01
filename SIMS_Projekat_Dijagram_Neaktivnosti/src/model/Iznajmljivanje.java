@@ -1,30 +1,30 @@
 package model;
 
-import java.util.Date;
-
 public class Iznajmljivanje {
-	private Date datumIznajmljivanja;
-	private Date datumVracanja;
+	private String datumIznajmljivanja;
+	private String datumVracanja;
 	private boolean produzen;
 	private Primerak primerak;
 	
-	public Iznajmljivanje(Date datumIznajmljivanja, Date datumVracanja, boolean produzen, Primerak primerak) {
+	public Iznajmljivanje() {}
+	
+	public Iznajmljivanje(String datumIznajmljivanja, String datumVracanja, boolean produzen, Primerak primerak) {
 		super();
 		this.datumIznajmljivanja = datumIznajmljivanja;
 		this.datumVracanja = datumVracanja;
 		this.produzen = produzen;
 		this.primerak = primerak;
 	}
-	public Date getDatumIznajmljivanja() {
+	public String getDatumIznajmljivanja() {
 		return datumIznajmljivanja;
 	}
-	public void setDatumIznajmljivanja(Date datumIznajmljivanja) {
+	public void setDatumIznajmljivanja(String datumIznajmljivanja) {
 		this.datumIznajmljivanja = datumIznajmljivanja;
 	}
-	public Date getDatumVracanja() {
+	public String getDatumVracanja() {
 		return datumVracanja;
 	}
-	public void setDatumVracanja(Date datumVracanja) {
+	public void setDatumVracanja(String datumVracanja) {
 		this.datumVracanja = datumVracanja;
 	}
 	public boolean isProduzen() {
