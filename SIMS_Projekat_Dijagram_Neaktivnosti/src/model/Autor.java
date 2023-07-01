@@ -9,7 +9,9 @@ public class Autor {
 	private String prezime;
 	private String datumRodjenja;
 	private String datumSmrti = null;
-	private List<Knjiga> dela;
+	private List<Knjiga> dela = new ArrayList<Knjiga>();
+	
+	public Autor() {}
 	public Autor(String ime, String prezime, String datumRodjenja, String datumSmrti, List<Knjiga> dela) {
 		super();
 		this.ime = ime;

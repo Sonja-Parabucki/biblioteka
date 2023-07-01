@@ -6,6 +6,7 @@ public class Cenovnik {
 	private double clanarina;
 	private double kaznaPoDanu;
 	private Date pocetniDatum;
+	public Cenovnik() {}
 	public Cenovnik(double clanarina, double kaznaPoDanu, Date pocetniDatum) {
 		super();
 		this.clanarina = clanarina;

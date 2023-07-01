@@ -4,6 +4,7 @@ public class Adresa {
 	private String ulica;
 	private String broj;
 	private Mesto mesto;
+	public Adresa() {}
 	public Adresa(String ulica, String broj, Mesto mesto) {
 		super();
 		this.ulica = ulica;

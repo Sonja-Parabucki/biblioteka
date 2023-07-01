@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.swing.JDialog;
@@ -28,6 +29,7 @@ public class FormaIzdavac extends JDialog {
 	
 	private FormaIzdanje prozor;
 	private PadajucaLista stari;
+	private ArrayList<Izdavac> izdavaci;
 	
 	public FormaIzdavac(FormaIzdanje prozor) {
 		this.prozor = prozor;
@@ -68,7 +70,7 @@ public class FormaIzdavac extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (stari.getSelectedIndex() > -1) {
-					prozor.setIzdavac((Izdavac)stari.getSelectedItem());
+					prozor.setIzdavac(izdavaci.get(stari.getSelectedIndex()));
 					zatvori();
 				} 
 				else {
@@ -78,8 +80,7 @@ public class FormaIzdavac extends JDialog {
 					String mesto = tfMesto.getText();
 					String ppt = tfPpt.getText();
 					
-					if (naziv.isEmpty() || ulica.isEmpty() || broj.isEmpty() || mesto.isEmpty()
-							|| ppt.isEmpty()) {
+					if (naziv.isEmpty() || ulica.isEmpty() || broj.isEmpty() || mesto.isEmpty() || ppt.isEmpty()) {
 						JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
 					}
 					try {
@@ -99,7 +100,7 @@ public class FormaIzdavac extends JDialog {
 			}
 		});
 		
-		Set<Izdavac> izdavaci = prozor.kontroler.nadjiSveIzdavace();
+		izdavaci = new ArrayList<Izdavac>(prozor.kontroler.nadjiSveIzdavace());
 		String[] opcije = new String[izdavaci.size()];
 		
 		int i=0;

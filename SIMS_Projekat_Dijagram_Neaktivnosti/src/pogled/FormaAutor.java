@@ -5,12 +5,14 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 import model.Autor;
+import model.Zanr;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
 
@@ -25,6 +27,7 @@ public class FormaAutor extends JDialog {
 	
 	private FormaIzdanje prozor;
 	private PadajucaLista stari;
+	private ArrayList<Autor> autori;
 	
 	public FormaAutor(FormaIzdanje prozor) {
 		this.prozor = prozor;
@@ -56,7 +59,7 @@ public class FormaAutor extends JDialog {
 		tfDatSmrt = new TekstPolje("", fntTekstPolje, 240, 30);
 		
 		
-		Set<Autor> autori = prozor.kontroler.nadjiSveAutore();
+		autori = new ArrayList<Autor>(prozor.kontroler.nadjiSveAutore());
 		String[] opcije = new String[autori.size()];
 		int i=0;
 		for (Autor a:autori) {
@@ -68,33 +71,37 @@ public class FormaAutor extends JDialog {
 		
 		
 		
-		FormaDugme btnDodaj = new FormaDugme("Dodaj izdanje", clrSekundarna, clrForeground, 150, 20);
-		btnDodaj.addActionListener(new ActionListener() {
+		FormaDugme btnDodajNovi = new FormaDugme("Dodaj novog autora", clrSekundarna, clrForeground, 150, 20);
+		btnDodajNovi.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String ime = tfIme.getText();
+				String prz = tfPrezime.getText();
+				String datr = tfDatRodj.getText();
+				String dats = tfDatSmrt.getText();
+				
+				if (ime.isEmpty() || prz.isEmpty() || datr.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+					Autor aut = new Autor(ime, prz, datr, dats);
+					prozor.dodajAutora(aut);
+					zatvori();
+				}
+			}
+		});
+		
+		FormaDugme btnDodajStari = new FormaDugme("Dodaj autora sa liste", clrSekundarna, clrForeground, 150, 20);
+		btnDodajStari.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if (stari.getSelectedIndex() > -1) {
-					prozor.dodajAutora((Autor)stari.getSelectedItem());
+				if (stari.getSelectedIndex() != -1) {
+					prozor.dodajAutora(autori.get(stari.getSelectedIndex()));
 					zatvori();
-				} 
-				else {
-					String ime = tfIme.getText();
-					String prz = tfPrezime.getText();
-					String datr = tfDatRodj.getText();
-					String dats = tfDatSmrt.getText();
-					
-					if (ime.isEmpty() || prz.isEmpty() || datr.isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
-					}
-					else {
-						Autor aut = new Autor(ime, prz, datr, dats);
-						prozor.dodajAutora(aut);
-						zatvori();
-					}
-					
 				}
-				
 			}
 		});
 		
@@ -112,10 +119,12 @@ public class FormaAutor extends JDialog {
 		add(lblDatSmrt);
 		add(tfDatSmrt, "wrap");
 		
+		add(btnDodajNovi, "wrap, span2, align center");
+		
 		add(lblStari, "wrap, span2, align center");
 		add(stari, "wrap, span2, align center");
 		
-		add(btnDodaj, "wrap, span2, align center");
+		add(btnDodajStari, "wrap, span2, align center");
 	}
 	
 	

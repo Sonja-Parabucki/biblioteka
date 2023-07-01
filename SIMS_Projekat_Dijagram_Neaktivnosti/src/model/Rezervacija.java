@@ -9,6 +9,8 @@ public class Rezervacija {
 	private Knjiga knjiga;
 	private Primerak primerak;
 	private Clan clan;
+	
+	public Rezervacija() {}
 	public Rezervacija(Date datumKreiranja, boolean preuzeo, Date datumDodele, Knjiga knjiga, Primerak primerak,
 			Clan clan) {
 		super();

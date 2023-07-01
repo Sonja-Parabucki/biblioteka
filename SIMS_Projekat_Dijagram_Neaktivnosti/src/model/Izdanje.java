@@ -13,7 +13,7 @@ public class Izdanje extends Knjiga {
 	private String opis;
 	private String udk;
 	private String isbn;
-	private Date godinaIzdanja;
+	private int godinaIzdanja;
 	private TipKoricenja koricenje;
 	private Izdavac izdavac;
 	private List<Primerak> primerci;
@@ -24,7 +24,7 @@ public class Izdanje extends Knjiga {
 	}
 	
 	public Izdanje(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
-			Date godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac) {
+			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac) {
 		super(naziv, jezik, autori, zanrovi);
 		this.id = id;
 		this.opis = opis;
@@ -37,7 +37,7 @@ public class Izdanje extends Knjiga {
 	}
 	
 	public Izdanje(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
-			Date godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
+			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
 		super(naziv, jezik, autori, zanrovi);
 		this.id = id;
 		this.opis = opis;
@@ -74,10 +74,10 @@ public class Izdanje extends Knjiga {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public Date getGodinaIzdanja() {
+	public int getGodinaIzdanja() {
 		return godinaIzdanja;
 	}
-	public void setGodinaIzdanja(Date godinaIzdanja) {
+	public void setGodinaIzdanja(int godinaIzdanja) {
 		this.godinaIzdanja = godinaIzdanja;
 	}
 	public TipKoricenja getKoricenje() {

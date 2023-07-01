@@ -8,7 +8,9 @@ public class Izdavac {
 	
 	private String naziv;
 	private Adresa adresa;
-	private List<Izdanje> izdanja;
+	private List<Izdanje> izdanja = new ArrayList<Izdanje>();
+	
+	public Izdavac() {}
 	
 	public Izdavac(String naziv, Adresa adresa, List<Izdanje> izdanja) {
 		super();

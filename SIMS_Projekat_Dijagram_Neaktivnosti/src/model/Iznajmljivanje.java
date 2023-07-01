@@ -8,6 +8,8 @@ public class Iznajmljivanje {
 	private boolean produzen;
 	private Primerak primerak;
 	private Clan clan;
+	
+	public Iznajmljivanje() {}
 	public Iznajmljivanje(Date datumIznajmljivanja, Date datumVracanja, boolean produzen, Primerak primerak,
 			Clan clan) {
 		super();

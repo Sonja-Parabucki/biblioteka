@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.swing.JDialog;
@@ -21,6 +22,7 @@ public class FormaZanr extends JDialog {
 	private TekstPolje tfNaziv;
 	private FormaIzdanje prozor;
 	private PadajucaLista stari;
+	private ArrayList<Zanr> zan;
 	
 	public FormaZanr(FormaIzdanje prozor) {
 		this.prozor = prozor;
@@ -42,7 +44,7 @@ public class FormaZanr extends JDialog {
 		Labela lblNaziv = new Labela("Naziv:", fntLabela, clrTercijarna);
 		tfNaziv = new TekstPolje("", fntTekstPolje, 240, 30);
 		
-		Set<Zanr> zan = prozor.kontroler.nadjiSveZanrove();
+		zan = new ArrayList<Zanr>(prozor.kontroler.nadjiSveZanrove());
 		String[] opcije = new String[zan.size()];
 		int i=0;
 		for (Zanr a:zan) {
@@ -52,30 +54,33 @@ public class FormaZanr extends JDialog {
 		Labela lblStari = new Labela("ili odabedite prethodno uneti zanr:", fntLabela, clrTercijarna);
 		stari = new PadajucaLista(opcije, clrSekundarna, clrForeground, fntTekstPolje, 140, 30);
 		
-		FormaDugme btnDodaj = new FormaDugme("Dodaj", clrSekundarna, clrForeground, 150, 20);
-		btnDodaj.addActionListener(new ActionListener() {
+		FormaDugme btnDodajNovi = new FormaDugme("Dodaj novi zanr", clrSekundarna, clrForeground, 150, 20);
+		btnDodajNovi.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				if (stari.getSelectedIndex() > -1) {
-					prozor.dodajZanr((Zanr)stari.getSelectedItem());
-					zatvori();
-				} 
+				String naziv = tfNaziv.getText();
+				if (naziv.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
+				}
 				else {
-					String naziv = tfNaziv.getText();
-					
-					if (naziv.isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
-					}
-					else {
-						Zanr z = new Zanr(naziv);
-						prozor.dodajZanr(z);
-						zatvori();
-					}
-					
+					Zanr z = new Zanr(naziv);
+					prozor.dodajZanr(z);
+					zatvori();
 				}
 				
+			}
+		});
+		
+		FormaDugme btnDodajStari = new FormaDugme("Dodaj zanr iz liste", clrSekundarna, clrForeground, 150, 20);
+		btnDodajStari.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (stari.getSelectedIndex() != -1) {
+					prozor.dodajZanr(zan.get(stari.getSelectedIndex()));
+					zatvori();
+				}
 			}
 		});
 		
@@ -85,10 +90,12 @@ public class FormaZanr extends JDialog {
 		add(lblNaziv);
 		add(tfNaziv, "wrap");
 		
+		add(btnDodajNovi, "wrap, span2, align center");
+		
 		add(lblStari, "wrap, span2, align center");
 		add(stari, "wrap, span2, align center");
 		
-		add(btnDodaj, "wrap, span2, align center");
+		add(btnDodajStari, "wrap, span2, align center");
 		
 	}
 	

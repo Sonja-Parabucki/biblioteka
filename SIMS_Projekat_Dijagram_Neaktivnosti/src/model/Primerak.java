@@ -6,6 +6,7 @@ public class Primerak {
 	private int inventarniBroj;
 	private double nabavnaCena;
 	private StanjePrimerka stanje;
+	public Primerak() {}
 	public Primerak(int inventarniBroj, double nabavnaCena, StanjePrimerka stanje) {
 		super();
 		this.inventarniBroj = inventarniBroj;

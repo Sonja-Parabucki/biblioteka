@@ -5,19 +5,26 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+
+import enumeracije.TipKoricenja;
 import izuzeci.BadFormatException;
 import izuzeci.MissingValueException;
 import izuzeci.NotSavedException;
 import kontroleri.IzdanjaKontroler;
 import model.Autor;
 import model.Biblioteka;
+import model.Izdanje;
 import model.Izdavac;
 import model.Zanr;
 import net.miginfocom.swing.MigLayout;
@@ -37,9 +44,10 @@ public class FormaIzdanje extends JDialog  {
 	private TekstPolje tfIsbn;
 	private TekstPolje tfGodina;
 	private TekstPolje tfIzdavac;
+	private PadajucaLista plKoricenje;
 	
-	public List<Autor> autori = new ArrayList<Autor>();
-	public List<Zanr> zanrovi = new ArrayList<Zanr>();
+	public Set<Autor> autori = new HashSet<Autor>();
+	public Set<Zanr> zanrovi = new HashSet<Zanr>();
 	public Izdavac izdavac = null;
 	
 	
@@ -60,7 +68,7 @@ public class FormaIzdanje extends JDialog  {
 		for (Zanr a : zanrovi) {
 			t += a.getNaziv() + ", ";
 		}
-		taAutori.setText(t.substring(0, t.length()-2));
+		taZanrovi.setText(t.substring(0, t.length()-2));
 	}
 
 
@@ -72,7 +80,12 @@ public class FormaIzdanje extends JDialog  {
 
 	public FormaIzdanje(Biblioteka biblioteka) {
 		
-		this.kontroler = new IzdanjaKontroler(biblioteka);
+		try {
+			this.kontroler = new IzdanjaKontroler(biblioteka);
+		} catch (IOException e3) {
+			JOptionPane.showMessageDialog(null, "Greska pri citanju iz fajlova.", "Greska", JOptionPane.ERROR_MESSAGE);
+			e3.printStackTrace();
+		}
 		
 		setSize(new Dimension(520, 750));
 		setLocationRelativeTo(null);
@@ -165,7 +178,7 @@ public class FormaIzdanje extends JDialog  {
 		
 		Labela lblKoricenje = new Labela("Koricenje:", fntLabela, clrTercijarna);
 		String[] tipoviK = {"mek povez", "tvd povez"};
-		PadajucaLista plKoricenje = new PadajucaLista(tipoviK,
+		plKoricenje = new PadajucaLista(tipoviK,
 				clrSekundarna, clrForeground, fntTekstPolje, 240, 30);
 		
 		
@@ -175,21 +188,42 @@ public class FormaIzdanje extends JDialog  {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				/*
-				try {
-					System.out.print(true);
-					
-					
-					zatvori();
-					}
-				catch (MissingValueException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getNaslov(), JOptionPane.ERROR_MESSAGE);
-				} catch (BadFormatException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getNaslov(), JOptionPane.ERROR_MESSAGE);
-				} catch (NotSavedException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getNaslov(), JOptionPane.ERROR_MESSAGE);
+				
+				String naziv = tfNaziv.getText();
+				String jezik = tfJezik.getText();
+				String opis = taOpis.getText();
+				String isbn = tfIsbn.getText();
+				String udk = tfUdk.getText();
+				String god = tfGodina.getText();
+				TipKoricenja koricenje;
+				
+				if (naziv.isEmpty() || jezik.isEmpty() || opis.isEmpty() || isbn.isEmpty() || udk.isEmpty()
+						|| god.isEmpty() || izdavac == null || autori.isEmpty() || zanrovi.isEmpty() || plKoricenje.getSelectedIndex() == -1) {
+					JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
 				}
-				*/
+				else {
+					try {
+						int godina = Integer.parseInt(god);
+						if (plKoricenje.getSelectedIndex()==0) koricenje = TipKoricenja.MEK_POVEZ;
+						else koricenje = TipKoricenja.TVRD_POVEZ;
+						
+						boolean ok = kontroler.dodajNovo(naziv, jezik, new ArrayList<Zanr>(zanrovi), new ArrayList<Autor>(autori),
+								opis, udk, isbn, godina, koricenje, izdavac);
+						
+						if (ok) {
+							zatvori();
+							JOptionPane.showMessageDialog(null, "Dodato novo izdanje.", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
+						} else {
+							JOptionPane.showMessageDialog(null, "Vec postoji ovo izdanje u sistemu.", "Greska", JOptionPane.ERROR_MESSAGE);
+						}
+						
+					} catch (NumberFormatException e2) {
+						JOptionPane.showMessageDialog(null, "Godina mora da bude broj.", "Greska", JOptionPane.ERROR_MESSAGE);
+					} catch (IOException e1) {
+						JOptionPane.showMessageDialog(null, "Greska pri upisu u fajlove.", "Greska", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+				
 			}
 		});
 		
@@ -224,6 +258,9 @@ public class FormaIzdanje extends JDialog  {
 		add(lblIzdavaci);
 		add(tfIzdavac);
 		add(btnDodajIzdavaca, "wrap");
+		
+		add(lblKoricenje);
+		add(plKoricenje, "wrap");
 		
 		add(btnDodaj, "wrap, span2, align center");
 		

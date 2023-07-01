@@ -27,6 +27,10 @@ public class IzdanjaRepo {
 	
 	private List<Izdanje> izdanja = new ArrayList<Izdanje>();
 	
+	public IzdanjaRepo() throws IOException {
+		ucitaj();
+	}
+	
 	public List<Izdanje> getIzdanja() {
 		return izdanja;
 	}
@@ -88,7 +92,7 @@ public class IzdanjaRepo {
 		}
 	}
 	
-	public List<Izdanje> ucitaj() throws IOException {
+	public void ucitaj() throws IOException {
 		
 		File fajlIzdanja = new File("./podaci/izdanja.json");
 		
@@ -102,8 +106,7 @@ public class IzdanjaRepo {
 			
 		} finally {
 			is.close();
-		}
-		return izdanja;			
+		}		
 	}
 
 }
