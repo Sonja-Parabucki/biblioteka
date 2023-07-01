@@ -16,4 +16,22 @@
   "placenaClanarina" : "01/07/2023",
   "primerci" : [ ],
   "tip" : "DETE"
+}, {
+  "ime" : "dfsdf",
+  "prezime" : "sdfsd",
+  "jmbg" : "1231231231231",
+  "imejl" : "dsfdf@gm.ocm",
+  "telefon" : "8374923847",
+  "adresa" : {
+    "ulica" : "dklsfjdlsf",
+    "broj" : "kdjslkfjd",
+    "mesto" : {
+      "naziv" : "fjskdkf",
+      "pptBroj" : 37648
+    }
+  },
+  "brojClanskeKarte" : "fgjsdkghl ",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "ODRASLA_OSOBA"
 } ]

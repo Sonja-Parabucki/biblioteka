@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -62,7 +63,8 @@ public class Meni extends JFrame{
 		btnIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				JDialog prozor = new FormaIzdanje(biblioteka);
+				prozor.setVisible(true);
 			}
 		});
 		

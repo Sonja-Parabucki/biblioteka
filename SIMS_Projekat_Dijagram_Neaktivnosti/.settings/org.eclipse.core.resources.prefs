@@ -2,5 +2,10 @@ eclipse.preferences.version=1
 encoding//src/izuzeci/MissingValueException.java=UTF-8
 encoding//src/izuzeci/NotFoundException.java=UTF-8
 encoding//src/izuzeci/NotSavedException.java=UTF-8
+<<<<<<< HEAD
 encoding//src/kontroleri/KorisnikKontroler.java=UTF-8
+=======
+encoding//src/kontroleri/NaloziKontroler.java=UTF-8
+encoding//src/pogled/FormaAutor.java=UTF-8
+>>>>>>> origin/izdanja
 encoding//src/pogled/Prijava.java=UTF-8

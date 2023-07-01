@@ -12,7 +12,7 @@ public class Clan extends Osoba {
 	private String placenaClanarina;
 	private List<Iznajmljivanje> primerci;
 	private TipClana tip;
-	
+
 	public Clan() {}	
 	
 	public Clan(String ime, String prezime, String jmbg, String imejl, String telefon, Adresa adresa,

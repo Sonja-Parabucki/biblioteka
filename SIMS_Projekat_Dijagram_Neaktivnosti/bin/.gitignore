@@ -1,9 +1,5 @@
-/enumeracije/
-/izuzeci/
-/kontroleri/
-/main/
 /model/
-/module-info.class
-/pogled/
+/kontroleri/
+/repo/
 /repozitorijumi/
-/util/
+/pogled/

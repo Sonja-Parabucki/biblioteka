@@ -179,4 +179,23 @@
       }
     }
   }
+}, {
+  "korisnickoIme" : "ksfjldkf",
+  "lozinka" : "dkfjsldkfDFS123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "dfsdf",
+    "prezime" : "sdfsd",
+    "jmbg" : "1231231231231",
+    "imejl" : "8374923847",
+    "telefon" : "dsfdf@gm.ocm",
+    "adresa" : {
+      "ulica" : "dklsfjdlsf",
+      "broj" : "kdjslkfjd",
+      "mesto" : {
+        "naziv" : "fjskdkf",
+        "pptBroj" : 37648
+      }
+    }
+  }
 } ]

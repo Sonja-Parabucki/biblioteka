@@ -5,7 +5,7 @@ public class Iznajmljivanje {
 	private String datumVracanja;
 	private boolean produzen;
 	private Primerak primerak;
-	
+
 	public Iznajmljivanje() {}
 	
 	public Iznajmljivanje(String datumIznajmljivanja, String datumVracanja, boolean produzen, Primerak primerak) {

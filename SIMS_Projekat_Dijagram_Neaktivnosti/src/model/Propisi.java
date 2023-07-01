@@ -10,6 +10,7 @@ public class Propisi {
 	private int brojSlikovnica;
 	private TipClana tipClana;
 	private List<Cenovnik> cenovnici;
+	public Propisi() {}
 	public Propisi(int brojKnjiga, int brojDana, int brojSlikovnica, TipClana tipClana, List<Cenovnik> cenovnici) {
 		super();
 		this.brojKnjiga = brojKnjiga;

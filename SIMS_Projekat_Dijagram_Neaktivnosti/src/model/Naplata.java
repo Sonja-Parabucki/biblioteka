@@ -9,6 +9,8 @@ public class Naplata {
 	private Date datum;
 	private TipNaplate tip;
 	private Clan clan;
+	
+	public Naplata() {}
 	public Naplata(double iznos, Date datum, TipNaplate tip, Clan clan) {
 		super();
 		this.iznos = iznos;
