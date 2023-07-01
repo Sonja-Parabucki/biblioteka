@@ -70,7 +70,7 @@ public class PrikazKnjiga extends JFrame {
 		Labela lblNaslov = new Labela("Knjige", fntNaslov, clrForeground);
 	
 
-		FormaDugme btnIzdanja = new FormaDugme("Prikaži izdanja", clrPrimarna, clrForeground, 150, 20);
+		FormaDugme btnIzdanja = new FormaDugme("Prikazi izdanja", clrPrimarna, clrForeground, 150, 20);
 		btnIzdanja.addActionListener(new ActionListener() {
 			
 			@Override

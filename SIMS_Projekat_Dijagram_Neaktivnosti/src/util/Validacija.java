@@ -1,5 +1,7 @@
 package util;
 
+import java.text.ParseException;
+
 public class Validacija {
 	
 	public static boolean praznaIliNepostojecaVrednost(String input) {
@@ -60,5 +62,17 @@ public class Validacija {
 	            return true;
 	    }
 	    return false;
+	}
+	
+	public static boolean proveriCenu(String str) {
+		try{
+			double cena = Double.parseDouble(str);
+			if (cena < 0) {
+				return false;
+			}
+			return true;
+		} catch(NumberFormatException e) {
+			return false;
+		}
 	}
 }

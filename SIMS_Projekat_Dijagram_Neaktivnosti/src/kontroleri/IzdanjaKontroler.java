@@ -24,6 +24,7 @@ public class IzdanjaKontroler {
 	public IzdanjaKontroler(Biblioteka biblioteka) throws IOException {
 		this.biblioteka = biblioteka;
 		this.repo = new IzdanjaRepo();
+		this.biblioteka.setIzdanja(this.repo.getIzdanja());
 	}
 	
 	public boolean dodajNovo
@@ -37,10 +38,6 @@ public class IzdanjaKontroler {
 		repo.dodajIzdanje(izdanje);
 		
 		biblioteka.dodajIzdanje(izdanje);
-		for (Autor autor: autori) {
-			autor.dodajDelo(izdanje);
-		}
-		izdavac.dodajIzdanje(izdanje);
 		
 		return true;
 	}
@@ -54,15 +51,15 @@ public class IzdanjaKontroler {
 		return repo.nadjiSvaIzdanja(knjiga);
 	}
 	
-	public Set<Izdavac> nadjiSveIzdavace(){
+	public List<Izdavac> nadjiSveIzdavace(){
 		return repo.nadjiSveIzdavace();
 	}
 	
-	public Set<Autor> nadjiSveAutore(){
+	public List<Autor> nadjiSveAutore(){
 		return repo.nadjiSveAutore();
 	}
 	
-	public Set<Zanr> nadjiSveZanrove(){
+	public List<Zanr> nadjiSveZanrove(){
 		return repo.nadjiSveZanrove();
 	}
 

@@ -99,8 +99,11 @@ public class Izdanje extends Knjiga {
 	}
 	@Override
 	public String toString() {
-		return "Izdanje [opis=" + opis + ", udk=" + udk + ", isbn=" + isbn + ", godinaIzdanja=" + godinaIzdanja
-				+ ", koricenje=" + koricenje + ", izdavac=" + izdavac + ", primerci=" + primerci + "]";
+		return this.naziv + " " + this.godinaIzdanja + " " + this.isbn;
+	}
+	
+	public void dodajPrimerak(Primerak p) {
+		this.primerci.add(p);
 	}
 
 	@Override

@@ -1,7 +1,11 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+
 import enumeracije.StanjePrimerka;
 
+@JsonAutoDetect(fieldVisibility = Visibility.ANY)
 public class Primerak {
 	private int inventarniBroj;
 	private double nabavnaCena;

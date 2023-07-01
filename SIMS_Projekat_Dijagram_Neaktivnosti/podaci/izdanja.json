@@ -5,8 +5,7 @@
     "ime" : "Ivo",
     "prezime" : "Andric",
     "datumRodjenja" : "1920",
-    "datumSmrti" : "1980",
-    "dela" : [ ]
+    "datumSmrti" : "1980"
   } ],
   "zanrovi" : [ {
     "naziv" : "Triler"
@@ -26,8 +25,7 @@
         "naziv" : "djfhskdhjf",
         "pptBroj" : 23176
       }
-    },
-    "izdanja" : [ ]
+    }
   },
   "primerci" : [ ]
 }, {
@@ -37,8 +35,7 @@
     "ime" : "Ivo",
     "prezime" : "Andric",
     "datumRodjenja" : "1920",
-    "datumSmrti" : "1980",
-    "dela" : [ ]
+    "datumSmrti" : "1980"
   } ],
   "zanrovi" : [ {
     "naziv" : "Triler"
@@ -58,10 +55,13 @@
         "naziv" : "djfhskdhjf",
         "pptBroj" : 23176
       }
-    },
-    "izdanja" : [ ]
+    }
   },
-  "primerci" : [ ]
+  "primerci" : [ {
+    "inventarniBroj" : 6,
+    "nabavnaCena" : 69.0,
+    "stanje" : "DOSTUPAN"
+  } ]
 }, {
   "naziv" : "Naslov",
   "jezik" : "jezik",
@@ -69,8 +69,7 @@
     "ime" : "Pera",
     "prezime" : "Peric",
     "datumRodjenja" : "2000",
-    "datumSmrti" : "",
-    "dela" : [ ]
+    "datumSmrti" : ""
   } ],
   "zanrovi" : [ {
     "naziv" : "Triler"
@@ -90,8 +89,7 @@
         "naziv" : "djfhskdhjf",
         "pptBroj" : 23176
       }
-    },
-    "izdanja" : [ ]
+    }
   },
   "primerci" : [ ]
 }, {
@@ -101,8 +99,7 @@
     "ime" : "Ivo",
     "prezime" : "Andric",
     "datumRodjenja" : "1920",
-    "datumSmrti" : "1980",
-    "dela" : [ ]
+    "datumSmrti" : "1980"
   } ],
   "zanrovi" : [ {
     "naziv" : "Horor"
@@ -122,8 +119,43 @@
         "naziv" : "bg",
         "pptBroj" : 12934
       }
-    },
-    "izdanja" : [ ]
+    }
   },
   "primerci" : [ ]
+}, {
+  "naziv" : "gs g",
+  "jezik" : "drgdrg",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [{
+    "naziv" : "Horor"
+  },{
+    "naziv" : "Triler"
+  }],
+  "id" : 5,
+  "opis" : "Buducnost",
+  "udk" : "dg43453",
+  "isbn" : "23432",
+  "godinaIzdanja" : 2342,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
+      }
+    }
+  },
+  "primerci" : [ {
+    "inventarniBroj" : 7,
+    "nabavnaCena" : 573586.0,
+    "stanje" : "DOSTUPAN"
+  } ]
 } ]

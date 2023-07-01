@@ -86,6 +86,9 @@ public class Biblioteka {
 				+ izdanja + ", ogranci=" + ogranci + ", naplate=" + naplate + ", zahteviZaProduzenje="
 				+ zahteviZaProduzenje + ", rezervacije=" + rezervacije + "]";
 	}
+	public void dodajPrimerak(Primerak p, int i) {
+		this.izdanja.get(i).dodajPrimerak(p);
+	}
 	
 	public void dodajIzdanje(Izdanje izdanje) {
 		izdanja.add(izdanje);

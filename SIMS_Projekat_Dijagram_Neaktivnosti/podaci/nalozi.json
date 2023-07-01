@@ -198,4 +198,23 @@
       }
     }
   }
+}, {
+  "korisnickoIme" : "ne",
+  "lozinka" : "123mjhgfsdS",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "Clhj",
+    "prezime" : "af wesf",
+    "jmbg" : "1029384785637",
+    "imejl" : "102934857",
+    "telefon" : "grd@gsd.td",
+    "adresa" : {
+      "ulica" : "fse",
+      "broj" : "3sfe3",
+      "mesto" : {
+        "naziv" : "IAWD",
+        "pptBroj" : 23543
+      }
+    }
+  }
 } ]

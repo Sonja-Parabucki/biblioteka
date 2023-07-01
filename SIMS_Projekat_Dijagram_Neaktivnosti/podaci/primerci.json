@@ -1,0 +1,29 @@
+[ {
+  "inventarniBroj" : 1,
+  "nabavnaCena" : 56.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 2,
+  "nabavnaCena" : 34.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 3,
+  "nabavnaCena" : 34.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 4,
+  "nabavnaCena" : 3423.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 5,
+  "nabavnaCena" : 4.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 6,
+  "nabavnaCena" : 69.0,
+  "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 7,
+  "nabavnaCena" : 573586.0,
+  "stanje" : "DOSTUPAN"
+} ]

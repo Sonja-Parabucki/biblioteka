@@ -34,5 +34,22 @@
   "placenaClanarina" : "01/07/2023",
   "primerci" : [ ],
   "tip" : "ODRASLA_OSOBA"
+}, {
+  "ime" : "Clhj",
+  "prezime" : "af wesf",
+  "jmbg" : "1029384785637",
+  "imejl" : "grd@gsd.td",
+  "telefon" : "102934857",
+  "adresa" : {
+    "ulica" : "fse",
+    "broj" : "3sfe3",
+    "mesto" : {
+      "naziv" : "IAWD",
+      "pptBroj" : 23543
+    }
+  },
+  "brojClanskeKarte" : "AAAAAAAAAAAAA",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "PENZIONER"
 } ]
-

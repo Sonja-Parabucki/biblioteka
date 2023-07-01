@@ -22,6 +22,7 @@ import model.Autor;
 import model.Izdanje;
 import model.Izdavac;
 import model.Knjiga;
+import model.Primerak;
 import model.Zanr;
 
 public class IzdanjaRepo {
@@ -53,30 +54,39 @@ public class IzdanjaRepo {
 		return izdanja.size() + 1;
 	}
 	
-	public Set<Izdavac> nadjiSveIzdavace(){
-		Set<Izdavac> izdavaci = new HashSet<Izdavac>();
+	public List<Izdavac> nadjiSveIzdavace(){
+		List<Izdavac> izdavaci = new ArrayList<Izdavac>();
 		for (Izdanje izdanje : izdanja) {
-			izdavaci.add(izdanje.getIzdavac());
+			if(!izdavaci.contains(izdanje.getIzdavac()))
+				izdavaci.add(izdanje.getIzdavac());
 		}
 		return izdavaci;
 	}
 	
-	public Set<Autor> nadjiSveAutore(){
-		Set<Autor> autori = new HashSet<Autor>();
+	public List<Autor> nadjiSveAutore(){
+		List<Autor> autori = new ArrayList<Autor>();
 		for (Izdanje izdanje : izdanja) {
-			autori.addAll(izdanje.getAutori());
+			for(Autor a : izdanje.getAutori()) {
+				if(!autori.contains(a)) {
+					autori.add(a);
+				}
+			}
 		}
 		return autori;
 	}
 	
-	public Set<Zanr> nadjiSveZanrove(){
-		Set<Zanr> zanrovi = new HashSet<Zanr>();
+	public List<Zanr> nadjiSveZanrove(){
+		List<Zanr> zanrovi = new ArrayList<Zanr>();
 		for (Izdanje izdanje : izdanja) {
-			zanrovi.addAll(izdanje.getZanrovi());
+			for(Zanr z : izdanje.getZanrovi()) {
+				if(!zanrovi.contains(z)) {
+					zanrovi.add(z);
+				}
+			}
 		}
 		return zanrovi;
 	}
-
+	
 	public List<Izdanje> nadjiSveKnjige(){
 		List<Izdanje> knjige = new ArrayList<Izdanje>();
 		int pom = 0;
@@ -135,6 +145,11 @@ public class IzdanjaRepo {
 		} finally {
 			is.close();
 		}		
+	}
+	
+	public void dodajPrimerak(Primerak p, int izdanje) throws IOException {
+		this.izdanja.get(izdanje).dodajPrimerak(p);
+		sacuvaj();
 	}
 
 }
