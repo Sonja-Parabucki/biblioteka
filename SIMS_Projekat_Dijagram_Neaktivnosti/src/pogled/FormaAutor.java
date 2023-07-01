@@ -5,16 +5,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
 import java.util.Set;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import model.Adresa;
 import model.Autor;
-import model.Izdavac;
-import model.Mesto;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
 

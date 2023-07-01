@@ -53,6 +53,15 @@ public class FormaIzdanje extends JDialog  {
 		}
 		taAutori.setText(t);
 	}
+	
+	public void dodajZanr(Zanr zanr) {
+		zanrovi.add(zanr);
+		String t = "";
+		for (Zanr a : zanrovi) {
+			t += a.getNaziv() + ", ";
+		}
+		taAutori.setText(t.substring(0, t.length()-2));
+	}
 
 
 	public void setIzdavac(Izdavac izdavac) {
@@ -96,7 +105,7 @@ public class FormaIzdanje extends JDialog  {
 		
 		
 		Labela lblOpis = new Labela("Opis:", fntLabela, clrTercijarna);
-		taOpis = new JTextArea(260, 200);
+		taOpis = new JTextArea(260, 90);
 		JScrollPane scrollOpis = new JScrollPane(taOpis);
 		scrollOpis.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollOpis.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -104,7 +113,7 @@ public class FormaIzdanje extends JDialog  {
 		
 		
 		Labela lblAutori = new Labela("Autori:", fntLabela, clrTercijarna);
-		taAutori = new JTextArea(260, 200);
+		taAutori = new JTextArea(260, 90);
 		taAutori.setEditable(false);
 		JScrollPane scrollAutori = new JScrollPane(taAutori);
 		scrollAutori.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -123,7 +132,8 @@ public class FormaIzdanje extends JDialog  {
 		
 		
 		Labela lblZanrovi = new Labela("Žanrovi:", fntLabela, clrTercijarna);
-		taZanrovi = new JTextArea(260, 200);
+		taZanrovi = new JTextArea(260, 90);
+		taZanrovi.setEditable(false);
 		JScrollPane scrollZanrovi = new JScrollPane(taZanrovi);
 		scrollZanrovi.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollZanrovi.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -134,8 +144,7 @@ public class FormaIzdanje extends JDialog  {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				
+				formaZanr();
 			}
 		});
 		
@@ -205,14 +214,15 @@ public class FormaIzdanje extends JDialog  {
 		add(scrollOpis, "wrap");
 		
 		add(lblZanrovi);
-		add(scrollZanrovi, "wrap");
+		add(scrollZanrovi);
+		add(btnDodajZanr, "wrap");
 		
 		add(lblAutori);
-		add(scrollAutori, "wrap");
+		add(scrollAutori);
 		add(btnDodajAutora, "wrap");
 
 		add(lblIzdavaci);
-		add(tfIzdavac, "wrap");
+		add(tfIzdavac);
 		add(btnDodajIzdavaca, "wrap");
 		
 		add(btnDodaj, "wrap, span2, align center");
@@ -232,5 +242,10 @@ public class FormaIzdanje extends JDialog  {
 	public void formaAutor() {
 		JDialog daut = new FormaAutor(this);
 		daut.setVisible(true);
+	}
+	
+	public void formaZanr() {
+		JDialog dz = new FormaZanr(this);
+		dz.setVisible(true);
 	}
 }
