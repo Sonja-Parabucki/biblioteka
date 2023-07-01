@@ -1,9 +1,11 @@
 package pogled.tabela;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
+import enumeracije.TipKoricenja;
 import model.Autor;
 import model.Izdanje;
 import model.Knjiga;
@@ -24,7 +26,7 @@ public class TabelaModelIzdanja extends AbstractTableModel{
 	
 	@Override
 	public int getColumnCount() {
-		return 4;
+		return 6;
 	}
 
 	@Override
@@ -36,13 +38,17 @@ public class TabelaModelIzdanja extends AbstractTableModel{
 	public String getColumnName(int column) {
 		switch (column) {
 		case 0:
-			return "Naziv";
+			return "Opis";
 		case 1:
-			return "Jezik";
+			return "UDK";
 		case 2:
-			return "Zanr";
+			return "ISBN";
 		case 3:
-			return "Autor";
+			return "Godina izdanja";
+		case 4:
+			return "Tip koričenja";
+		case 5:
+			return "Izdavač";
 		default:
 			return "";
 		}
@@ -58,6 +64,10 @@ public class TabelaModelIzdanja extends AbstractTableModel{
 		case 2:
 			return String.class;
 		case 3:
+			return LocalDate.class;
+		case 4:
+			return TipKoricenja.class;
+		case 5:
 			return String.class;
 		default:
 			return null;
@@ -66,32 +76,24 @@ public class TabelaModelIzdanja extends AbstractTableModel{
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		Knjiga knjiga = (Knjiga)izdanja.get(rowIndex);
+		Izdanje izdanje = izdanja.get(rowIndex);
 		switch (columnIndex) {
 		case 0:
-			return knjiga.getNaziv();
+			return izdanje.getOpis();
 		case 1:
-			return knjiga.getJezik();
+			return izdanje.getUdk();
 		case 2:
-			List<Zanr> zanrovi = knjiga.getZanrovi();
-			String za = "";
-			try {
-				for(Zanr z : zanrovi) {
-					za += z.getNaziv() + ", ";
-				}
-				za.substring(0, za.length()-2);
-			}catch(Exception e) {}
-			return za;
+			return izdanje.getIsbn();
 		case 3:
-			List<Autor> autori = knjiga.getAutori();
-			String au = "";
+			return izdanje.getGodinaIzdanja();
+		case 4:
+			return izdanje.getKoricenje();
+		case 5:
 			try {
-			for(Autor a : autori) {
-				au += a.getIme() + " " + a.getPrezime() + ", ";
+			return izdanje.getIzdavac().getNaziv();
+			}catch(Exception e){
+				return "";
 			}
-			au.substring(0, au.length()-2);
-			}catch(Exception e) {}
-			return au;
 		default:
 			return "";
 		}

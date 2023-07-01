@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -86,7 +87,7 @@ public class PrikazKnjiga extends JFrame {
 		Labela lblNaslov = new Labela("Knjige", fntNaslov, clrForeground);
 	
 
-		FormaDugme btnIzdanja = new FormaDugme("Pogledaj izdanja", clrPrimarna, clrForeground, 150, 20);
+		FormaDugme btnIzdanja = new FormaDugme("Prikaži izdanja", clrPrimarna, clrForeground, 150, 20);
 		btnIzdanja.addActionListener(new ActionListener() {
 			
 			@Override
@@ -94,19 +95,12 @@ public class PrikazKnjiga extends JFrame {
 				   int selectedRow = tabelaKnjiga.getSelectedRow();
 
                    if (selectedRow != -1) {
-                       // Get the values from the selected row
-//                       String name = tabelaKnjiga.getValueAt(selectedRow, 0).toString();
-//                       String position = tabelaKnjiga.getValueAt(selectedRow, 1).toString();
-//                       int age = Integer.parseInt(tabelaKnjiga.getValueAt(selectedRow, 2).toString());
                 	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                       // Do something with the selected item
-                       System.out.println("Selected item: " + izdanje);
+                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje);
+                	   prikaz.setVisible(true);
                    } else {
-                       // No row selected
-                       System.out.println("No item selected.");
+                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }
-//				DijalogDodavanjeJela dijalogDodavanjeJela = new DijalogDodavanjeJela(jeloKontroler, naziviTipovaJela, (TabelaModelJelovnik) tabelaJelovnik.getModel());
-//				dijalogDodavanjeJela.setVisible(true);
 			}
 		});
 				

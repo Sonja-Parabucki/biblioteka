@@ -33,21 +33,21 @@ public class PogledUtil {
 	
 	// zelena
 	public static Color getPrimarnaBoja() {
-		return new Color(16, 97, 4);
+		return new Color(255, 255, 255);
 	}
 	
 	// siva
 	public static Color getSekundarnaBoja() {
-		return new Color(64, 71, 62);
+		return new Color(0, 0, 0);
 	}
 	
 	// svetlo siva
 	public static Color getTercijarnaBoja() {
-		return new Color(190, 196, 188);
+		return new Color(0, 0, 0);
 	}
 	
 	public static Color getForegroundColor() {
-		return Color.WHITE;
+		return Color.BLACK;
 	}
 	
 	public static DateTimeFormatter getFormatDatuma() {

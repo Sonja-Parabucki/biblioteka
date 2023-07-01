@@ -42,7 +42,7 @@ public class Meni extends JFrame{
 		
 		Labela lblNaslov = new Labela("Prijavljeni korisnik: " + biblioteka.getPrijavljeniKorisnik().getKorisnickoIme(), fntLabela, clrForeground);
 		
-		FormaDugme prikazIzdanja = new FormaDugme("Prikaz izdanja", clrPrimarna, clrForeground, 70, 30);
+		FormaDugme prikazIzdanja = new FormaDugme("Prikaz knjiga", clrPrimarna, clrForeground, 70, 30);
 		prikazIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

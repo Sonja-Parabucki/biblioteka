@@ -20,8 +20,8 @@ import model.Izdanje;
 import model.Knjiga;
 import model.Zanr;
 import net.miginfocom.swing.MigLayout;
-import pogled.tabela.TabelaKnjiga;
-import pogled.tabela.TabelaModelKnjiga;
+import pogled.tabela.TabelaIzdanja;
+import pogled.tabela.TabelaModelIzdanja;
 import util.PogledUtil;
 
 public class PrikazIzdanja  extends JFrame {
@@ -31,8 +31,8 @@ public class PrikazIzdanja  extends JFrame {
 	private List<Izdanje> izdanja;
 	//kontroleri
 	
-	private TabelaKnjiga tabelaKnjiga;
-	private TabelaModelKnjiga tabelaModelKnjiga;
+	private TabelaIzdanja tabelaIzdanja;
+	private TabelaModelIzdanja tabelaModelIzdanja;
 	
 	public PrikazIzdanja(Knjiga knjiga) {
 		setSize(new Dimension(800, 600));
@@ -43,7 +43,6 @@ public class PrikazIzdanja  extends JFrame {
 		setVisible(true);
 
 		Font fntNaslov = PogledUtil.getVelikiNaslovFont();
-		Color clrPrimarna = PogledUtil.getPrimarnaBoja();
 		Color clrSekundarna = PogledUtil.getSekundarnaBoja();
 		Color clrForeground = PogledUtil.getForegroundColor();
 		
@@ -96,10 +95,10 @@ public class PrikazIzdanja  extends JFrame {
 
 	private void inicijalizujTabeluZaposlenih() {
 		
-		tabelaModelKnjiga = new TabelaModelKnjiga(izdanja);
-		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
-        tabelaKnjiga.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
+		tabelaModelIzdanja = new TabelaModelIzdanja(izdanja);
+		this.tabelaIzdanja= new TabelaIzdanja(tabelaModelIzdanja);
+        tabelaIzdanja.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+		JScrollPane scrollPane = new JScrollPane(tabelaIzdanja);
 		scrollPane.setPreferredSize(new Dimension(800, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -110,7 +109,7 @@ public class PrikazIzdanja  extends JFrame {
 	}
 	
 	private void azurirajPrikaz() {
-		TabelaModelKnjiga model = (TabelaModelKnjiga) tabelaKnjiga.getModel();
+		TabelaModelIzdanja model = (TabelaModelIzdanja) tabelaIzdanja.getModel();
 		model.fireTableDataChanged();
 		validate();
 	}
