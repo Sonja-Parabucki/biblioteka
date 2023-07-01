@@ -18,8 +18,10 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import model.Autor;
 import model.Izdanje;
 import model.Izdavac;
+import model.Zanr;
 
 public class IzdanjaRepo {
 	
@@ -46,13 +48,30 @@ public class IzdanjaRepo {
 		return izdanja.size() + 1;
 	}
 	
-	public List<Izdavac> nadjiSveIzdavace(){
+	public Set<Izdavac> nadjiSveIzdavace(){
 		Set<Izdavac> izdavaci = new HashSet<Izdavac>();
 		for (Izdanje izdanje : izdanja) {
 			izdavaci.add(izdanje.getIzdavac());
 		}
-		return (List<Izdavac>) izdavaci;
+		return izdavaci;
 	}
+	
+	public Set<Autor> nadjiSveAutore(){
+		Set<Autor> autori = new HashSet<Autor>();
+		for (Izdanje izdanje : izdanja) {
+			autori.addAll(izdanje.getAutori());
+		}
+		return autori;
+	}
+	
+	public Set<Zanr> nadjiSveZanrove(){
+		Set<Zanr> zanrovi = new HashSet<Zanr>();
+		for (Izdanje izdanje : izdanja) {
+			zanrovi.addAll(izdanje.getZanrovi());
+		}
+		return zanrovi;
+	}
+	
 
 	public void sacuvaj() throws IOException {
 		File fajlIzdanja = new File("./podaci/izdanja.json");

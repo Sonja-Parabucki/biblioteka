@@ -81,4 +81,8 @@ public class Biblioteka {
 				+ zahteviZaProduzenje + ", rezervacije=" + rezervacije + "]";
 	}
 	
+	public void dodajIzdanje(Izdanje izdanje) {
+		izdanja.add(izdanje);
+	}
+	
 }

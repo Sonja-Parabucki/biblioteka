@@ -2,9 +2,9 @@ package model;
 
 public class Adresa {
 	private String ulica;
-	private int broj;
+	private String broj;
 	private Mesto mesto;
-	public Adresa(String ulica, int broj, Mesto mesto) {
+	public Adresa(String ulica, String broj, Mesto mesto) {
 		super();
 		this.ulica = ulica;
 		this.broj = broj;
@@ -16,10 +16,10 @@ public class Adresa {
 	public void setUlica(String ulica) {
 		this.ulica = ulica;
 	}
-	public int getBroj() {
+	public String getBroj() {
 		return broj;
 	}
-	public void setBroj(int broj) {
+	public void setBroj(String broj) {
 		this.broj = broj;
 	}
 	public Mesto getMesto() {

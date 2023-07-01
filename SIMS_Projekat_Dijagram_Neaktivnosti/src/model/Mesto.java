@@ -22,6 +22,6 @@ public class Mesto {
 	}
 	@Override
 	public String toString() {
-		return "Mesto [naziv=" + naziv + ", pptBroj=" + pptBroj + "]";
+		return naziv + ", " + pptBroj;
 	}
 }

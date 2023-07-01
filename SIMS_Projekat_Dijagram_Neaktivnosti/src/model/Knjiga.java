@@ -7,14 +7,16 @@ public class Knjiga {
 	protected String naziv;
 	protected String jezik;
 	protected List<Autor> autori;
+	protected List<Zanr> zanrovi;
 	
 	public Knjiga() {}
 	
-	public Knjiga(String naziv, String jezik, List<Autor> autori) {
+	public Knjiga(String naziv, String jezik, List<Autor> autori, List<Zanr> zanrovi) {
 		super();
 		this.naziv = naziv;
 		this.jezik = jezik;
 		this.autori = autori;
+		this.zanrovi = zanrovi;
 	}
 	
 	public String getNaziv() {
@@ -35,11 +37,18 @@ public class Knjiga {
 	public void setAutori(List<Autor> autori) {
 		this.autori = autori;
 	}
-	@Override
-	public String toString() {
-		return "Knjiga [naziv=" + naziv + ", jezik=" + jezik + ", autori=" + autori + "]";
+	public List<Zanr> getZanrovi() {
+		return zanrovi;
 	}
 
+	public void setZanrovi(List<Zanr> zanrovi) {
+		this.zanrovi = zanrovi;
+	}
+
+	@Override
+	public String toString() {
+		return "Knjiga [naziv=" + naziv + ", jezik=" + jezik + ", autori=" + autori + ", zanrovi=" + zanrovi + "]";
+	}
 
 	@Override
 	public boolean equals(Object obj) {
