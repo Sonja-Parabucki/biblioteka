@@ -44,6 +44,8 @@ public class IzdanjaKontroler {
 	}
 	
 	
+
+	
 	public Set<Izdavac> nadjiSveIzdavace(){
 		return repo.nadjiSveIzdavace();
 	}

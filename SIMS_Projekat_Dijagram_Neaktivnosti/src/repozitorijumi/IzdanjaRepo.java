@@ -77,6 +77,14 @@ public class IzdanjaRepo {
 	}
 	
 
+	public Set<Izdanje> nadjiSveKnjige(){
+		Set<Izdanje> izdanja = new HashSet<Izdanje>();
+		for(Izdanje izdanje : izdanja) {
+			
+		}
+		return izdanja;
+	}
+	
 	public void sacuvaj() throws IOException {
 		File fajlIzdanja = new File("./podaci/izdanja.json");
 		

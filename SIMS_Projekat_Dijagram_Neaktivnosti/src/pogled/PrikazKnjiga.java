@@ -17,6 +17,7 @@ import enumeracije.TipNaloga;
 import model.Autor;
 import model.Biblioteka;
 import model.Izdanje;
+import model.Knjiga;
 import model.Zanr;
 import net.miginfocom.swing.MigLayout;
 import pogled.tabela.TabelaKnjiga;
@@ -26,7 +27,7 @@ import util.PogledUtil;
 public class PrikazKnjiga extends JFrame {
 
 	private static final long serialVersionUID = 4175309540188497204L;
-	private List<Izdanje> izdanja;
+	private List<Knjiga> izdanja;
 	//kontroleri
 	
 	private TabelaKnjiga tabelaKnjiga;
@@ -50,36 +51,7 @@ public class PrikazKnjiga extends JFrame {
 //		jeloKontroler = new JeloKontroler();
 //		tipJelaKontroler = new TipJelaKontroler();
 		try {
-			//dobavi izdanja
-//			this.izdanja = new ArrayList<>();
-//			Izdanje i = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, null, null, null);
-//			List<Zanr> zi = new ArrayList<Zanr>();
-//			Zanr z = new Zanr("Z");
-//			Zanr a = new Zanr("A");
-//			Zanr n = new Zanr("N");
-//			Zanr r = new Zanr("R");
-//			zi.add(z);
-//			zi.add(a);
-//			zi.add(n);
-//			zi.add(r);
-//			i.setZanrovi(zi);
-//			
-//			this.izdanja.add(i);
-//			Izdanje i1 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, TipKoricenja.TVRD_POVEZ, null, null);
-//			List<Autor> autori = new ArrayList<Autor>();
-//			Autor autor1 = new Autor("Ime", "Prezime", null, null, null);
-//			Autor autor2 = new Autor("Ime2", "Prezime2", null, null, null);
-//			autori.add(autor1);
-//			autori.add(autor2);
-//			i1.setAutori(autori);
-//			this.izdanja.add(i1);
-//			Izdanje i2 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, TipKoricenja.MEK_POVEZ, null, null);
-//			this.izdanja.add(i2);
-//			Izdanje i3 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, null, null, null);
-//			this.izdanja.add(i3);
-//			Izdanje i4 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, null, null, null);
-//			this.izdanja.add(i4);
-			//this.izdanja = jeloKontroler.dobaviJelaSaCenama();
+//			this.izdanja = jeloKontroler.dobaviJelaSaCenama();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -94,15 +66,9 @@ public class PrikazKnjiga extends JFrame {
 				   int selectedRow = tabelaKnjiga.getSelectedRow();
 
                    if (selectedRow != -1) {
-                       // Get the values from the selected row
-//                       String name = tabelaKnjiga.getValueAt(selectedRow, 0).toString();
-//                       String position = tabelaKnjiga.getValueAt(selectedRow, 1).toString();
-//                       int age = Integer.parseInt(tabelaKnjiga.getValueAt(selectedRow, 2).toString());
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                       // Do something with the selected item
-                       System.out.println("Selected item: " + izdanje);
+//                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
+//                       System.out.println("Selected item: " + izdanje);
                    } else {
-                       // No row selected
                        System.out.println("No item selected.");
                    }
 //				DijalogDodavanjeJela dijalogDodavanjeJela = new DijalogDodavanjeJela(jeloKontroler, naziviTipovaJela, (TabelaModelJelovnik) tabelaJelovnik.getModel());

@@ -11,9 +11,9 @@ import model.Zanr;
 
 public class TabelaModelKnjiga extends AbstractTableModel{
 	private static final long serialVersionUID = -2987067730871371449L;
-	private List<Izdanje> izdanja;
+	private List<Knjiga> izdanja;
 	
-	public TabelaModelKnjiga(List<Izdanje> izdanja) {
+	public TabelaModelKnjiga(List<Knjiga> izdanja) {
 		this.izdanja = izdanja;
 	}
 	
@@ -65,7 +65,7 @@ public class TabelaModelKnjiga extends AbstractTableModel{
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		Knjiga knjiga = (Knjiga)izdanja.get(rowIndex);
+		Knjiga knjiga = izdanja.get(rowIndex);
 		switch (columnIndex) {
 		case 0:
 			return knjiga.getNaziv();
@@ -96,7 +96,7 @@ public class TabelaModelKnjiga extends AbstractTableModel{
 		}
 	}
 	
-	public Izdanje getIzdanje(int rowIndex) {
+	public Knjiga getIzdanje(int rowIndex) {
 		return izdanja.get(rowIndex);
 	}
 

@@ -20,7 +20,9 @@ import model.Izdanje;
 import model.Knjiga;
 import model.Zanr;
 import net.miginfocom.swing.MigLayout;
+import pogled.tabela.TabelaIzdanja;
 import pogled.tabela.TabelaKnjiga;
+import pogled.tabela.TabelaModelIzdanja;
 import pogled.tabela.TabelaModelKnjiga;
 import util.PogledUtil;
 
@@ -31,8 +33,8 @@ public class PrikazIzdanja  extends JFrame {
 	private List<Izdanje> izdanja;
 	//kontroleri
 	
-	private TabelaKnjiga tabelaKnjiga;
-	private TabelaModelKnjiga tabelaModelKnjiga;
+	private TabelaIzdanja tabelaIzdanja;
+	private TabelaModelIzdanja tabelaModelIzdanja;
 	
 	public PrikazIzdanja(Knjiga knjiga) {
 		setSize(new Dimension(800, 600));
@@ -96,7 +98,7 @@ public class PrikazIzdanja  extends JFrame {
 
 	private void inicijalizujTabeluZaposlenih() {
 		
-		tabelaModelKnjiga = new TabelaModelKnjiga(izdanja);
+		TabelaModelIzdanja = new TabelaModelIzdanja(izdanja);
 		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
         tabelaKnjiga.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
