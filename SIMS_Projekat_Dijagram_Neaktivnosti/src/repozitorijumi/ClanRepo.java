@@ -62,6 +62,14 @@ public class ClanRepo {
 		}		
 	}
 	
+	public boolean PronadjiPoClanskojKarti(String clKarta) {
+		for (Clan c : clanovi) {
+			if (c.getBrojClanskeKarte().equals(clKarta))
+				return true;
+		}
+		return false;
+	}
+	
 	public void dodajClana(Clan clan) throws IOException {
 		clanovi.add(clan);
 		sacuvajClanove();

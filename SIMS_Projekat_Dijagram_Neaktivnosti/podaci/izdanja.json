@@ -1,0 +1,33 @@
+[ {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980",
+    "dela" : [ ]
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 1,
+  "opis" : "Veoma lepa knjiga",
+  "udk" : "1234523",
+  "isbn" : "1231231231",
+  "godinaIzdanja" : 2020,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    },
+    "izdanja" : [ ]
+  },
+  "primerci" : [ ]
+} ]

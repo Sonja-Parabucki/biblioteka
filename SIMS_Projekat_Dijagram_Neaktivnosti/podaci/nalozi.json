@@ -9,211 +9,192 @@
   "tip" : "VISI_BIBLIOTEKAR",
   "osoba" : null
 }, {
-  "korisnickoIme" : "mi",
-  "lozinka" : "mMmMmM123",
+  "korisnickoIme" : "fdsfs",
+  "lozinka" : "ddddddD123",
   "tip" : "CLAN",
   "osoba" : {
-    "ime" : "djasldfjspef",
-    "prezime" : "fsdfsdfsf",
+    "ime" : "asda",
+    "prezime" : "asd",
     "jmbg" : "1231231231231",
-    "imejl" : "231923",
-    "telefon" : "sdasda@gmaio.com",
+    "imejl" : "312734",
+    "telefon" : "ddd@gmail.com",
     "adresa" : {
-      "ulica" : "vdsdf",
-      "broj" : "sdfsdfs",
+      "ulica" : "f",
+      "broj" : "f",
       "mesto" : {
-        "naziv" : "dsdcsd",
-        "pptBroj" : 21000
+        "naziv" : "f",
+        "pptBroj" : 21123
       }
     }
   }
 }, {
-  "korisnickoIme" : "d",
-  "lozinka" : "dddddD123",
+  "korisnickoIme" : "dasd",
+  "lozinka" : "dsadD123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "jkjkkj",
+    "prezime" : "a",
+    "jmbg" : "1231231231231",
+    "imejl" : "34123",
+    "telefon" : "sadsd@gmail.com",
+    "adresa" : {
+      "ulica" : "asd",
+      "broj" : "asd",
+      "mesto" : {
+        "naziv" : "das",
+        "pptBroj" : 21312
+      }
+    }
+  }
+}, {
+  "korisnickoIme" : "dd",
+  "lozinka" : "ddddddD2021",
   "tip" : "CLAN",
   "osoba" : {
     "ime" : "asd",
     "prezime" : "asd",
-    "jmbg" : "3453453453453",
-    "imejl" : "123232312",
-    "telefon" : "dasdad@gm.com",
-    "adresa" : {
-      "ulica" : "dsdfsdf",
-      "broj" : "21321",
-      "mesto" : {
-        "naziv" : "dsfdfsdf",
-        "pptBroj" : 21231
-      }
-    }
-  }
-}, {
-  "korisnickoIme" : "data",
-  "lozinka" : "Ddddd123",
-  "tip" : "CLAN",
-  "osoba" : {
-    "ime" : "asdasd",
-    "prezime" : "asdasd",
-    "jmbg" : "2342342343123",
-    "imejl" : "1",
-    "telefon" : "dfsdf@gm.com",
+    "jmbg" : "1231231231231",
+    "imejl" : "1234354",
+    "telefon" : "dsdsds@gmail.com",
     "adresa" : {
       "ulica" : "d",
       "broj" : "d",
       "mesto" : {
-        "naziv" : "ed",
-        "pptBroj" : 12312
+        "naziv" : "d",
+        "pptBroj" : 21312
       }
     }
   }
 }, {
   "korisnickoIme" : "ddd",
-  "lozinka" : "Ddddd123",
+  "lozinka" : "dddDdd123",
   "tip" : "CLAN",
   "osoba" : {
-    "ime" : "asdasdasdasd",
-    "prezime" : "asdasdas",
-    "jmbg" : "1231231231123",
-    "imejl" : "021323454",
-    "telefon" : "ddd@gm.com",
+    "ime" : "a",
+    "prezime" : "a",
+    "jmbg" : "1231231231231",
+    "imejl" : "23192381",
+    "telefon" : "fasdfs@gm.com",
     "adresa" : {
-      "ulica" : "sdasdas",
-      "broj" : "21312",
+      "ulica" : "d",
+      "broj" : "d",
       "mesto" : {
-        "naziv" : "dwsadsd",
+        "naziv" : "d",
         "pptBroj" : 21312
       }
     }
   }
 }, {
-  "korisnickoIme" : "fdf",
-  "lozinka" : "dddddd123D",
+  "korisnickoIme" : "dddddd",
+  "lozinka" : "xdddddddD123",
   "tip" : "CLAN",
   "osoba" : {
-    "ime" : "fghfh",
-    "prezime" : "fghfgh",
+    "ime" : "w",
+    "prezime" : "w",
     "jmbg" : "1231231231231",
-    "imejl" : "12",
-    "telefon" : "ssdf@gmai.com",
+    "imejl" : "21312321",
+    "telefon" : "ddd@gmail.com",
     "adresa" : {
-      "ulica" : "asda",
-      "broj" : "asd",
+      "ulica" : "f",
+      "broj" : "f",
       "mesto" : {
-        "naziv" : "ads",
-        "pptBroj" : 21312
-      }
-    }
-  }
-}, {
-  "korisnickoIme" : "dddds",
-  "lozinka" : "dddddD123",
-  "tip" : "CLAN",
-  "osoba" : {
-    "ime" : "sdfsd",
-    "prezime" : "sdfsd",
-    "jmbg" : "1231231231231",
-    "imejl" : "2312",
-    "telefon" : "fsd@gmia.com",
-    "adresa" : {
-      "ulica" : "dfgdf",
-      "broj" : "dfgdfg",
-      "mesto" : {
-        "naziv" : "fdgfd",
-        "pptBroj" : 12312
-      }
-    }
-  }
-}, {
-  "korisnickoIme" : "asd",
-  "lozinka" : "asdasd123A",
-  "tip" : "CLAN",
-  "osoba" : {
-    "ime" : "sadsda",
-    "prezime" : "asdasd",
-    "jmbg" : "1231231231231",
-    "imejl" : "2310231",
-    "telefon" : "asdasd@g.com",
-    "adresa" : {
-      "ulica" : "asdas",
-      "broj" : "asdasd21312",
-      "mesto" : {
-        "naziv" : "sadsd",
-        "pptBroj" : 21312
-      }
-    }
-  }
-}, {
-  "korisnickoIme" : "aa",
-  "lozinka" : "Aaaaaa234",
-  "tip" : "CLAN",
-  "osoba" : {
-    "ime" : "asd",
-    "prezime" : "asd",
-    "jmbg" : "1231231231231",
-    "imejl" : "123",
-    "telefon" : "dasd@gm.com",
-    "adresa" : {
-      "ulica" : "asdas",
-      "broj" : "asdasd",
-      "mesto" : {
-        "naziv" : "asd",
-        "pptBroj" : 21312
-      }
-    }
-  }
-}, {
-  "korisnickoIme" : "aaaa",
-  "lozinka" : "kadjsjs!asd123A",
-  "tip" : "CLAN",
-  "osoba" : {
-    "ime" : "sad",
-    "prezime" : "sda",
-    "jmbg" : "3453453453453",
-    "imejl" : "23123",
-    "telefon" : "dssf@gm.com",
-    "adresa" : {
-      "ulica" : "dfsd",
-      "broj" : "dsd",
-      "mesto" : {
-        "naziv" : "dasd",
-        "pptBroj" : 21342
-      }
-    }
-  }
-}, {
-  "korisnickoIme" : "fgdf",
-  "lozinka" : "aaaaA123",
-  "tip" : "CLAN",
-  "osoba" : {
-    "ime" : "ghgfhfg",
-    "prezime" : "fghfgh",
-    "jmbg" : "1231231231231",
-    "imejl" : "128332",
-    "telefon" : "dsds@gm.com",
-    "adresa" : {
-      "ulica" : "df",
-      "broj" : "sdf",
-      "mesto" : {
-        "naziv" : "ds",
+        "naziv" : "21",
         "pptBroj" : 21345
       }
     }
   }
 }, {
-  "korisnickoIme" : "sads",
-  "lozinka" : "Ddddddd123",
+  "korisnickoIme" : "fdfd",
+  "lozinka" : "dddhsfkjhDFG223123",
   "tip" : "CLAN",
   "osoba" : {
-    "ime" : "s",
-    "prezime" : "s",
+    "ime" : "aSA",
+    "prezime" : "asd",
     "jmbg" : "1231231231231",
-    "imejl" : "21423434",
-    "telefon" : "sdasd@gm.com",
+    "imejl" : "2312312",
+    "telefon" : "ddd@gmail.com",
     "adresa" : {
-      "ulica" : "asd",
-      "broj" : "asd",
+      "ulica" : "sdf",
+      "broj" : "sdfsd",
       "mesto" : {
-        "naziv" : "dsa",
+        "naziv" : "fdfd",
+        "pptBroj" : 21345
+      }
+    }
+  }
+}, {
+  "korisnickoIme" : "fg",
+  "lozinka" : "testTEST123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "dg",
+    "prezime" : "f",
+    "jmbg" : "4564564564564",
+    "imejl" : "342",
+    "telefon" : "fsdf@gmd.com",
+    "adresa" : {
+      "ulica" : "fsd",
+      "broj" : "sdf",
+      "mesto" : {
+        "naziv" : "fsdf",
+        "pptBroj" : 34135
+      }
+    }
+  }
+}, {
+  "korisnickoIme" : "fffff",
+  "lozinka" : "ffFFFF123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "dfsdf",
+    "prezime" : "dfsdf",
+    "jmbg" : "2121121212122",
+    "imejl" : "21323",
+    "telefon" : "fdsf@gm.com",
+    "adresa" : {
+      "ulica" : "sdfsd",
+      "broj" : "sdfsd",
+      "mesto" : {
+        "naziv" : "sdfsd",
         "pptBroj" : 21312
+      }
+    }
+  }
+}, {
+  "korisnickoIme" : "sdfsdfs",
+  "lozinka" : "dfsdfD123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "df",
+    "prezime" : "df",
+    "jmbg" : "1231231231231",
+    "imejl" : "4382479",
+    "telefon" : "dfsdfs@gmia.com",
+    "adresa" : {
+      "ulica" : "dfksj",
+      "broj" : "fjsd",
+      "mesto" : {
+        "naziv" : "fks",
+        "pptBroj" : 12312
+      }
+    }
+  }
+}, {
+  "korisnickoIme" : "ksfjldkf",
+  "lozinka" : "dkfjsldkfDFS123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "dfsdf",
+    "prezime" : "sdfsd",
+    "jmbg" : "1231231231231",
+    "imejl" : "8374923847",
+    "telefon" : "dsfdf@gm.ocm",
+    "adresa" : {
+      "ulica" : "dklsfjdlsf",
+      "broj" : "kdjslkfjd",
+      "mesto" : {
+        "naziv" : "fjskdkf",
+        "pptBroj" : 37648
       }
     }
   }

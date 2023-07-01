@@ -1,22 +1,43 @@
 package model;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import enumeracije.TipKoricenja;
 
 public class Izdanje extends Knjiga {
 	
+	private int id;
 	private String opis;
 	private String udk;
 	private String isbn;
-	private Date godinaIzdanja;
+	private int godinaIzdanja;
 	private TipKoricenja koricenje;
 	private Izdavac izdavac;
 	private List<Primerak> primerci;
-	public Izdanje(String naziv, String jezik, List<Autor> autori, List<Zanr> zanrovi, String opis, String udk, String isbn,
-			Date godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
+	
+	public Izdanje() {
+		super();
+	}
+	
+	public Izdanje(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
+			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac) {
 		super(naziv, jezik, autori, zanrovi);
+		this.id = id;
+		this.opis = opis;
+		this.udk = udk;
+		this.isbn = isbn;
+		this.godinaIzdanja = godinaIzdanja;
+		this.koricenje = koricenje;
+		this.izdavac = izdavac;
+		this.primerci = new ArrayList<Primerak>();
+	}
+	
+	public Izdanje(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
+			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
+		super(naziv, jezik, autori, zanrovi);
+		this.id = id;
 		this.opis = opis;
 		this.udk = udk;
 		this.isbn = isbn;
@@ -24,6 +45,14 @@ public class Izdanje extends Knjiga {
 		this.koricenje = koricenje;
 		this.izdavac = izdavac;
 		this.primerci = primerci;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getOpis() {
 		return opis;
@@ -43,10 +72,10 @@ public class Izdanje extends Knjiga {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public Date getGodinaIzdanja() {
+	public int getGodinaIzdanja() {
 		return godinaIzdanja;
 	}
-	public void setGodinaIzdanja(Date godinaIzdanja) {
+	public void setGodinaIzdanja(int godinaIzdanja) {
 		this.godinaIzdanja = godinaIzdanja;
 	}
 	public TipKoricenja getKoricenje() {
@@ -71,5 +100,19 @@ public class Izdanje extends Knjiga {
 	public String toString() {
 		return "Izdanje [opis=" + opis + ", udk=" + udk + ", isbn=" + isbn + ", godinaIzdanja=" + godinaIzdanja
 				+ ", koricenje=" + koricenje + ", izdavac=" + izdavac + ", primerci=" + primerci + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Izdanje other = (Izdanje) obj;
+		return Objects.equals(godinaIzdanja, other.godinaIzdanja) && Objects.equals(isbn, other.isbn)
+				&& Objects.equals(izdavac, other.izdavac) && koricenje == other.koricenje
+				&& Objects.equals(autori, other.autori) && Objects.equals(naziv, other.naziv);
 	}
 }

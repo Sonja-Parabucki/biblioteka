@@ -1,33 +1,37 @@
 [ {
-  "ime" : "s",
-  "prezime" : "s",
+  "ime" : "df",
+  "prezime" : "df",
   "jmbg" : "1231231231231",
-  "imejl" : "sdasd@gm.com",
-  "telefon" : "21423434",
+  "imejl" : "dfsdfs@gmia.com",
+  "telefon" : "4382479",
   "adresa" : {
-    "ulica" : "asd",
-    "broj" : "asd",
+    "ulica" : "dfksj",
+    "broj" : "fjsd",
     "mesto" : {
-      "naziv" : "dsa",
-      "pptBroj" : 21312
+      "naziv" : "fks",
+      "pptBroj" : 12312
     }
   },
-  "brojClanskeKarte" : "sda",
-  "placenaClanarina" : {
-    "year" : 2023,
-    "month" : "JULY",
-    "monthValue" : 7,
-    "dayOfMonth" : 1,
-    "leapYear" : false,
-    "dayOfWeek" : "SATURDAY",
-    "dayOfYear" : 182,
-    "era" : "CE",
-    "chronology" : {
-      "id" : "ISO",
-      "calendarType" : "iso8601",
-      "isoBased" : true
+  "brojClanskeKarte" : "dfsdf",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "DETE"
+}, {
+  "ime" : "dfsdf",
+  "prezime" : "sdfsd",
+  "jmbg" : "1231231231231",
+  "imejl" : "dsfdf@gm.ocm",
+  "telefon" : "8374923847",
+  "adresa" : {
+    "ulica" : "dklsfjdlsf",
+    "broj" : "kdjslkfjd",
+    "mesto" : {
+      "naziv" : "fjskdkf",
+      "pptBroj" : 37648
     }
   },
-  "tip" : "PENZIONER",
-  "primerci" : [ ]
+  "brojClanskeKarte" : "fgjsdkghl ",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "ODRASLA_OSOBA"
 } ]

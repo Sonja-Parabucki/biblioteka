@@ -3,6 +3,7 @@ package model;
 public class Ogranak {
 	private String naziv;
 	private Adresa adresa;
+	public Ogranak() {}
 	public Ogranak(String naziv, Adresa adresa) {
 		super();
 		this.naziv = naziv;

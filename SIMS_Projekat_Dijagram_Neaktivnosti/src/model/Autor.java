@@ -1,21 +1,32 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Autor {
 	private String ime;
 	private String prezime;
-	private Date datumRodjenja;
-	private Date datumSmrti = null;
-	private List<Knjiga> dela;
-	public Autor(String ime, String prezime, Date datumRodjenja, Date datumSmrti, List<Knjiga> dela) {
+	private String datumRodjenja;
+	private String datumSmrti = null;
+	private List<Knjiga> dela = new ArrayList<Knjiga>();
+	
+	public Autor() {}
+	public Autor(String ime, String prezime, String datumRodjenja, String datumSmrti, List<Knjiga> dela) {
 		super();
 		this.ime = ime;
 		this.prezime = prezime;
 		this.datumRodjenja = datumRodjenja;
 		this.datumSmrti = datumSmrti;
 		this.dela = dela;
+	}
+	public Autor(String ime, String prezime, String datumRodjenja, String datumSmrti) {
+		super();
+		this.ime = ime;
+		this.prezime = prezime;
+		this.datumRodjenja = datumRodjenja;
+		this.datumSmrti = datumSmrti;
+		this.dela = new ArrayList<Knjiga>();
 	}
 	public String getIme() {
 		return ime;
@@ -29,16 +40,16 @@ public class Autor {
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
-	public Date getDatumRodjenja() {
+	public String getDatumRodjenja() {
 		return datumRodjenja;
 	}
-	public void setDatumRodjenja(Date datumRodjenja) {
+	public void setDatumRodjenja(String datumRodjenja) {
 		this.datumRodjenja = datumRodjenja;
 	}
-	public Date getDatumSmrti() {
+	public String getDatumSmrti() {
 		return datumSmrti;
 	}
-	public void setDatumSmrti(Date datumSmrti) {
+	public void setDatumSmrti(String datumSmrti) {
 		this.datumSmrti = datumSmrti;
 	}
 	public List<Knjiga> getDela() {
@@ -49,9 +60,10 @@ public class Autor {
 	}
 	@Override
 	public String toString() {
-		return "Autor [ime=" + ime + ", prezime=" + prezime + ", datumRodjenja=" + datumRodjenja + ", datumSmrti="
-				+ datumSmrti + ", dela=" + dela + "]";
+		return ime + " " + prezime + ", " + datumRodjenja;
 	}
 	
-	
+	public void dodajDelo(Knjiga knjiga) {
+		dela.add(knjiga);
+	}
 }

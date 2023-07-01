@@ -12,6 +12,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+import javax.swing.border.Border;
 import javax.swing.plaf.ComboBoxUI;
 import javax.swing.plaf.basic.BasicArrowButton;
 import javax.swing.plaf.basic.BasicComboBoxUI;
@@ -29,7 +30,7 @@ public class PadajucaLista extends JComboBox {
 	@SuppressWarnings("unchecked")
 	public PadajucaLista(String[] opcije, Color pozadinaBoja, Color prednjaBoja, Font font, int sirina, int visina) {
 		super(opcije);
-		this.setBackground(pozadinaBoja);
+		this.setBackground(Color.LIGHT_GRAY);
 		this.setForeground(prednjaBoja);
 		this.setFont(font);
 		this.setPreferredSize(new Dimension(sirina, visina));
@@ -88,6 +89,6 @@ class StrelicaUI extends BasicComboBoxUI {
         return new BasicArrowButton(
             BasicArrowButton.SOUTH,
             pozadinaBoja, pozadinaBoja,
-            Color.WHITE, Color.WHITE);
+            Color.BLACK, Color.BLACK);
     }
 }

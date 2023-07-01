@@ -9,7 +9,6 @@ public class Osoba {
 	private Adresa adresa;
 	
 	public Osoba() {}
-	
 	public Osoba(String ime, String prezime, String jmbg, String imejl, String telefon, Adresa adresa) {
 		super();
 		this.ime = ime;
