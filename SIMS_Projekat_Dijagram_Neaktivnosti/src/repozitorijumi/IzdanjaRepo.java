@@ -21,6 +21,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import model.Autor;
 import model.Izdanje;
 import model.Izdavac;
+import model.Knjiga;
 import model.Zanr;
 
 public class IzdanjaRepo {
@@ -75,8 +76,35 @@ public class IzdanjaRepo {
 		}
 		return zanrovi;
 	}
-	
 
+	public List<Izdanje> nadjiSveKnjige(){
+		List<Izdanje> knjige = new ArrayList<Izdanje>();
+		int pom = 0;
+		for(Izdanje izdanje : izdanja) {
+			for(Izdanje iz : knjige) {
+				if(iz.jeIstaKnjiga(izdanje)) {
+					pom = 1;
+					break;
+				}
+			}
+			if(pom==0) {
+				knjige.add(izdanje);
+			}
+			pom = 0;
+		}
+		return knjige;
+	}
+	
+	public List<Izdanje> nadjiSvaIzdanja(Knjiga knjiga){
+		List<Izdanje> izd = new ArrayList<Izdanje>();
+		for(Izdanje izdanje : izdanja) {
+			if(izdanje.jeIstaKnjiga(knjiga)) {
+				izd.add(izdanje);
+			}
+		}
+		return izd;
+	}
+	
 	public void sacuvaj() throws IOException {
 		File fajlIzdanja = new File("./podaci/izdanja.json");
 		

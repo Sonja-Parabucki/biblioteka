@@ -21,8 +21,12 @@ public class ClanRepo {
 	
 	List<Clan> clanovi = new ArrayList<Clan>();
 	
-	public ClanRepo() throws IOException {
-		ucitajClanove();
+	public ClanRepo() {
+		try{
+			ucitajClanove();
+		}catch(Exception e) {
+			
+		}
 	}
 	
 	public void sacuvajClanove() throws IOException {

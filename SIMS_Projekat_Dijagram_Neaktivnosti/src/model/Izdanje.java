@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,7 +16,6 @@ public class Izdanje extends Knjiga {
 	private TipKoricenja koricenje;
 	private Izdavac izdavac;
 	private List<Primerak> primerci;
-	
 	
 	public Izdanje() {
 		super();
@@ -38,6 +36,7 @@ public class Izdanje extends Knjiga {
 	
 	public Izdanje(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
 			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
+
 		super(naziv, jezik, autori, zanrovi);
 		this.id = id;
 		this.opis = opis;
@@ -117,6 +116,36 @@ public class Izdanje extends Knjiga {
 				&& Objects.equals(izdavac, other.izdavac) && koricenje == other.koricenje
 				&& Objects.equals(autori, other.autori) && Objects.equals(naziv, other.naziv);
 	}
-
 	
+	public boolean jeIstaKnjiga(Knjiga i) {
+		int pom = 0;
+		if(naziv.equals(i.naziv) && jezik.equals(i.jezik)) {
+			for(Autor a : i.autori) {
+				if(!autori.contains(a)) {
+					pom = 1;
+				}
+			}
+			for(Autor a : autori) {
+				if(!i.autori.contains(a)) {
+					pom = 1;
+				}
+			}
+			for(Zanr z : i.zanrovi) {
+				if(!zanrovi.contains(z)) {
+					pom = 1;
+				}
+			}
+			for(Zanr z: zanrovi) {
+				if(!i.zanrovi.contains(z)) {
+					pom = 1;
+				}
+			}
+
+			if(pom==1) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
 }

@@ -33,8 +33,7 @@ public class Clan extends Osoba {
 	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 	    String strDate = formatter.format(date);
 		this.placenaClanarina = strDate;
-		
-;		this.primerci = new ArrayList<Iznajmljivanje>();
+		this.primerci = new ArrayList<Iznajmljivanje>();
 		this.tip = tip;
 	}
 	

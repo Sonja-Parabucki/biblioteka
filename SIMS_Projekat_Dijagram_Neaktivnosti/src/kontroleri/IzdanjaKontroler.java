@@ -11,8 +11,10 @@ import model.Autor;
 import model.Biblioteka;
 import model.Izdanje;
 import model.Izdavac;
+import model.Knjiga;
 import model.Zanr;
 import repozitorijumi.IzdanjaRepo;
+
 
 public class IzdanjaKontroler {
 	
@@ -43,6 +45,14 @@ public class IzdanjaKontroler {
 		return true;
 	}
 	
+	
+	public List<Izdanje> nadjiSveKnjige(){
+		return repo.nadjiSveKnjige();
+	}
+	
+	public List<Izdanje> nadjiSvaIzdanja(Knjiga knjiga){
+		return repo.nadjiSvaIzdanja(knjiga);
+	}
 	
 	public Set<Izdavac> nadjiSveIzdavace(){
 		return repo.nadjiSveIzdavace();
