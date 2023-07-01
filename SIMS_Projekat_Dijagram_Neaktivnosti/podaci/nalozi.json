@@ -217,4 +217,23 @@
       }
     }
   }
+}, {
+  "korisnickoIme" : "anaaa",
+  "lozinka" : "anaA12348900",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "a",
+    "prezime" : "a",
+    "jmbg" : "1231231231231",
+    "imejl" : "1231231",
+    "telefon" : "ana@ana.ana",
+    "adresa" : {
+      "ulica" : "na",
+      "broj" : "na",
+      "mesto" : {
+        "naziv" : "na",
+        "pptBroj" : 21000
+      }
+    }
+  }
 } ]

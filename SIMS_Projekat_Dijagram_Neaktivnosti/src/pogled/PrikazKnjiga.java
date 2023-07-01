@@ -11,7 +11,6 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 
 import enumeracije.TipKoricenja;
 import enumeracije.TipNaloga;
@@ -34,7 +33,7 @@ public class PrikazKnjiga extends JFrame {
 	private TabelaModelKnjiga tabelaModelKnjiga;
 	
 	public PrikazKnjiga(Biblioteka biblioteka) {
-		setSize(new Dimension(800, 600));
+		setSize(new Dimension(1000, 600));
 		setTitle("Knjige");
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -70,8 +69,12 @@ public class PrikazKnjiga extends JFrame {
 			List<Autor> autori = new ArrayList<Autor>();
 			Autor autor1 = new Autor("Ime", "Prezime", null, null, null);
 			Autor autor2 = new Autor("Ime2", "Prezime2", null, null, null);
+			Autor autor3 = new Autor("Ime3", "Prezime2", null, null, null);
+			Autor autor4 = new Autor("Ime3", "Prezime2", null, null, null);
 			autori.add(autor1);
 			autori.add(autor2);
+			autori.add(autor3);
+			autori.add(autor4);
 			i1.setAutori(autori);
 			this.izdanja.add(i1);
 			Izdanje i2 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, TipKoricenja.MEK_POVEZ, null, null);
@@ -119,9 +122,8 @@ public class PrikazKnjiga extends JFrame {
 		
 		tabelaModelKnjiga = new TabelaModelKnjiga(izdanja);
 		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
-        tabelaKnjiga.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
-		scrollPane.setPreferredSize(new Dimension(800, 500));
+		scrollPane.setPreferredSize(new Dimension(900, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		

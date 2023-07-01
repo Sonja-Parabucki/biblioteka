@@ -25,7 +25,13 @@ public class TabelaIzdanja extends JTable {
 		this.getTableHeader().setFont(PogledUtil.getTeksPoljeFont());
 		this.setFont(PogledUtil.getTeksPoljeFont());
 		this.setRowHeight(40);
-		this.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+		this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		this.getColumnModel().getColumn(0).setPreferredWidth(150);
+		this.getColumnModel().getColumn(1).setPreferredWidth(150);
+		this.getColumnModel().getColumn(2).setPreferredWidth(150);
+		this.getColumnModel().getColumn(3).setPreferredWidth(150);
+		this.getColumnModel().getColumn(4).setPreferredWidth(150);
+		this.getColumnModel().getColumn(5).setPreferredWidth(150);
 		
 		TableCellRenderer stringCellRenderer = this.getDefaultRenderer(String.class);
 		TableCellRenderer floatCellRenderer = this.getDefaultRenderer(Float.class);

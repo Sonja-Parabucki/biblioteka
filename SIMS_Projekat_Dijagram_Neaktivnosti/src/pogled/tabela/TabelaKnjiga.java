@@ -25,7 +25,11 @@ public class TabelaKnjiga extends JTable {
 		this.getTableHeader().setFont(PogledUtil.getTeksPoljeFont());
 		this.setFont(PogledUtil.getTeksPoljeFont());
 		this.setRowHeight(40);
-		this.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+		this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		this.getColumnModel().getColumn(0).setPreferredWidth(225);
+		this.getColumnModel().getColumn(1).setPreferredWidth(225);
+		this.getColumnModel().getColumn(2).setPreferredWidth(225);
+		this.getColumnModel().getColumn(3).setPreferredWidth(225);
 		
 		TableCellRenderer stringCellRenderer = this.getDefaultRenderer(String.class);
 		TableCellRenderer floatCellRenderer = this.getDefaultRenderer(Float.class);

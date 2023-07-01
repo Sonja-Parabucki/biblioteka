@@ -3,8 +3,6 @@ package pogled;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import enumeracije.TipKoricenja;
-import enumeracije.TipNaloga;
 import model.Autor;
-import model.Biblioteka;
 import model.Izdanje;
 import model.Knjiga;
 import model.Zanr;
@@ -35,7 +31,7 @@ public class PrikazIzdanja  extends JFrame {
 	private TabelaModelIzdanja tabelaModelIzdanja;
 	
 	public PrikazIzdanja(Knjiga knjiga) {
-		setSize(new Dimension(800, 600));
+		setSize(new Dimension(1000, 600));
 		setTitle("Izdanja");
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -97,9 +93,8 @@ public class PrikazIzdanja  extends JFrame {
 		
 		tabelaModelIzdanja = new TabelaModelIzdanja(izdanja);
 		this.tabelaIzdanja= new TabelaIzdanja(tabelaModelIzdanja);
-        tabelaIzdanja.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		JScrollPane scrollPane = new JScrollPane(tabelaIzdanja);
-		scrollPane.setPreferredSize(new Dimension(800, 500));
+		scrollPane.setPreferredSize(new Dimension(900, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
