@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Izdavac {
 	
@@ -35,5 +36,18 @@ public class Izdavac {
 	public String toString() {
 		return "Izdavac [naziv=" + naziv + ", adresa=" + adresa + ", izdanja=" + izdanja + "]";
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Izdavac other = (Izdavac) obj;
+		return Objects.equals(naziv, other.naziv);
+	}
 
+	
 }
