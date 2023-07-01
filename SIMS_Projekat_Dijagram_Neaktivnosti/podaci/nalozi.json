@@ -160,4 +160,23 @@
       }
     }
   }
+}, {
+  "korisnickoIme" : "sdfsdfs",
+  "lozinka" : "dfsdfD123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "df",
+    "prezime" : "df",
+    "jmbg" : "1231231231231",
+    "imejl" : "4382479",
+    "telefon" : "dfsdfs@gmia.com",
+    "adresa" : {
+      "ulica" : "dfksj",
+      "broj" : "fjsd",
+      "mesto" : {
+        "naziv" : "fks",
+        "pptBroj" : 12312
+      }
+    }
+  }
 } ]

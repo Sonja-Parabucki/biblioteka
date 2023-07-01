@@ -1,0 +1,19 @@
+[ {
+  "ime" : "df",
+  "prezime" : "df",
+  "jmbg" : "1231231231231",
+  "imejl" : "dfsdfs@gmia.com",
+  "telefon" : "4382479",
+  "adresa" : {
+    "ulica" : "dfksj",
+    "broj" : "fjsd",
+    "mesto" : {
+      "naziv" : "fks",
+      "pptBroj" : 12312
+    }
+  },
+  "brojClanskeKarte" : "dfsdf",
+  "placenaClanarina" : "01/07/2023",
+  "primerci" : [ ],
+  "tip" : "DETE"
+} ]
