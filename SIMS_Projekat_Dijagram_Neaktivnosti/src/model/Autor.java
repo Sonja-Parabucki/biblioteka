@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Autor {
+
 	private String ime;
 	private String prezime;
 	private String datumRodjenja;
@@ -62,7 +63,12 @@ public class Autor {
 	public String toString() {
 		return ime + " " + prezime + ", " + datumRodjenja;
 	}
-	
+	@Override
+	public boolean equals(Object obj) {
+		Autor a = (Autor)obj;
+		return ime.equals(a.ime) && prezime.equals(a.prezime) && datumRodjenja.equals(a.datumRodjenja);
+	}
+
 	public void dodajDelo(Knjiga knjiga) {
 		dela.add(knjiga);
 	}

@@ -116,5 +116,25 @@ public class Izdanje extends Knjiga {
 				&& Objects.equals(izdavac, other.izdavac) && koricenje == other.koricenje
 				&& Objects.equals(autori, other.autori) && Objects.equals(naziv, other.naziv);
 	}
-
+	
+	public boolean jeIstaKnjiga(Knjiga i) {
+		int pom = 0;
+		if(naziv.equals(i.naziv) && jezik.equals(i.jezik)) {
+			for(Autor a : i.autori) {
+				if(!autori.contains(a)) {
+					pom = 1;
+				}
+			}
+			for(Autor a : autori) {
+				if(!i.autori.contains(a)) {
+					pom = 1;
+				}
+			}
+			if(pom==1) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
 }

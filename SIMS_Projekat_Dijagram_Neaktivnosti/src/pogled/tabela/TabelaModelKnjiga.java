@@ -11,9 +11,9 @@ import model.Zanr;
 
 public class TabelaModelKnjiga extends AbstractTableModel{
 	private static final long serialVersionUID = -2987067730871371449L;
-	private List<Knjiga> izdanja;
+	private List<Izdanje> izdanja;
 	
-	public TabelaModelKnjiga(List<Knjiga> izdanja) {
+	public TabelaModelKnjiga(List<Izdanje> izdanja) {
 		this.izdanja = izdanja;
 	}
 	
@@ -96,7 +96,7 @@ public class TabelaModelKnjiga extends AbstractTableModel{
 		}
 	}
 	
-	public Knjiga getIzdanje(int rowIndex) {
+	public Izdanje getIzdanje(int rowIndex) {
 		return izdanja.get(rowIndex);
 	}
 

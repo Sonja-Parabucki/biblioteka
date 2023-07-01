@@ -30,4 +30,68 @@
     "izdanja" : [ ]
   },
   "primerci" : [ ]
+}, {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980",
+    "dela" : [ ]
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 2,
+  "opis" : "PROBA",
+  "udk" : "sidjalskd",
+  "isbn" : "123123556",
+  "godinaIzdanja" : 2028,
+  "koricenje" : "TVRD_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    },
+    "izdanja" : [ ]
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Pera",
+    "prezime" : "Peric",
+    "datumRodjenja" : "2000",
+    "datumSmrti" : "",
+    "dela" : [ ]
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 3,
+  "opis" : "proba2",
+  "udk" : "jkdnsmds",
+  "isbn" : "jnkdss",
+  "godinaIzdanja" : 2000,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    },
+    "izdanja" : [ ]
+  },
+  "primerci" : [ ]
 } ]

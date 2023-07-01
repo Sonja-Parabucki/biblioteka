@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import javax.swing.JScrollPane;
 
 import enumeracije.TipKoricenja;
 import enumeracije.TipNaloga;
+import kontroleri.IzdanjaKontroler;
 import model.Autor;
 import model.Biblioteka;
 import model.Izdanje;
@@ -27,11 +29,12 @@ import util.PogledUtil;
 public class PrikazKnjiga extends JFrame {
 
 	private static final long serialVersionUID = 4175309540188497204L;
-	private List<Knjiga> izdanja;
+	private List<Izdanje> izdanja;
 	//kontroleri
 	
 	private TabelaKnjiga tabelaKnjiga;
 	private TabelaModelKnjiga tabelaModelKnjiga;
+	private IzdanjaKontroler izdanjaKontroler;
 	
 	public PrikazKnjiga(Biblioteka biblioteka) {
 		setSize(new Dimension(1000, 600));
@@ -51,8 +54,16 @@ public class PrikazKnjiga extends JFrame {
 //		jeloKontroler = new JeloKontroler();
 //		tipJelaKontroler = new TipJelaKontroler();
 		try {
+			izdanjaKontroler = new IzdanjaKontroler(biblioteka);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		try {
 			System.out.println("");
-//			this.izdanja = jeloKontroler.dobaviJelaSaCenama();
+			this.izdanja = izdanjaKontroler.nadjiSveKnjige();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -68,9 +79,9 @@ public class PrikazKnjiga extends JFrame {
 
                    if (selectedRow != -1) {
 
-//                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-//                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje);
-//                	   prikaz.setVisible(true);
+                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
+                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
+                	   prikaz.setVisible(true);
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }

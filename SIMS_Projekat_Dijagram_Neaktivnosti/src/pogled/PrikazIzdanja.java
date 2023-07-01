@@ -3,6 +3,7 @@ package pogled;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import enumeracije.TipKoricenja;
+import kontroleri.IzdanjaKontroler;
 import model.Autor;
+import model.Biblioteka;
 import model.Izdanje;
 import model.Knjiga;
 import model.Zanr;
@@ -31,8 +34,9 @@ public class PrikazIzdanja  extends JFrame {
 	
 	private TabelaIzdanja tabelaIzdanja;
 	private TabelaModelIzdanja tabelaModelIzdanja;
+	private IzdanjaKontroler izdanjeKontroler;
 	
-	public PrikazIzdanja(Knjiga knjiga) {
+	public PrikazIzdanja(Knjiga knjiga, Biblioteka biblioteka) {
 		setSize(new Dimension(1000, 600));
 		setTitle("Izdanja");
 		setLocationRelativeTo(null);
@@ -46,39 +50,15 @@ public class PrikazIzdanja  extends JFrame {
 		
 		setBackground(clrSekundarna);
 		
-//		jeloKontroler = new JeloKontroler();
-//		tipJelaKontroler = new TipJelaKontroler();
 		try {
-			//dobavi izdanja
-//			this.izdanja = new ArrayList<>();
-//			Izdanje i = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, null, null, null);
-//			List<Zanr> zi = new ArrayList<Zanr>();
-//			Zanr z = new Zanr("Z");
-//			Zanr a = new Zanr("A");
-//			Zanr n = new Zanr("N");
-//			Zanr r = new Zanr("R");
-//			zi.add(z);
-//			zi.add(a);
-//			zi.add(n);
-//			zi.add(r);
-//			i.setZanrovi(zi);
-//			
-//			this.izdanja.add(i);
-//			Izdanje i1 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, TipKoricenja.TVRD_POVEZ, null, null);
-//			List<Autor> autori = new ArrayList<Autor>();
-//			Autor autor1 = new Autor("Ime", "Prezime", null, null, null);
-//			Autor autor2 = new Autor("Ime2", "Prezime2", null, null, null);
-//			autori.add(autor1);
-//			autori.add(autor2);
-//			i1.setAutori(autori);
-//			this.izdanja.add(i1);
-//			Izdanje i2 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, TipKoricenja.MEK_POVEZ, null, null);
-//			this.izdanja.add(i2);
-//			Izdanje i3 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, null, null, null);
-//			this.izdanja.add(i3);
-//			Izdanje i4 = new Izdanje("A", "A", null, null, "a", "UDK", "ISBN", null, null, null, null);
-//			this.izdanja.add(i4);
-			//this.izdanja = jeloKontroler.dobaviJelaSaCenama();
+			izdanjeKontroler = new IzdanjaKontroler(biblioteka);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			this.izdanja = izdanjeKontroler.nadjiSvaIzdanja(knjiga);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
