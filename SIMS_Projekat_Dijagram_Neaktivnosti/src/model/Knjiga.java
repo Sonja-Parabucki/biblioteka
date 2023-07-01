@@ -8,7 +8,6 @@ public class Knjiga {
 	protected String jezik;
 	protected List<Autor> autori;
 	protected List<Zanr> zanrovi;
-	
 	public Knjiga() {}
 	
 	public Knjiga(String naziv, String jezik, List<Autor> autori, List<Zanr> zanrovi) {

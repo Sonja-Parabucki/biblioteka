@@ -3,8 +3,6 @@ package pogled;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import enumeracije.TipKoricenja;
-import enumeracije.TipNaloga;
 import model.Autor;
-import model.Biblioteka;
 import model.Izdanje;
 import model.Knjiga;
 import model.Zanr;
@@ -37,7 +33,7 @@ public class PrikazIzdanja  extends JFrame {
 	private TabelaModelIzdanja tabelaModelIzdanja;
 	
 	public PrikazIzdanja(Knjiga knjiga) {
-		setSize(new Dimension(800, 600));
+		setSize(new Dimension(1000, 600));
 		setTitle("Izdanja");
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -45,7 +41,6 @@ public class PrikazIzdanja  extends JFrame {
 		setVisible(true);
 
 		Font fntNaslov = PogledUtil.getVelikiNaslovFont();
-		Color clrPrimarna = PogledUtil.getPrimarnaBoja();
 		Color clrSekundarna = PogledUtil.getSekundarnaBoja();
 		Color clrForeground = PogledUtil.getForegroundColor();
 		
@@ -97,12 +92,10 @@ public class PrikazIzdanja  extends JFrame {
 	}
 
 	private void inicijalizujTabeluZaposlenih() {
-		
-		TabelaModelIzdanja = new TabelaModelIzdanja(izdanja);
-		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
-        tabelaKnjiga.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
-		scrollPane.setPreferredSize(new Dimension(800, 500));
+		tabelaModelIzdanja = new TabelaModelIzdanja(izdanja);
+		this.tabelaIzdanja= new TabelaIzdanja(tabelaModelIzdanja);
+		JScrollPane scrollPane = new JScrollPane(tabelaIzdanja);
+		scrollPane.setPreferredSize(new Dimension(900, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
@@ -112,7 +105,7 @@ public class PrikazIzdanja  extends JFrame {
 	}
 	
 	private void azurirajPrikaz() {
-		TabelaModelKnjiga model = (TabelaModelKnjiga) tabelaKnjiga.getModel();
+		TabelaModelIzdanja model = (TabelaModelIzdanja) tabelaIzdanja.getModel();
 		model.fireTableDataChanged();
 		validate();
 	}

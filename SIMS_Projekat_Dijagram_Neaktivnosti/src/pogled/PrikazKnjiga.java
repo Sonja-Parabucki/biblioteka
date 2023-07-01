@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 
 import enumeracije.TipKoricenja;
 import enumeracije.TipNaloga;
@@ -34,7 +34,7 @@ public class PrikazKnjiga extends JFrame {
 	private TabelaModelKnjiga tabelaModelKnjiga;
 	
 	public PrikazKnjiga(Biblioteka biblioteka) {
-		setSize(new Dimension(800, 600));
+		setSize(new Dimension(1000, 600));
 		setTitle("Knjige");
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -51,6 +51,7 @@ public class PrikazKnjiga extends JFrame {
 //		jeloKontroler = new JeloKontroler();
 //		tipJelaKontroler = new TipJelaKontroler();
 		try {
+			System.out.println("");
 //			this.izdanja = jeloKontroler.dobaviJelaSaCenama();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,7 +59,7 @@ public class PrikazKnjiga extends JFrame {
 		Labela lblNaslov = new Labela("Knjige", fntNaslov, clrForeground);
 	
 
-		FormaDugme btnIzdanja = new FormaDugme("Pogledaj izdanja", clrPrimarna, clrForeground, 150, 20);
+		FormaDugme btnIzdanja = new FormaDugme("Prikaži izdanja", clrPrimarna, clrForeground, 150, 20);
 		btnIzdanja.addActionListener(new ActionListener() {
 			
 			@Override
@@ -66,13 +67,13 @@ public class PrikazKnjiga extends JFrame {
 				   int selectedRow = tabelaKnjiga.getSelectedRow();
 
                    if (selectedRow != -1) {
+
 //                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-//                       System.out.println("Selected item: " + izdanje);
+//                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje);
+//                	   prikaz.setVisible(true);
                    } else {
-                       System.out.println("No item selected.");
+                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }
-//				DijalogDodavanjeJela dijalogDodavanjeJela = new DijalogDodavanjeJela(jeloKontroler, naziviTipovaJela, (TabelaModelJelovnik) tabelaJelovnik.getModel());
-//				dijalogDodavanjeJela.setVisible(true);
 			}
 		});
 				
@@ -91,9 +92,8 @@ public class PrikazKnjiga extends JFrame {
 		
 		tabelaModelKnjiga = new TabelaModelKnjiga(izdanja);
 		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
-        tabelaKnjiga.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
-		scrollPane.setPreferredSize(new Dimension(800, 500));
+		scrollPane.setPreferredSize(new Dimension(900, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		

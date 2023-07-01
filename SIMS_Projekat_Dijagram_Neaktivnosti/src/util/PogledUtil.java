@@ -44,6 +44,7 @@ public class PogledUtil {
 	// svetlo siva
 	public static Color getTercijarnaBoja() {
 		return new Color(90, 90, 90);
+
 	}
 	
 	public static Color getForegroundColor() {

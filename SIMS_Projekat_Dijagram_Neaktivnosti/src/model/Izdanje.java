@@ -36,6 +36,7 @@ public class Izdanje extends Knjiga {
 	
 	public Izdanje(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
 			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
+
 		super(naziv, jezik, autori, zanrovi);
 		this.id = id;
 		this.opis = opis;
@@ -115,4 +116,5 @@ public class Izdanje extends Knjiga {
 				&& Objects.equals(izdavac, other.izdavac) && koricenje == other.koricenje
 				&& Objects.equals(autori, other.autori) && Objects.equals(naziv, other.naziv);
 	}
+
 }

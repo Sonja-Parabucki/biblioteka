@@ -78,17 +78,17 @@ public class TabelaModelKnjiga extends AbstractTableModel{
 				for(Zanr z : zanrovi) {
 					za += z.getNaziv() + ", ";
 				}
-				za.substring(0, za.length()-2);
+				za = za.substring(0, za.length()-2);
 			}catch(Exception e) {}
 			return za;
 		case 3:
 			List<Autor> autori = knjiga.getAutori();
 			String au = "";
 			try {
-			for(Autor a : autori) {
-				au += a.getIme() + " " + a.getPrezime() + ", ";
-			}
-			au.substring(0, au.length()-2);
+				for(Autor a : autori) {
+					au += a.getIme() + " " + a.getPrezime() + ", ";
+				}
+				au = au.substring(0, au.length()-2);
 			}catch(Exception e) {}
 			return au;
 		default:
