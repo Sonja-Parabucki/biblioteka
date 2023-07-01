@@ -13,6 +13,8 @@ public class Clan extends Osoba {
 	private List<Iznajmljivanje> iznajmljivanja;
 	private TipClana tip;
 	
+	public Clan() {}
+	
 	public Clan(String ime, String prezime, String jmbg, String imejl, String telefon, Adresa adresa,
 			String brojClanskeKarte, String placenaClanarina, List<Iznajmljivanje> iznajmljivanje, TipClana tip) {
 		super(ime, prezime, jmbg, imejl, telefon, adresa);
