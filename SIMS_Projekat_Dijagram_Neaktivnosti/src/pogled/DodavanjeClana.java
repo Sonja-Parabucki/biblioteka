@@ -120,7 +120,7 @@ public class DodavanjeClana extends JFrame {
 				try {
 					korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
 					JOptionPane.showMessageDialog(null, "Clan je uspesno dodat!");
-					
+					dispose();
 				} catch (MissingValueException e) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, e.getMessage());
