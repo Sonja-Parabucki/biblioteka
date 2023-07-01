@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 import izuzeci.BadCredentialsException;
 import izuzeci.MissingValueException;
-import kontroleri.NaloziKontroler;
+import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
 import model.Nalog;
 import net.miginfocom.swing.MigLayout;
@@ -71,7 +71,8 @@ public class Meni extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				DodavanjeClana prikaz = new DodavanjeClana(biblioteka);
+				prikaz.setVisible(true);
 			}
 		});
 		

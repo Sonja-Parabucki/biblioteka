@@ -74,6 +74,11 @@ public class Biblioteka {
 	public void setNalozi(List<Nalog> nalozi) {
 		this.nalozi = nalozi;
 	}
+	
+	public void dodajNalog(Nalog nalog) {
+		this.nalozi.add(nalog);
+	}
+	
 	@Override
 	public String toString() {
 		return "Biblioteka [prijavljeniKorisnik=" + prijavljeniKorisnik + ", propisi=" + propisi + ", izdanja="
