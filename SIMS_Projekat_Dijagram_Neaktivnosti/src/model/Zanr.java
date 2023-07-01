@@ -21,5 +21,9 @@ public class Zanr {
 	public String toString() {
 		return naziv;
 	}
-	
+	@Override
+	public boolean equals(Object obj) {
+		Zanr z = (Zanr)obj;
+		return z.naziv.equals(naziv);
+	}
 }

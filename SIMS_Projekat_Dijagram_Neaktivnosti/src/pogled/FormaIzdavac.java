@@ -63,7 +63,38 @@ public class FormaIzdavac extends JDialog {
 		Labela lblPpt = new Labela("PPT:", fntLabela, clrTercijarna);
 		tfPpt = new TekstPolje("", fntTekstPolje, 140, 30);
 		
-		FormaDugme btnDodaj = new FormaDugme("Dodaj izdanje", clrSekundarna, clrForeground, 150, 20);
+		FormaDugme btnDodajNovo = new FormaDugme("Dodaj novog izdavaca", clrSekundarna, clrForeground, 150, 20);
+		btnDodajNovo.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String naziv = tfIzdavac.getText();
+				String ulica = tfUlica.getText();
+				String broj = tfBroj.getText();
+				String mesto = tfMesto.getText();
+				String ppt = tfPpt.getText();
+				
+				if (naziv.isEmpty() || ulica.isEmpty() || broj.isEmpty() || mesto.isEmpty() || ppt.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
+				}
+				try {
+					
+					Mesto m = new Mesto(mesto, Integer.parseInt(ppt));
+					Adresa a = new Adresa(ulica, broj, m);
+					Izdavac iz = new Izdavac(naziv, a);
+					prozor.setIzdavac(iz);
+					zatvori();
+					
+				}
+				catch (NumberFormatException e2) {
+					JOptionPane.showMessageDialog(null, "PPT mora da bude broj.", "Greska", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+		
+		FormaDugme btnDodaj = new FormaDugme("Dodaj izdavaca sa liste", clrSekundarna, clrForeground, 150, 20);
 		btnDodaj.addActionListener(new ActionListener() {
 			
 			@Override
@@ -72,31 +103,7 @@ public class FormaIzdavac extends JDialog {
 				if (stari.getSelectedIndex() > -1) {
 					prozor.setIzdavac(izdavaci.get(stari.getSelectedIndex()));
 					zatvori();
-				} 
-				else {
-					String naziv = tfIzdavac.getText();
-					String ulica = tfUlica.getText();
-					String broj = tfBroj.getText();
-					String mesto = tfMesto.getText();
-					String ppt = tfPpt.getText();
-					
-					if (naziv.isEmpty() || ulica.isEmpty() || broj.isEmpty() || mesto.isEmpty() || ppt.isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
-					}
-					try {
-						
-						Mesto m = new Mesto(mesto, Integer.parseInt(ppt));
-						Adresa a = new Adresa(ulica, broj, m);
-						Izdavac iz = new Izdavac(naziv, a);
-						prozor.setIzdavac(iz);
-						zatvori();
-						
-					}
-					catch (NumberFormatException e2) {
-						JOptionPane.showMessageDialog(null, "PPT mora da bude broj.", "Greska", JOptionPane.ERROR_MESSAGE);
-					}
 				}
-				
 			}
 		});
 		
@@ -128,6 +135,8 @@ public class FormaIzdavac extends JDialog {
 		
 		add(lblPpt);
 		add(tfPpt, "wrap");
+		
+		add(btnDodajNovo, "wrap, span2, align center");
 		
 		add(lblStari, "wrap, span2, align center");
 		add(stari, "wrap, span2, align center");

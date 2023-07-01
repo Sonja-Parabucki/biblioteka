@@ -94,4 +94,36 @@
     "izdanja" : [ ]
   },
   "primerci" : [ ]
+}, {
+  "naziv" : "Naslov",
+  "jezik" : "jezik",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980",
+    "dela" : [ ]
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Horor"
+  } ],
+  "id" : 4,
+  "opis" : "jupi",
+  "udk" : "asfijdkl",
+  "isbn" : "asknfk",
+  "godinaIzdanja" : 1990,
+  "koricenje" : "TVRD_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
+      }
+    },
+    "izdanja" : [ ]
+  },
+  "primerci" : [ ]
 } ]

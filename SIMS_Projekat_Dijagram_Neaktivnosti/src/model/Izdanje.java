@@ -130,6 +130,17 @@ public class Izdanje extends Knjiga {
 					pom = 1;
 				}
 			}
+			for(Zanr z : i.zanrovi) {
+				if(!zanrovi.contains(z)) {
+					pom = 1;
+				}
+			}
+			for(Zanr z: zanrovi) {
+				if(!i.zanrovi.contains(z)) {
+					pom = 1;
+				}
+			}
+
 			if(pom==1) {
 				return false;
 			}
