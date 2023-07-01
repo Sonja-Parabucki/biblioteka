@@ -30,14 +30,14 @@ public class Main {
 		
 		
 		/////ovo obrisati kad se nadje bug
-		ClanRepo c;
-		try {
-			c = new ClanRepo();
-			c.ucitajClanove();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		ClanRepo c;
+//		try {
+//			c = new ClanRepo();
+//			c.ucitajClanove();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		/////
 
 	}

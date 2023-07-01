@@ -46,7 +46,8 @@ public class Meni extends JFrame{
 		prikazIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				PrikazKnjiga prikaz = new PrikazKnjiga(biblioteka);
+				prikaz.setVisible(true);
 			}
 		});
 		

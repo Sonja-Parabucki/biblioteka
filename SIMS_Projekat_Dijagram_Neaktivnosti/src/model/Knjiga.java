@@ -6,11 +6,19 @@ public class Knjiga {
 	private String naziv;
 	private String jezik;
 	private List<Autor> autori;
-	public Knjiga(String naziv, String jezik, List<Autor> autori) {
+	private List<Zanr> zanrovi;
+	public Knjiga(String naziv, String jezik, List<Autor> autori, List<Zanr> zanrovi) {
 		super();
 		this.naziv = naziv;
 		this.jezik = jezik;
 		this.autori = autori;
+		this.zanrovi = zanrovi;
+	}
+	public List<Zanr> getZanrovi() {
+		return zanrovi;
+	}
+	public void setZanrovi(List<Zanr> zanrovi) {
+		this.zanrovi = zanrovi;
 	}
 	public String getNaziv() {
 		return naziv;

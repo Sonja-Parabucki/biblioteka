@@ -14,9 +14,9 @@ public class Izdanje extends Knjiga {
 	private TipKoricenja koricenje;
 	private Izdavac izdavac;
 	private List<Primerak> primerci;
-	public Izdanje(String naziv, String jezik, List<Autor> autori, String opis, String udk, String isbn,
+	public Izdanje(String naziv, String jezik, List<Autor> autori, List<Zanr> zanrovi, String opis, String udk, String isbn,
 			Date godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac, List<Primerak> primerci) {
-		super(naziv, jezik, autori);
+		super(naziv, jezik, autori, zanrovi);
 		this.opis = opis;
 		this.udk = udk;
 		this.isbn = isbn;
@@ -72,5 +72,4 @@ public class Izdanje extends Knjiga {
 		return "Izdanje [opis=" + opis + ", udk=" + udk + ", isbn=" + isbn + ", godinaIzdanja=" + godinaIzdanja
 				+ ", koricenje=" + koricenje + ", izdavac=" + izdavac + ", primerci=" + primerci + "]";
 	}
-
 }
