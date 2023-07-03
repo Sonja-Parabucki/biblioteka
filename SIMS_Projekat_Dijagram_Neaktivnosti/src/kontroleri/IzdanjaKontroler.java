@@ -69,7 +69,7 @@ public class IzdanjaKontroler {
 		return repo.nadjiSveZanrove();
 	}
 
-	public void promeniCenu(int idIzdanja, int inventarniBroj, int nova) throws IOException {
+	public void promeniCenu(int idIzdanja, int inventarniBroj, double nova) throws IOException {
 		repo.promeniNabavnuCenu(idIzdanja, inventarniBroj, nova);
 		biblioteka.setIzdanja(repo.getIzdanja());
 	}

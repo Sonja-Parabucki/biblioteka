@@ -75,7 +75,7 @@ public class PrikazPrimerci extends JFrame{
             	   Primerak primerak = tabelaModelPrimerci.getPrimerak(selectedRow);
         		   String cena = JOptionPane.showInputDialog(null, "Nova vrednost nabavne cene:", primerak.getNabavnaCena());
         		   if (Validacija.proveriCenu(cena)) {
-        			   int nova = Integer.parseInt(cena);
+        			   double nova = Double.parseDouble(cena);
         			   try {
         				   PrimerakKontroler primerakKontroler = new PrimerakKontroler(biblioteka);
         				   primerakKontroler.promeniCenu(primerak.getInventarniBroj(), nova);

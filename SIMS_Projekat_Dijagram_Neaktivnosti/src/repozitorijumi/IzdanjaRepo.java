@@ -174,7 +174,7 @@ public class IzdanjaRepo {
 		sacuvaj();
 	}
 	
-	public void promeniNabavnuCenu(int idIzdanja, int inventarniBroj, int nova) throws IOException {
+	public void promeniNabavnuCenu(int idIzdanja, int inventarniBroj, double nova) throws IOException {
 		for (Izdanje iz : izdanja) {
 			if (iz.getId() == idIzdanja) {
 				for (Primerak p : iz.getPrimerci()) {
