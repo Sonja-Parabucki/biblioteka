@@ -20,6 +20,7 @@ import util.PogledUtil;
 public class VracanjePogled extends JFrame {
 	private IznajmljivanjeKontroler iznajmljivanjeKontroler;
 	private PadajucaLista primerci;
+	private PadajucaLista stanja;
 	public VracanjePogled(Biblioteka biblioteka) {
 		JPanel panel = new JPanel();
 		
@@ -46,11 +47,13 @@ public class VracanjePogled extends JFrame {
 		
 		
 		String[] primerciNazivi = iznajmljivanjeKontroler.dobaviNazivePrimeraka(StanjePrimerka.IZNAJMLJEN);
-		String[] clanoviNazivi = iznajmljivanjeKontroler.dobaviNaziveClanova();
+		String[] stanjaNazivi = {"Nije ostecen", "Ostecen"};
 		this.primerci = new PadajucaLista(primerciNazivi, clrSekundarna, clrForeground, fntTekstPolje, 120, 20);
+		this.stanja = new PadajucaLista(stanjaNazivi, clrSekundarna, clrForeground, fntTekstPolje, 120, 20);
 		
 		Labela lblNaslov = new Labela("Vracanje primerka", fntNaslov, clrForeground);
 		Labela lblPrimerak = new Labela("Izaberite primerak", fntLabela, clrForeground);
+		Labela lblStanje = new Labela("Stanje primerka pri povracaju", fntLabela, clrForeground);
 		
 		FormaDugme dugme = new FormaDugme("Vrati", clrPrimarna, clrForeground, 70, 30);
 
@@ -59,7 +62,7 @@ public class VracanjePogled extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					iznajmljivanjeKontroler.vratiKnjigu(Integer.parseInt((String)primerci.getSelectedItem()));
+					iznajmljivanjeKontroler.vratiKnjigu(Integer.parseInt((String)primerci.getSelectedItem()), stanja.getSelectedIndex());
 					JOptionPane.showMessageDialog(null,  "Uspešno vracen primerak!", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
 				}
@@ -74,6 +77,8 @@ public class VracanjePogled extends JFrame {
 		panel.add(lblNaslov, "span 2, wrap, align center");
 		panel.add(lblPrimerak);
 		panel.add(primerci, "wrap");
+		panel.add(lblStanje);
+		panel.add(stanja, "wrap");
 		panel.add(dugme, "span2, align center");
 		add(panel);
 	}

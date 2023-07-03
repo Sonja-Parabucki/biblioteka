@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import enumeracije.StanjePrimerka;
+import izuzeci.BadCredentialsException;
+import izuzeci.NotFoundException;
 import model.Biblioteka;
 import model.Clan;
 import model.Iznajmljivanje;
@@ -27,19 +29,27 @@ public class IznajmljivanjeKontroler {
 		izdanjeRepo = new IzdanjaRepo();
 	}
 	
-	public void iznajmiKnjigu(String clanskaKarta, int invBroj) throws IOException {
+	public void iznajmiKnjigu(String clanskaKarta, int invBroj) throws IOException, BadCredentialsException, NotFoundException {
+		
+		int brojIznajmljenih = clanRepo.izbrojDug(clanskaKarta);
+		if(brojIznajmljenih>=3) {
+			throw new BadCredentialsException("Prekoracen maksimalni dozvoljeni broj iznajmljivanja!");
+		}
+		if(!clanRepo.platioClanarinu(clanskaKarta)) {
+			throw new NotFoundException("Clan nije uplatio clanarinu.");
+		}
 		
 		promeniStanje(invBroj, StanjePrimerka.IZNAJMLJEN);
 		
 		LocalDate danas = LocalDate.now();
-		LocalDate rok = LocalDate.now();
-		rok.plusDays(2);
+//		LocalDate rok = LocalDate.now();
+//		rok = rok.plusDays(2);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		String datumIzn = danas.format(formatter);
-		String datumVrac = rok.format(formatter);
+		//String datumVrac = rok.format(formatter);
 		
 		Primerak p = primerakRepo.dobaviPrimerak(invBroj);
-		Iznajmljivanje iz = new Iznajmljivanje(datumIzn, datumVrac, false, p);
+		Iznajmljivanje iz = new Iznajmljivanje(datumIzn, "nije vracen", false, p);
 		clanRepo.dodajIznajmljivanje(clanskaKarta, iz);
 		
 	}
@@ -51,8 +61,14 @@ public class IznajmljivanjeKontroler {
 		
 	}
 	
-	public void vratiKnjigu(int invBroj) throws IOException {
-		promeniStanje(invBroj, StanjePrimerka.DOSTUPAN);
+	public void vratiKnjigu(int invBroj, int stanje) throws IOException {
+		if(stanje == 0) {
+			promeniStanje(invBroj, StanjePrimerka.DOSTUPAN);
+		}
+		else if (stanje == 1) {
+			promeniStanje(invBroj, StanjePrimerka.NEDOSTUPAN);
+		}
+		clanRepo.vratiKnjigu(invBroj);
 	}
 	
 	public String[] dobaviNaziveClanova(){
