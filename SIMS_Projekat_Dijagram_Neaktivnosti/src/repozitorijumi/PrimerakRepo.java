@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import model.Nalog;
+import enumeracije.StanjePrimerka;
 import model.Primerak;
 
 public class PrimerakRepo {
@@ -32,7 +32,7 @@ public class PrimerakRepo {
 		}
 	}
 	
-	private void sacuvajPrimerke() throws IOException {
+	public void sacuvajPrimerke() throws IOException {
 		File fajlPrimerci = new File("./podaci/primerci.json");
 		
 		OutputStream osPrimerci = new BufferedOutputStream(new FileOutputStream(fajlPrimerci));
@@ -78,18 +78,36 @@ public class PrimerakRepo {
 	public int generisiInvBroj() {
 		int i = 1;
 		while (true) {
-			if (!nadjiInvBroj(i)) {
+			if (dobaviPrimerak(i)==null) {
 				return i;
 			}
 			i++;
 		}
 	}
 	
-	private boolean nadjiInvBroj(int broj) {
-		for(Primerak p : this.primerci) {
-			if (p.getInventarniBroj() == broj) return true;
+	public Primerak dobaviPrimerak(int broj) {
+		for(Primerak p: this.primerci) {
+			if(p.getInventarniBroj() == broj) return p;
 		}
-		return false;
+		return null;
+	}
+
+	public void promeniStanje(int invBroj, StanjePrimerka novo) throws IOException {
+		for(Primerak p: this.primerci) {
+			if(p.getInventarniBroj() == invBroj) {
+				p.setStanje(novo);
+				sacuvajPrimerke();
+				return;
+			}
+		}		
+	}
+
+	public List<Primerak> dobaviPoStanju(StanjePrimerka stanje) {
+		List<Primerak> zeljeni = new ArrayList<Primerak>();
+		for(Primerak p : primerci) {
+			if(p.getStanje()==stanje) zeljeni.add(p);
+		}
+		return zeljeni;
 	}
 	
 	public void promeniCenu(int id, double cena) throws IOException {

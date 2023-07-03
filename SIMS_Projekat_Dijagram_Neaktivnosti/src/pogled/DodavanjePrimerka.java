@@ -15,7 +15,6 @@ import izuzeci.BadFormatException;
 import kontroleri.IzdanjaKontroler;
 import kontroleri.PrimerakKontroler;
 import model.Biblioteka;
-import model.Izdanje;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
 
@@ -38,7 +37,6 @@ public class DodavanjePrimerka extends JFrame {
 		Font fntTekstPolje = PogledUtil.getTeksPoljeFont();
 		Color clrPrimarna = PogledUtil.getPrimarnaBoja();
 		Color clrSekundarna = PogledUtil.getSekundarnaBoja();
-		Color clrTercijarna = PogledUtil.getTercijarnaBoja();
 		Color clrForeground = PogledUtil.getForegroundColor();
 
 		panel.setBackground(clrPrimarna);

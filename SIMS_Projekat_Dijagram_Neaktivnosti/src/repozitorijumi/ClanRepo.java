@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import enumeracije.TipClana;
 import model.Adresa;
 import model.Clan;
+import model.Iznajmljivanje;
 
 public class ClanRepo {
 	
@@ -82,6 +83,20 @@ public class ClanRepo {
 		sacuvajClanove();
 	}
 	
+	public List<Clan> getClanovi(){
+		return clanovi;
+	}
+
+	public void dodajIznajmljivanje(String clanskaKarta, Iznajmljivanje iz) throws IOException {
+		for(Clan c : clanovi) {
+			if(c.getBrojClanskeKarte().equals(clanskaKarta)) {
+				c.dodajIznajmljivanje(iz);
+				sacuvajClanove();
+				return;
+			}
+		}
+		
+	}
 	public void izmeniClana(String staraClKarta, Adresa adresa, String broj, String ime, String mejl, String JMBG, String prezime, String telefon, String tip) throws IOException {
 		for (Clan clan : clanovi) {
 			if (clan.getBrojClanskeKarte().equals(staraClKarta)) {
@@ -96,9 +111,5 @@ public class ClanRepo {
 			}
 		}
 		sacuvajClanove();
-	}
-	
-	public List<Clan> getClanovi(){
-		return clanovi;
 	}
 }
