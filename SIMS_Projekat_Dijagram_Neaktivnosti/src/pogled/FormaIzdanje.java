@@ -208,7 +208,6 @@ public class FormaIzdanje extends JDialog  {
 		btnDodaj.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				String naziv = tfNaziv.getText();
 				String jezik = tfJezik.getText();
 				String opis = taOpis.getText();
@@ -216,7 +215,6 @@ public class FormaIzdanje extends JDialog  {
 				String udk = tfUdk.getText();
 				String god = tfGodina.getText();
 				TipKoricenja koricenje;
-				
 				if (naziv.isEmpty() || jezik.isEmpty() || opis.isEmpty() || isbn.isEmpty() || udk.isEmpty()
 						|| god.isEmpty() || izdavac == null || autori.isEmpty() || zanrovi.isEmpty() || plKoricenje.getSelectedIndex() == -1) {
 					JOptionPane.showMessageDialog(null, "Nisu uneti svi podaci.", "Fale podaci", JOptionPane.ERROR_MESSAGE);
@@ -227,23 +225,18 @@ public class FormaIzdanje extends JDialog  {
 						if (plKoricenje.getSelectedIndex()==0) koricenje = TipKoricenja.MEK_POVEZ;
 						else koricenje = TipKoricenja.TVRD_POVEZ;
 						
-						boolean ok;
-						if (izdanje0 == null)
-						{
+						if (izdanje0 == null) {
 							if (kontroler.dodajNovo(naziv, jezik, zanrovi, autori, opis, udk, isbn, godina, koricenje, izdavac)) {
 								dispose();
 								JOptionPane.showMessageDialog(null, "Dodato novo izdanje.", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
 							} else {
 								JOptionPane.showMessageDialog(null, "Vec postoji ovo izdanje u sistemu.", "Greska", JOptionPane.ERROR_MESSAGE);
 							}
-						}
-						else
-						{
+						} else {
 							kontroler.izmeni(izdanje0.getId(), naziv, jezik, zanrovi, autori, opis, udk, isbn, godina, koricenje, izdavac);
 							JOptionPane.showMessageDialog(null, "Sacuvani novi podaci.", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
 							dispose();
 						}
-						
 					} catch (NumberFormatException e2) {
 						JOptionPane.showMessageDialog(null, "Godina mora da bude broj.", "Greska", JOptionPane.ERROR_MESSAGE);
 					} catch (IOException e1) {
@@ -254,42 +247,31 @@ public class FormaIzdanje extends JDialog  {
 		});
 		
 		setLayout(new MigLayout("", "30[]25[]25", "30[]30[]15[]15[]15[]15[]15[]40[]"));
-		
 		add(lblNaziv);
 		add(tfNaziv, "wrap, span3");
-		
 		add(lblJezik);
 		add(tfJezik, "wrap, span2");
-		
 		add(lblIsbn);
 		add(tfIsbn, "wrap, span2");
-		
 		add(lblUdk);
 		add(tfUdk, "wrap, span2");
-		
 		add(lblGodina);
 		add(tfGodina, "wrap");
-		
 		add(lblOpis);
 		add(scrollOpis, "wrap, span3");
-		
 		add(lblZanrovi);
 		add(scrollZanrovi);
 		add(btnDodajZanr);
 		add(btnResetZanr, "wrap");
-		
 		add(lblAutori);
 		add(scrollAutori);
 		add(btnDodajAutora);
 		add(btnResetAutora, "wrap");
-
 		add(lblIzdavaci);
 		add(tfIzdavac, "span2");
 		add(btnDodajIzdavaca, "wrap");
-		
 		add(lblKoricenje);
 		add(plKoricenje, "wrap, span2");
-		
 		add(btnDodaj, "wrap, span4, align center");
 	}
 	

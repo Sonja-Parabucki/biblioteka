@@ -210,7 +210,7 @@
   "opis" : "qq",
   "udk" : "q",
   "isbn" : "qq",
-  "godinaIzdanja" : 78,
+  "godinaIzdanja" : 2077,
   "koricenje" : "MEK_POVEZ",
   "izdavac" : {
     "naziv" : "Laguna",
@@ -220,6 +220,36 @@
       "mesto" : {
         "naziv" : "djfhskdhjf",
         "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "w",
+  "jezik" : "w",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Klasik"
+  } ],
+  "id" : 8,
+  "opis" : "we",
+  "udk" : "w",
+  "isbn" : "w",
+  "godinaIzdanja" : 23,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
       }
     }
   },
