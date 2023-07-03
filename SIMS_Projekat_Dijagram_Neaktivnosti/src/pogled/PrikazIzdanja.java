@@ -73,18 +73,17 @@ public class PrikazIzdanja  extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				/*
-				   int selectedRow = tabelaKnjiga.getSelectedRow();
+				   int selectedRow = tabelaIzdanja.getSelectedRow();
 
                    if (selectedRow != -1) {
 
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
+                	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
+                	   PrikazPrimerci prikaz = new PrikazPrimerci(biblioteka, izdanje);
                 	   prikaz.setVisible(true);
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }
-                   */
+                   
 			}
 		});
 		

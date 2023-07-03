@@ -75,7 +75,8 @@ public class Meni extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				PrikazClanovi pc = new PrikazClanovi(biblioteka);
+				pc.setVisible(true);
 			}
 		});
 		
