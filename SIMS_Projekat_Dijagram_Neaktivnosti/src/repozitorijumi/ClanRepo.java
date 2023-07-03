@@ -8,6 +8,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,5 +114,37 @@ public class ClanRepo {
 			}
 		}
 		sacuvajClanove();
+	}
+
+	public void vratiKnjigu(int invBroj) throws IOException {
+		for(Clan c : clanovi) {
+			for(Iznajmljivanje iz : c.getPrimerci()) {
+				if((iz.getPrimerak().getInventarniBroj()!=invBroj)||!iz.getDatumVracanja().equals("nije vracen")) continue;
+				LocalDate danas = LocalDate.now();
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+				String datumVrac = danas.format(formatter);
+				iz.setDatumVracanja(datumVrac);
+				sacuvajClanove();
+				return;
+			}
+		}
+	}
+	
+	public int izbrojDug(String clanskaKarta) {
+		int broj = 0;
+		Clan c = PronadjiPoClanskojKarti(clanskaKarta);
+		for(Iznajmljivanje iz : c.getPrimerci()) {
+			if(iz.getDatumVracanja().equals("nije vracen")) broj++;
+		}
+		return broj;
+	}
+	
+	public boolean platioClanarinu(String clanskaKarta) {
+		Clan c = PronadjiPoClanskojKarti(clanskaKarta);
+		LocalDate danas = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate uplatio = LocalDate.parse(c.getPlacenaClanarina(), formatter);
+		int razlika = Math.abs((int) ChronoUnit.DAYS.between(uplatio, danas));
+		return razlika < 365;
 	}
 }

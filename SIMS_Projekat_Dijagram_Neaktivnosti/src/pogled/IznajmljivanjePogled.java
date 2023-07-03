@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import enumeracije.StanjePrimerka;
+import izuzeci.BadCredentialsException;
+import izuzeci.NotFoundException;
 import kontroleri.IznajmljivanjeKontroler;
 import model.Biblioteka;
 import net.miginfocom.swing.MigLayout;
@@ -65,6 +67,12 @@ public class IznajmljivanjePogled extends JFrame {
 					iznajmljivanjeKontroler.iznajmiKnjigu(((String)clanovi.getSelectedItem()).split(",")[0], Integer.parseInt((String)primerci.getSelectedItem()));
 					JOptionPane.showMessageDialog(null,  "Uspešno iznajmljen primerak!", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
+				}
+				catch(BadCredentialsException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Prekoracena granica", JOptionPane.ERROR_MESSAGE);
+				}
+				catch(NotFoundException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Neuplacena clanarina", JOptionPane.ERROR_MESSAGE);
 				}
 				catch (IOException e1) {
 					e1.printStackTrace();
