@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,38 +75,43 @@ public class PrikazIzdanja  extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				/*
-				   int selectedRow = tabelaKnjiga.getSelectedRow();
+				   int selectedRow = tabelaIzdanja.getSelectedRow();
 
                    if (selectedRow != -1) {
 
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
+                	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
+                	   PrikazPrimerci prikaz = new PrikazPrimerci(biblioteka, izdanje);
                 	   prikaz.setVisible(true);
+                	   dispose();
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }
-                   */
+                   
 			}
 		});
 		
 		FormaDugme btnIzmeni = new FormaDugme("Izmeni izdanje", clrPrimarna, clrForeground, 150, 20);
 		btnIzmeni.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				/*
-				   int selectedRow = tabelaKnjiga.getSelectedRow();
+			   int selectedRow = tabelaIzdanja.getSelectedRow();
+               if (selectedRow != -1) {
 
-                   if (selectedRow != -1) {
-
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
-                	   prikaz.setVisible(true);
-                   } else {
-                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
-                   }
-                   */
+            	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
+            	   FormaIzdanje prozor = new FormaIzdanje(biblioteka, izdanje);
+            	   prozor.setVisible(true);
+            	   dispose();
+               } else {
+                   JOptionPane.showMessageDialog(null, "Niste izabrali izdanje.");
+               }
+			}
+		});
+		
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				PrikazKnjiga prikaz = new PrikazKnjiga(biblioteka);
+				prikaz.setVisible(true);
 			}
 		});
 	
@@ -136,5 +143,6 @@ public class PrikazIzdanja  extends JFrame {
 		model.fireTableDataChanged();
 		validate();
 	}
+	
 }
 

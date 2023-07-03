@@ -10,7 +10,7 @@ public class BadFormatException extends Exception {
 	
 	public BadFormatException(String message) {
 		super(message);
-		naslov = "Pogrešan format";
+		naslov = "Pogresan format";
 	}
 	
 	public String getNaslov() {

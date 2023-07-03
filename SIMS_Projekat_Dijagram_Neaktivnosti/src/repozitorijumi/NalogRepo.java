@@ -16,11 +16,19 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import enumeracije.TipNaloga;
 import model.Nalog;
+import model.Osoba;
 
 public class NalogRepo {
+	
+	List<Nalog> nalozi;
+	
+	public NalogRepo() throws IOException {
+		nalozi = ucitajNaloge();
+	}
 
-	public void sacuvajNaloge(List<Nalog> nalozi) throws IOException {
+	public void sacuvajNaloge() throws IOException {
 		File fajlNalozi = new File("./podaci/nalozi.json");
 		
 		OutputStream osNalozi = new BufferedOutputStream(new FileOutputStream(fajlNalozi));
@@ -60,9 +68,28 @@ public class NalogRepo {
 	}
 	
 	public void dodajNalog(Nalog nalog) throws IOException {
-		List<Nalog> nalozi = ucitajNaloge();
 		nalozi.add(nalog);
-		sacuvajNaloge(nalozi);
+		sacuvajNaloge();
 	}
 	
+	public Nalog pronadjiNalog(Osoba osoba) {
+		for (Nalog n : nalozi) {
+			if (n.getOsoba() != null && n.getOsoba().getJmbg().equals(osoba.getJmbg()))
+				return n;
+		}
+		return null;
+	}
+	
+	public void izmeniNalog(String staroKorIme, Osoba osoba, TipNaloga tip, String korIme, String lozinka) throws IOException {
+		for (Nalog nalog : nalozi) {
+			if (nalog.getKorisnickoIme().equals(staroKorIme)) {
+				nalog.setOsoba(osoba);
+				nalog.setTip(tip);
+				nalog.setKorisnickoIme(korIme);
+				nalog.setLozinka(lozinka);
+				break;
+			}
+		}
+		sacuvajNaloge();
+	}
 }

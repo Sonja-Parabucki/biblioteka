@@ -36,4 +36,8 @@ public class PrimerakKontroler {
 		iR.dodajPrimerak(p, izdanje);
 	}
 	
+	public void promeniCenu(int id, double cena) throws IOException {
+		PrimerakRepo repo = new PrimerakRepo();
+		repo.promeniCenu(id, cena);
+	}
 }

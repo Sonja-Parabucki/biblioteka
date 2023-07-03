@@ -42,6 +42,12 @@ public class IzdanjaKontroler {
 		return true;
 	}
 	
+	public void izmeni(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
+			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac) throws IOException {
+		repo.izmeni(id, naziv, jezik, zanrovi, autori, opis, udk, isbn, godinaIzdanja, koricenje, izdavac);
+		biblioteka.setIzdanja(repo.getIzdanja());
+	}
+	
 	
 	public List<Izdanje> nadjiSveKnjige(){
 		return repo.nadjiSveKnjige();
@@ -63,4 +69,8 @@ public class IzdanjaKontroler {
 		return repo.nadjiSveZanrove();
 	}
 
+	public void promeniCenu(int idIzdanja, int inventarniBroj, double nova) throws IOException {
+		repo.promeniNabavnuCenu(idIzdanja, inventarniBroj, nova);
+		biblioteka.setIzdanja(repo.getIzdanja());
+	}
 }

@@ -82,6 +82,11 @@ public class Biblioteka {
 		this.nalozi.add(nalog);
 	}
 	
+	public void izmeniNalog(Nalog stari, Nalog n) {
+		this.nalozi.remove(stari);
+		dodajNalog(n);
+	}
+	
 	@Override
 	public String toString() {
 		return "Biblioteka [prijavljeniKorisnik=" + prijavljeniKorisnik + ", propisi=" + propisi + ", izdanja="

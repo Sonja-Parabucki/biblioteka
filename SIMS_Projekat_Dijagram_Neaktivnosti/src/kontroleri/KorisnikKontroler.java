@@ -1,6 +1,7 @@
 package kontroleri;
 
 import java.io.IOException;
+import java.util.List;
 
 import enumeracije.TipClana;
 import enumeracije.TipNaloga;
@@ -49,13 +50,68 @@ public class KorisnikKontroler {
 			return null;
 		}
 		
+		public void azurirajClana(String staraClanskaKarta, String staroKorisnickoIme, String ime, String prezime, String JMBG, String mejl, String telefon, String mesto, String postanskiBroj, String broj, String ulica,
+				String korIme, String lozinka, String clanskaKarta, String tip) throws UniqueValueException, MissingValueException, BadFormatException, IOException {
+			
+			if (Validacija.praznaIliNepostojecaVrednost(ime)) {
+				throw new MissingValueException("Nije validno uneto ime.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(prezime)) {
+				throw new MissingValueException("Nije validno uneto prezime.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(telefon)) {
+				throw new MissingValueException("Nije validno unet telefon.");
+			} else if (!Validacija.validanTelefon(telefon)) {
+				throw new BadFormatException("Broj telefona može da sadrži samo cifre 0-9.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(mejl)) {
+				throw new MissingValueException("Nije validno uneta email adresa.");
+			} else if (!Validacija.validanEmail(mejl)) {
+				throw new BadFormatException("Email adresa nije uneta u validnom formatu. Mora biti oblika text@text.text");
+			} else if (Validacija.praznaIliNepostojecaVrednost(JMBG)) {
+				throw new MissingValueException("Nije validno unet JMBG.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(mesto)) {
+				throw new MissingValueException("Nije validno uneto mesto.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(ulica)) {
+				throw new MissingValueException("Nije validno unet ulica.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(broj)) {
+				throw new MissingValueException("Nije validno unet broj.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(postanskiBroj)) {
+				throw new MissingValueException("Nije validno unet broj.");
+			} else if (!Validacija.validanPostanskiBroj(postanskiBroj)) {
+				throw new BadFormatException("Postanski broj može da sadrži samo 5 cifara.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(clanskaKarta)) {
+				throw new MissingValueException("Nije validno unet broj clanske karte.");
+			} else if (!Validacija.validanJMBG(JMBG)) {
+				throw new BadFormatException("JMBG nije unet u validnom formatu. Mora biti sadrzati 13 cifara");
+			} else if (Validacija.praznaIliNepostojecaVrednost(korIme)) {
+				throw new MissingValueException("Nije uneto korisničko ime.");
+			} else if (Validacija.praznaIliNepostojecaVrednost(lozinka)) {
+				throw new MissingValueException("Nije uneta lozinka.");
+			} else if (!Validacija.validnaLozinka(lozinka)) {
+				throw new BadFormatException("Lozinka mora da sadrži bar 8 karaktera, od čega bar jedno veliko slovo, malo slovo i broj.");
+			}
+			
+			Mesto m = new Mesto(mesto, Integer.parseInt(postanskiBroj));
+			Adresa adresa = new Adresa(ulica, broj, m);
+			Osoba osoba = new Osoba(ime, prezime, JMBG, telefon, mejl, adresa);
+			
+			Nalog stariNalog = nadjiNalog(staroKorisnickoIme);
+			
+			NalogRepo korisnikRepo = new NalogRepo();
+			korisnikRepo.izmeniNalog(staroKorisnickoIme, osoba, TipNaloga.CLAN, korIme, lozinka);
+			Nalog n = korisnikRepo.pronadjiNalog(osoba);
+			
+			biblioteka.izmeniNalog(stariNalog, n);
+
+			ClanRepo cr = new ClanRepo();
+			cr.izmeniClana(staraClanskaKarta, adresa, clanskaKarta, ime, mejl, JMBG, prezime, telefon, tip);
+		}
+		
 		public void registrujClana(String ime, String prezime, String JMBG, String mejl, String telefon, String mesto, String postanskiBroj, String broj, String ulica,
 				String korIme, String lozinka, String clanskaKarta, String tip) throws MissingValueException, BadFormatException, UniqueValueException, IOException {
 			
 			Nalog nalog = nadjiNalog(korIme);
 			ClanRepo cr = new ClanRepo();
 			
-			if (cr.PronadjiPoClanskojKarti(clanskaKarta)) {
+			if (cr.PronadjiPoClanskojKarti(clanskaKarta) != null) {
 				throw new UniqueValueException("Uneti broj clanske karte je zauzet.");
 			} else if (nalog != null) {
 				throw new UniqueValueException("Uneto korisničko ime je već registrovano.");
@@ -111,5 +167,10 @@ public class KorisnikKontroler {
 
 		private boolean checkIfNullOrEmpty(String input) {
 			return input == null || input.equals("");
+		}
+		
+		public List<Clan> getClanovi(){
+			ClanRepo clanRepo = new ClanRepo();
+			return clanRepo.getClanovi();
 		}
 	}

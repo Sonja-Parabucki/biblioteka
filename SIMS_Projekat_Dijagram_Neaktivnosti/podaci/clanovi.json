@@ -17,50 +17,50 @@
   "primerci" : [ ],
   "tip" : "DETE"
 }, {
-  "ime" : "dfsdf",
-  "prezime" : "sdfsd",
+  "ime" : "fdsfs",
+  "prezime" : "AAAA",
   "jmbg" : "1231231231231",
   "imejl" : "dsfdf@gm.ocm",
   "telefon" : "8374923847",
   "adresa" : {
     "ulica" : "dklsfjdlsf",
-    "broj" : "kdjslkfjd",
+    "broj" : "dklsfjdlsf",
     "mesto" : {
       "naziv" : "fjskdkf",
       "pptBroj" : 37648
     }
   },
-  "brojClanskeKarte" : "fgjsdkghl ",
+  "brojClanskeKarte" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
   "placenaClanarina" : "01/07/2023",
   "primerci" : [ ],
-  "tip" : "ODRASLA_OSOBA"
+  "tip" : "STUDENT"
 }, {
-  "ime" : "Clhj",
+  "ime" : "neko",
   "prezime" : "af wesf",
   "jmbg" : "1029384785637",
   "imejl" : "grd@gsd.td",
   "telefon" : "102934857",
   "adresa" : {
     "ulica" : "fse",
-    "broj" : "3sfe3",
+    "broj" : "fse",
     "mesto" : {
       "naziv" : "IAWD",
       "pptBroj" : 23543
     }
   },
-  "brojClanskeKarte" : "AAAAAAAAAAAAA",
+  "brojClanskeKarte" : "fse",
   "placenaClanarina" : "01/07/2023",
   "primerci" : [ ],
   "tip" : "PENZIONER"
 }, {
-  "ime" : "Sonja",
+  "ime" : "s",
   "prezime" : "Parabucki",
   "jmbg" : "2357123456789",
   "imejl" : "sdfs@dfd.fds",
   "telefon" : "123456789",
   "adresa" : {
     "ulica" : "fdewf",
-    "broj" : "4",
+    "broj" : "fdewf",
     "mesto" : {
       "naziv" : "ffds",
       "pptBroj" : 21000
@@ -70,4 +70,22 @@
   "placenaClanarina" : "03/07/2023",
   "primerci" : [ ],
   "tip" : "STUDENT"
+}, {
+  "ime" : "Tet",
+  "prezime" : "testic",
+  "jmbg" : "2813723123123",
+  "imejl" : "flsjdhfkl@gmial.com",
+  "telefon" : "38497384",
+  "adresa" : {
+    "ulica" : "Bulevar123",
+    "broj" : "Bulevar",
+    "mesto" : {
+      "naziv" : "Novi Sad",
+      "pptBroj" : 23094
+    }
+  },
+  "brojClanskeKarte" : "clanskaKarta123",
+  "placenaClanarina" : "03/07/2023",
+  "primerci" : [ ],
+  "tip" : "ODRASLA_OSOBA"
 } ]

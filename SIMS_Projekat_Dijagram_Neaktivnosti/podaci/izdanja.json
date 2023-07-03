@@ -1,6 +1,6 @@
 [ {
   "naziv" : "Naslov",
-  "jezik" : "jezik",
+  "jezik" : "jezikcic",
   "autori" : [ {
     "ime" : "Ivo",
     "prezime" : "Andric",
@@ -30,7 +30,7 @@
   "primerci" : [ ]
 }, {
   "naziv" : "Naslov",
-  "jezik" : "jezik",
+  "jezik" : "jezik123123123",
   "autori" : [ {
     "ime" : "Ivo",
     "prezime" : "Andric",
@@ -39,12 +39,14 @@
   } ],
   "zanrovi" : [ {
     "naziv" : "Triler"
+  }, {
+    "naziv" : "Horor"
   } ],
   "id" : 2,
   "opis" : "PROBA",
   "udk" : "sidjalskd",
   "isbn" : "123123556",
-  "godinaIzdanja" : 2028,
+  "godinaIzdanja" : 2021,
   "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Laguna",
@@ -123,7 +125,7 @@
   },
   "primerci" : [ ]
 }, {
-  "naziv" : "gs g",
+  "naziv" : "gs gssa",
   "jezik" : "drgdrg",
   "autori" : [ {
     "ime" : "Ivo",
@@ -176,7 +178,7 @@
   "opis" : "dfghk",
   "udk" : "123456",
   "isbn" : "123456",
-  "godinaIzdanja" : 2002,
+  "godinaIzdanja" : 2000,
   "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Laguna",
@@ -192,6 +194,74 @@
   "primerci" : [ {
     "inventarniBroj" : 8,
     "nabavnaCena" : 450.0,
+    "stanje" : "DOSTUPAN"
+  }, {
+    "inventarniBroj" : 9,
+    "nabavnaCena" : 1.0,
+    "stanje" : "DOSTUPAN"
+  } ]
+}, {
+  "naziv" : "qq",
+  "jezik" : "q",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 7,
+  "opis" : "qq",
+  "udk" : "q",
+  "isbn" : "qq",
+  "godinaIzdanja" : 2077,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "ww",
+  "jezik" : "windows",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Klasik"
+  } ],
+  "id" : 8,
+  "opis" : "we",
+  "udk" : "w",
+  "isbn" : "w",
+  "godinaIzdanja" : 2023,
+  "koricenje" : "TVRD_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
+      }
+    }
+  },
+  "primerci" : [ {
+    "inventarniBroj" : 10,
+    "nabavnaCena" : 133.0,
     "stanje" : "DOSTUPAN"
   } ]
 } ]

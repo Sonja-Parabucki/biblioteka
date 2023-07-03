@@ -30,7 +30,6 @@ public class PrikazKnjiga extends JFrame {
 
 	private static final long serialVersionUID = 4175309540188497204L;
 	private List<Izdanje> izdanja;
-	//kontroleri
 	
 	private TabelaKnjiga tabelaKnjiga;
 	private TabelaModelKnjiga tabelaModelKnjiga;
@@ -50,13 +49,9 @@ public class PrikazKnjiga extends JFrame {
 		Color clrForeground = PogledUtil.getForegroundColor();
 		
 		setBackground(clrSekundarna);
-		
-//		jeloKontroler = new JeloKontroler();
-//		tipJelaKontroler = new TipJelaKontroler();
 		try {
 			izdanjaKontroler = new IzdanjaKontroler(biblioteka);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -82,6 +77,7 @@ public class PrikazKnjiga extends JFrame {
                 	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
                 	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
                 	   prikaz.setVisible(true);
+                	   dispose();
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }
