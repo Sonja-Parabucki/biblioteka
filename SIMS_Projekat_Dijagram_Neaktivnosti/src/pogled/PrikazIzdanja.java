@@ -3,11 +3,14 @@ package pogled;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -45,6 +48,7 @@ public class PrikazIzdanja  extends JFrame {
 		setVisible(true);
 
 		Font fntNaslov = PogledUtil.getVelikiNaslovFont();
+		Color clrPrimarna = PogledUtil.getPrimarnaBoja();
 		Color clrSekundarna = PogledUtil.getSekundarnaBoja();
 		Color clrForeground = PogledUtil.getForegroundColor();
 		
@@ -63,11 +67,54 @@ public class PrikazIzdanja  extends JFrame {
 			e.printStackTrace();
 		}
 		Labela lblNaslov = new Labela("Izdanja", fntNaslov, clrForeground);
+		
+		FormaDugme btnPrimerci = new FormaDugme("Prikazi primerke", clrPrimarna, clrForeground, 150, 20);
+		btnPrimerci.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				/*
+				   int selectedRow = tabelaKnjiga.getSelectedRow();
+
+                   if (selectedRow != -1) {
+
+                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
+                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
+                	   prikaz.setVisible(true);
+                   } else {
+                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
+                   }
+                   */
+			}
+		});
+		
+		FormaDugme btnIzmeni = new FormaDugme("Izmeni izdanje", clrPrimarna, clrForeground, 150, 20);
+		btnIzmeni.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				/*
+				   int selectedRow = tabelaKnjiga.getSelectedRow();
+
+                   if (selectedRow != -1) {
+
+                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
+                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
+                	   prikaz.setVisible(true);
+                   } else {
+                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
+                   }
+                   */
+			}
+		});
 	
 				
 		setLayout(new MigLayout("", "30[]40[]", "5[]5[]40[]"));
 		
 		add(lblNaslov, "wrap, span2, align center");
+		add(btnPrimerci, "cell 0 2, wrap, align left");
+		add(btnIzmeni, "cell 1 2, wrap, align left");
+		
 		this.inicijalizujTabeluZaposlenih();
 	}
 

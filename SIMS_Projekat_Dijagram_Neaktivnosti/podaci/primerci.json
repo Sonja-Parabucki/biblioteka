@@ -26,4 +26,8 @@
   "inventarniBroj" : 7,
   "nabavnaCena" : 573586.0,
   "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 8,
+  "nabavnaCena" : 450.0,
+  "stanje" : "DOSTUPAN"
 } ]

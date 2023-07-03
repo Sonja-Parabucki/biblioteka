@@ -26,7 +26,7 @@ public class Meni extends JFrame{
 	
 	public Meni(Biblioteka biblioteka) {
 		
-		setSize(new Dimension(500, 400));
+		setSize(new Dimension(500, 600));
 		setTitle("Meni");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -70,6 +70,15 @@ public class Meni extends JFrame{
 			}
 		});
 		
+		FormaDugme btnClanoviPrikaz = new FormaDugme("Prikaz clanova", clrPrimarna, clrForeground, 70, 30);
+		btnClanoviPrikaz.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
 		FormaDugme btnClanovi = new FormaDugme("Dodavanje clanova", clrPrimarna, clrForeground, 70, 30);
 		btnClanovi.addActionListener(new ActionListener() {
 			
@@ -77,6 +86,24 @@ public class Meni extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				DodavanjeClana prikaz = new DodavanjeClana(biblioteka);
 				prikaz.setVisible(true);
+			}
+		});
+		
+		FormaDugme btnIznajmi = new FormaDugme("Iznajmljivanje knjige", clrPrimarna, clrForeground, 70, 30);
+		btnClanovi.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		FormaDugme btnVrati = new FormaDugme("Vracanje knjige", clrPrimarna, clrForeground, 70, 30);
+		btnClanovi.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		
@@ -94,9 +121,12 @@ public class Meni extends JFrame{
 		
 		pnlPrijava.add(lblNaslov, "wrap, align center");
 		pnlPrijava.add(prikazIzdanja, "wrap, align center");
+		pnlPrijava.add(btnClanoviPrikaz, "wrap, align center");
 		pnlPrijava.add(btnClanovi, "wrap, align center");
 		pnlPrijava.add(btnIzdanja, "wrap, align center");
 		pnlPrijava.add(btnPrimeraka, "wrap, align center");
+		pnlPrijava.add(btnIznajmi, "wrap, align center");
+		pnlPrijava.add(btnVrati, "wrap, align center");
 		pnlPrijava.add(btnIzlaz, "wrap, align center");
 		add(pnlPrijava);
 	}

@@ -52,4 +52,22 @@
   "placenaClanarina" : "01/07/2023",
   "primerci" : [ ],
   "tip" : "PENZIONER"
+}, {
+  "ime" : "Sonja",
+  "prezime" : "Parabucki",
+  "jmbg" : "2357123456789",
+  "imejl" : "sdfs@dfd.fds",
+  "telefon" : "123456789",
+  "adresa" : {
+    "ulica" : "fdewf",
+    "broj" : "4",
+    "mesto" : {
+      "naziv" : "ffds",
+      "pptBroj" : 21000
+    }
+  },
+  "brojClanskeKarte" : "456123",
+  "placenaClanarina" : "03/07/2023",
+  "primerci" : [ ],
+  "tip" : "STUDENT"
 } ]

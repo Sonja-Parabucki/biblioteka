@@ -217,4 +217,23 @@
       }
     }
   }
+}, {
+  "korisnickoIme" : "s",
+  "lozinka" : "Sonja123345",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "Sonja",
+    "prezime" : "Parabucki",
+    "jmbg" : "2357123456789",
+    "imejl" : "123456789",
+    "telefon" : "sdfs@dfd.fds",
+    "adresa" : {
+      "ulica" : "fdewf",
+      "broj" : "4",
+      "mesto" : {
+        "naziv" : "ffds",
+        "pptBroj" : 21000
+      }
+    }
+  }
 } ]
