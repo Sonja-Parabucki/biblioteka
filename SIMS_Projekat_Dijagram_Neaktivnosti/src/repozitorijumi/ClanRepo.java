@@ -15,6 +15,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+
+import enumeracije.TipClana;
+import model.Adresa;
 import model.Clan;
 
 public class ClanRepo {
@@ -66,16 +69,32 @@ public class ClanRepo {
 		}		
 	}
 	
-	public boolean PronadjiPoClanskojKarti(String clKarta) {
+	public Clan PronadjiPoClanskojKarti(String clKarta) {
 		for (Clan c : clanovi) {
 			if (c.getBrojClanskeKarte().equals(clKarta))
-				return true;
+				return c;
 		}
-		return false;
+		return null;
 	}
 	
 	public void dodajClana(Clan clan) throws IOException {
 		clanovi.add(clan);
+		sacuvajClanove();
+	}
+	
+	public void izmeniClana(String staraClKarta, Adresa adresa, String broj, String ime, String mejl, String JMBG, String prezime, String telefon, String tip) throws IOException {
+		for (Clan clan : clanovi) {
+			if (clan.getBrojClanskeKarte().equals(staraClKarta)) {
+				clan.setAdresa(adresa);
+				clan.setBrojClanskeKarte(broj);
+				clan.setIme(ime);
+				clan.setImejl(mejl);
+				clan.setJmbg(JMBG);
+				clan.setPrezime(prezime);
+				clan.setTelefon(telefon);
+				clan.setTip(TipClana.valueOf(tip));
+			}
+		}
 		sacuvajClanove();
 	}
 	
