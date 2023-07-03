@@ -81,8 +81,11 @@ public class PrikazPrimerci extends JFrame{
         				   primerakKontroler.promeniCenu(primerak.getInventarniBroj(), nova);
         				   izdanjaKontroler.promeniCenu(izdanje.getId(), primerak.getInventarniBroj(), nova);
         				   dispose();
+        				   primerak.setNabavnaCena(nova);
         				   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
         				   prikaz.setVisible(true);
+        				   PrikazPrimerci prikazp = new PrikazPrimerci(biblioteka, izdanje);
+        				   prikazp.setVisible(true);
         				   
         			   } catch(IOException e1) {
         				   JOptionPane.showMessageDialog(null, "Greska pri upisu u fajlove.");
