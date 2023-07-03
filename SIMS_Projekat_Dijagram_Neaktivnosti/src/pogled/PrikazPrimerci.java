@@ -6,41 +6,39 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
-import enumeracije.TipKoricenja;
 import enumeracije.TipNaloga;
 import kontroleri.IzdanjaKontroler;
-import model.Autor;
 import model.Biblioteka;
 import model.Izdanje;
-import model.Knjiga;
-import model.Zanr;
+import model.Primerak;
 import net.miginfocom.swing.MigLayout;
 import pogled.tabela.TabelaKnjiga;
 import pogled.tabela.TabelaModelKnjiga;
+import pogled.tabela.TabelaModelPrimerci;
+import pogled.tabela.TabelaPrimerci;
 import util.PogledUtil;
 
-public class PrikazKnjiga extends JFrame {
+public class PrikazPrimerci extends JFrame{
 
-	private static final long serialVersionUID = 4175309540188497204L;
-	private List<Izdanje> izdanja;
+	private static final long serialVersionUID = -3938021684626508651L;
+	private List<Primerak> primerci;
 	
-	private TabelaKnjiga tabelaKnjiga;
-	private TabelaModelKnjiga tabelaModelKnjiga;
+	private TabelaPrimerci tabelaPrimerci;
+	private TabelaModelPrimerci tabelaModelPrimerci;
 	private IzdanjaKontroler izdanjaKontroler;
 	
-	public PrikazKnjiga(Biblioteka biblioteka) {
+	public PrikazPrimerci(Biblioteka biblioteka, Izdanje izdanje) {
 		setSize(new Dimension(1000, 600));
-		setTitle("Knjige");
+		setTitle("Primerci");
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setName("Knjige");
+		setName("Primerci");
 		setVisible(true);
 
 		Font fntNaslov = PogledUtil.getVelikiNaslovFont();
@@ -58,47 +56,23 @@ public class PrikazKnjiga extends JFrame {
 		
 		try {
 			System.out.println("");
-			this.izdanja = izdanjaKontroler.nadjiSveKnjige();
+			this.primerci = izdanje.getPrimerci();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		Labela lblNaslov = new Labela("Knjige", fntNaslov, clrForeground);
-	
-
-		FormaDugme btnIzdanja = new FormaDugme("Prikazi izdanja", clrPrimarna, clrForeground, 150, 20);
-		btnIzdanja.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				   int selectedRow = tabelaKnjiga.getSelectedRow();
-
-                   if (selectedRow != -1) {
-
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
-                	   prikaz.setVisible(true);
-                   } else {
-                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
-                   }
-			}
-		});
+		Labela lblNaslov = new Labela("Primerci", fntNaslov, clrForeground);
 				
 		setLayout(new MigLayout("", "30[]40[]", "5[]5[]40[]"));
 		
 		add(lblNaslov, "wrap, span2, align center");
-		add(btnIzdanja, "cell 0 2, wrap, align left");
-		if (biblioteka.getPrijavljeniKorisnik().getTip() != TipNaloga.VISI_BIBLIOTEKAR) {
-			btnIzdanja.setVisible(false);
-
-		}
 		this.inicijalizujTabeluZaposlenih();
 	}
 
 	private void inicijalizujTabeluZaposlenih() {
 		
-		tabelaModelKnjiga = new TabelaModelKnjiga(izdanja);
-		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
-		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
+		tabelaModelPrimerci = new TabelaModelPrimerci(primerci);
+		this.tabelaPrimerci = new TabelaPrimerci(tabelaModelPrimerci);
+		JScrollPane scrollPane = new JScrollPane(tabelaPrimerci);
 		scrollPane.setPreferredSize(new Dimension(900, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -109,7 +83,7 @@ public class PrikazKnjiga extends JFrame {
 	}
 	
 	private void azurirajPrikaz() {
-		TabelaModelKnjiga model = (TabelaModelKnjiga) tabelaKnjiga.getModel();
+		TabelaModelPrimerci model = (TabelaModelPrimerci) tabelaPrimerci.getModel();
 		model.fireTableDataChanged();
 		validate();
 	}

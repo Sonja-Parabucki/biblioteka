@@ -6,41 +6,40 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
-import enumeracije.TipKoricenja;
 import enumeracije.TipNaloga;
 import kontroleri.IzdanjaKontroler;
-import model.Autor;
+import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
+import model.Clan;
 import model.Izdanje;
-import model.Knjiga;
-import model.Zanr;
 import net.miginfocom.swing.MigLayout;
+import pogled.tabela.TabelaClanovi;
 import pogled.tabela.TabelaKnjiga;
+import pogled.tabela.TabelaModelClanovi;
 import pogled.tabela.TabelaModelKnjiga;
 import util.PogledUtil;
 
-public class PrikazKnjiga extends JFrame {
+public class PrikazClanovi extends JFrame {
 
-	private static final long serialVersionUID = 4175309540188497204L;
-	private List<Izdanje> izdanja;
+	private static final long serialVersionUID = 8975687317591663060L;
+	private List<Clan> clanovi;
+	//kontroleri
 	
-	private TabelaKnjiga tabelaKnjiga;
-	private TabelaModelKnjiga tabelaModelKnjiga;
-	private IzdanjaKontroler izdanjaKontroler;
+	private TabelaClanovi tabelaClanovi;
+	private TabelaModelClanovi tabelaModelClanovi;
 	
-	public PrikazKnjiga(Biblioteka biblioteka) {
+	public PrikazClanovi(Biblioteka biblioteka) {
 		setSize(new Dimension(1000, 600));
-		setTitle("Knjige");
+		setTitle("Clanovi");
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setName("Knjige");
+		setName("Clanovi");
 		setVisible(true);
 
 		Font fntNaslov = PogledUtil.getVelikiNaslovFont();
@@ -49,36 +48,33 @@ public class PrikazKnjiga extends JFrame {
 		Color clrForeground = PogledUtil.getForegroundColor();
 		
 		setBackground(clrSekundarna);
-		try {
-			izdanjaKontroler = new IzdanjaKontroler(biblioteka);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
 		
+		KorisnikKontroler kk = new KorisnikKontroler(biblioteka);
 		
 		try {
 			System.out.println("");
-			this.izdanja = izdanjaKontroler.nadjiSveKnjige();
+			this.clanovi = kk.getClanovi();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		Labela lblNaslov = new Labela("Knjige", fntNaslov, clrForeground);
+		Labela lblNaslov = new Labela("Clanovi", fntNaslov, clrForeground);
 	
 
-		FormaDugme btnIzdanja = new FormaDugme("Prikazi izdanja", clrPrimarna, clrForeground, 150, 20);
+		FormaDugme btnIzdanja = new FormaDugme("Izmeni clana", clrPrimarna, clrForeground, 150, 20);
 		btnIzdanja.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				   int selectedRow = tabelaKnjiga.getSelectedRow();
+				   int selectedRow = tabelaClanovi.getSelectedRow();
 
                    if (selectedRow != -1) {
 
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
-                	   prikaz.setVisible(true);
+                	   Clan clan = tabelaModelClanovi.getClan(selectedRow);
+                	   
+                	   //prozor za izmenu
+                	   
                    } else {
-                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
+                       JOptionPane.showMessageDialog(null, "Niste izabrali clana.");
                    }
 			}
 		});
@@ -96,9 +92,9 @@ public class PrikazKnjiga extends JFrame {
 
 	private void inicijalizujTabeluZaposlenih() {
 		
-		tabelaModelKnjiga = new TabelaModelKnjiga(izdanja);
-		this.tabelaKnjiga = new TabelaKnjiga(tabelaModelKnjiga);
-		JScrollPane scrollPane = new JScrollPane(tabelaKnjiga);
+		tabelaModelClanovi = new TabelaModelClanovi(clanovi);
+		this.tabelaClanovi = new TabelaClanovi(tabelaModelClanovi);
+		JScrollPane scrollPane = new JScrollPane(tabelaClanovi);
 		scrollPane.setPreferredSize(new Dimension(900, 500));
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -109,7 +105,7 @@ public class PrikazKnjiga extends JFrame {
 	}
 	
 	private void azurirajPrikaz() {
-		TabelaModelKnjiga model = (TabelaModelKnjiga) tabelaKnjiga.getModel();
+		TabelaModelClanovi model = (TabelaModelClanovi) tabelaClanovi.getModel();
 		model.fireTableDataChanged();
 		validate();
 	}

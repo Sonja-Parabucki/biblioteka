@@ -78,4 +78,8 @@ public class ClanRepo {
 		clanovi.add(clan);
 		sacuvajClanove();
 	}
+	
+	public List<Clan> getClanovi(){
+		return clanovi;
+	}
 }

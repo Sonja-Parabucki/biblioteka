@@ -1,6 +1,7 @@
 package kontroleri;
 
 import java.io.IOException;
+import java.util.List;
 
 import enumeracije.TipClana;
 import enumeracije.TipNaloga;
@@ -111,5 +112,10 @@ public class KorisnikKontroler {
 
 		private boolean checkIfNullOrEmpty(String input) {
 			return input == null || input.equals("");
+		}
+		
+		public List<Clan> getClanovi(){
+			ClanRepo clanRepo = new ClanRepo();
+			return clanRepo.getClanovi();
 		}
 	}
