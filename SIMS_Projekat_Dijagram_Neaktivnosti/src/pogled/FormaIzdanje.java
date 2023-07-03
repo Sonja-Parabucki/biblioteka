@@ -102,7 +102,7 @@ public class FormaIzdanje extends JDialog  {
 		this.tfIzdavac.setText(izdavac.toString());
 	}
 	
-	private void osnova(Biblioteka biblioteka, Knjiga knjiga) {
+	private void osnova(Biblioteka biblioteka) {
 		try {
 			this.kontroler = new IzdanjaKontroler(biblioteka);
 		} catch (IOException e3) {
@@ -280,15 +280,15 @@ public class FormaIzdanje extends JDialog  {
 	}
 	
 	
-	public FormaIzdanje(Biblioteka biblioteka, Knjiga knjiga) {
+	public FormaIzdanje(Biblioteka biblioteka) {
 		setTitle("Dodavanje izdanja");
-		osnova(biblioteka, knjiga);
+		osnova(biblioteka);
 	}
 	
 	
-	public FormaIzdanje(Biblioteka biblioteka, Izdanje izabrano, int br) {
+	public FormaIzdanje(Biblioteka biblioteka, Izdanje izabrano) {
 		setTitle("Promena podataka o izdanju");
-		osnova(biblioteka, izabrano);
+		osnova(biblioteka);
 		izdanje0 = izabrano;
 		tfNaziv.setText(izabrano.getNaziv());
 		tfJezik.setText(izabrano.getJezik());

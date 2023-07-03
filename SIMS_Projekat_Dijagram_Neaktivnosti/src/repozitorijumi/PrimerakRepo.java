@@ -91,4 +91,13 @@ public class PrimerakRepo {
 		}
 		return false;
 	}
+	
+	public void promeniCenu(int id, int cena) throws IOException {
+		for(Primerak p : this.primerci) {
+			if (p.getInventarniBroj() == id) {
+				p.setInventarniBroj(cena);
+				sacuvajPrimerke();
+			}
+		}
+	}
 }

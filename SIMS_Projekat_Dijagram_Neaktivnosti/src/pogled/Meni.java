@@ -66,7 +66,7 @@ public class Meni extends JFrame{
 		btnIzdanja.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JDialog prozor = new FormaIzdanje(biblioteka, null);
+				JDialog prozor = new FormaIzdanje(biblioteka);
 				prozor.setVisible(true);
 			}
 		});

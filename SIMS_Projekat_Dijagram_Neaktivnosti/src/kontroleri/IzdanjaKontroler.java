@@ -68,4 +68,9 @@ public class IzdanjaKontroler {
 	public List<Zanr> nadjiSveZanrove(){
 		return repo.nadjiSveZanrove();
 	}
+
+	public void promeniCenu(int idIzdanja, int inventarniBroj, int nova) throws IOException {
+		repo.promeniNabavnuCenu(idIzdanja, inventarniBroj, nova);
+		biblioteka.setIzdanja(repo.getIzdanja());
+	}
 }

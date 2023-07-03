@@ -82,6 +82,7 @@ public class PrikazIzdanja  extends JFrame {
                 	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
                 	   PrikazPrimerci prikaz = new PrikazPrimerci(biblioteka, izdanje);
                 	   prikaz.setVisible(true);
+                	   dispose();
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }
@@ -97,7 +98,7 @@ public class PrikazIzdanja  extends JFrame {
                if (selectedRow != -1) {
 
             	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
-            	   FormaIzdanje prozor = new FormaIzdanje(biblioteka, izdanje, 1);
+            	   FormaIzdanje prozor = new FormaIzdanje(biblioteka, izdanje);
             	   prozor.setVisible(true);
             	   dispose();
                } else {
@@ -142,5 +143,6 @@ public class PrikazIzdanja  extends JFrame {
 		model.fireTableDataChanged();
 		validate();
 	}
+	
 }
 

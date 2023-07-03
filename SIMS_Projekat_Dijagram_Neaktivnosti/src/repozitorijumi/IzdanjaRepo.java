@@ -173,5 +173,20 @@ public class IzdanjaRepo {
 		this.izdanja.get(izdanje).dodajPrimerak(p);
 		sacuvaj();
 	}
+	
+	public void promeniNabavnuCenu(int idIzdanja, int inventarniBroj, int nova) throws IOException {
+		for (Izdanje iz : izdanja) {
+			if (iz.getId() == idIzdanja) {
+				for (Primerak p : iz.getPrimerci()) {
+					if (p.getInventarniBroj() == inventarniBroj) {
+						p.setNabavnaCena(nova);
+						break;
+					}
+				}
+				break;
+			}
+		}
+		sacuvaj();
+	}
 
 }
