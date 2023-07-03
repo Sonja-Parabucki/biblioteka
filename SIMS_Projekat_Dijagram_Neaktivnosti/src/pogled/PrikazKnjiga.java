@@ -77,6 +77,7 @@ public class PrikazKnjiga extends JFrame {
                 	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
                 	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
                 	   prikaz.setVisible(true);
+                	   dispose();
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
                    }

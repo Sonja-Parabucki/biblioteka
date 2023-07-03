@@ -1,6 +1,6 @@
 [ {
   "naziv" : "Naslov",
-  "jezik" : "jezik",
+  "jezik" : "jezikcic",
   "autori" : [ {
     "ime" : "Ivo",
     "prezime" : "Andric",
@@ -30,7 +30,7 @@
   "primerci" : [ ]
 }, {
   "naziv" : "Naslov",
-  "jezik" : "jezik",
+  "jezik" : "jezik123123123",
   "autori" : [ {
     "ime" : "Ivo",
     "prezime" : "Andric",
@@ -46,7 +46,7 @@
   "opis" : "PROBA",
   "udk" : "sidjalskd",
   "isbn" : "123123556",
-  "godinaIzdanja" : 2028,
+  "godinaIzdanja" : 2021,
   "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Laguna",
@@ -232,7 +232,7 @@
   "primerci" : [ ]
 }, {
   "naziv" : "ww",
-  "jezik" : "w",
+  "jezik" : "windows",
   "autori" : [ {
     "ime" : "Ivo",
     "prezime" : "Andric",
@@ -246,7 +246,7 @@
   "opis" : "we",
   "udk" : "w",
   "isbn" : "w",
-  "godinaIzdanja" : 23,
+  "godinaIzdanja" : 2023,
   "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Vulkan",

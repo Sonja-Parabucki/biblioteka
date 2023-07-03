@@ -129,6 +129,9 @@ public class DodavanjeClana extends JFrame {
 					if (clan.length == 1) {
 						korisnikKontroler.azurirajClana(staraClKarta, staroKorIme, tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
 						JOptionPane.showMessageDialog(null, "Clan je uspesno azuriran!");
+						
+						PrikazClanovi pc = new PrikazClanovi(biblioteka);
+						pc.setVisible(true);
 					}
 					else {
 						korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());

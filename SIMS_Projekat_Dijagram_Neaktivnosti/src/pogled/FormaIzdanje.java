@@ -26,6 +26,7 @@ import model.Autor;
 import model.Biblioteka;
 import model.Izdanje;
 import model.Izdavac;
+import model.Knjiga;
 import model.Zanr;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
@@ -101,7 +102,7 @@ public class FormaIzdanje extends JDialog  {
 		this.tfIzdavac.setText(izdavac.toString());
 	}
 	
-	private void osnova(Biblioteka biblioteka) {
+	private void osnova(Biblioteka biblioteka, Knjiga knjiga) {
 		try {
 			this.kontroler = new IzdanjaKontroler(biblioteka);
 		} catch (IOException e3) {
@@ -236,6 +237,9 @@ public class FormaIzdanje extends JDialog  {
 							kontroler.izmeni(izdanje0.getId(), naziv, jezik, zanrovi, autori, opis, udk, isbn, godina, koricenje, izdavac);
 							JOptionPane.showMessageDialog(null, "Sacuvani novi podaci.", "Uspeh", JOptionPane.INFORMATION_MESSAGE);
 							dispose();
+							
+							PrikazKnjiga prikaz1 = new PrikazKnjiga(biblioteka);
+		                	prikaz1.setVisible(true);
 						}
 					} catch (NumberFormatException e2) {
 						JOptionPane.showMessageDialog(null, "Godina mora da bude broj.", "Greska", JOptionPane.ERROR_MESSAGE);
@@ -276,15 +280,15 @@ public class FormaIzdanje extends JDialog  {
 	}
 	
 	
-	public FormaIzdanje(Biblioteka biblioteka) {
+	public FormaIzdanje(Biblioteka biblioteka, Knjiga knjiga) {
 		setTitle("Dodavanje izdanja");
-		osnova(biblioteka);
+		osnova(biblioteka, knjiga);
 	}
 	
 	
-	public FormaIzdanje(Biblioteka biblioteka, Izdanje izabrano) {
+	public FormaIzdanje(Biblioteka biblioteka, Izdanje izabrano, int br) {
 		setTitle("Promena podataka o izdanju");
-		osnova(biblioteka);
+		osnova(biblioteka, izabrano);
 		izdanje0 = izabrano;
 		tfNaziv.setText(izabrano.getNaziv());
 		tfJezik.setText(izabrano.getJezik());

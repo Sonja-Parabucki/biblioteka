@@ -76,6 +76,7 @@ public class PrikazClanovi extends JFrame {
 						try {
 							prikaz = new DodavanjeClana(biblioteka, clan);
 		       				prikaz.setVisible(true);
+		       				dispose();
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();

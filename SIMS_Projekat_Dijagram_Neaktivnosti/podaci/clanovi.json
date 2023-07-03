@@ -18,7 +18,7 @@
   "tip" : "DETE"
 }, {
   "ime" : "fdsfs",
-  "prezime" : "AAAAAAAAAAAAAAAA",
+  "prezime" : "AAAA",
   "jmbg" : "1231231231231",
   "imejl" : "dsfdf@gm.ocm",
   "telefon" : "8374923847",
@@ -33,9 +33,9 @@
   "brojClanskeKarte" : "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
   "placenaClanarina" : "01/07/2023",
   "primerci" : [ ],
-  "tip" : "ODRASLA_OSOBA"
+  "tip" : "STUDENT"
 }, {
-  "ime" : "ne",
+  "ime" : "neko",
   "prezime" : "af wesf",
   "jmbg" : "1029384785637",
   "imejl" : "grd@gsd.td",
@@ -87,5 +87,5 @@
   "brojClanskeKarte" : "clanskaKarta123",
   "placenaClanarina" : "03/07/2023",
   "primerci" : [ ],
-  "tip" : "DETE"
+  "tip" : "ODRASLA_OSOBA"
 } ]

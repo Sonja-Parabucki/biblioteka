@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -95,11 +97,20 @@ public class PrikazIzdanja  extends JFrame {
                if (selectedRow != -1) {
 
             	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
-            	   FormaIzdanje prozor = new FormaIzdanje(biblioteka, izdanje);
+            	   FormaIzdanje prozor = new FormaIzdanje(biblioteka, izdanje, 1);
             	   prozor.setVisible(true);
+            	   dispose();
                } else {
                    JOptionPane.showMessageDialog(null, "Niste izabrali izdanje.");
                }
+			}
+		});
+		
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				PrikazKnjiga prikaz = new PrikazKnjiga(biblioteka);
+				prikaz.setVisible(true);
 			}
 		});
 	
