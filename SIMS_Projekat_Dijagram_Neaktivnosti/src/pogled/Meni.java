@@ -90,20 +90,22 @@ public class Meni extends JFrame{
 		});
 		
 		FormaDugme btnIznajmi = new FormaDugme("Iznajmljivanje knjige", clrPrimarna, clrForeground, 70, 30);
-		btnClanovi.addActionListener(new ActionListener() {
+		btnIznajmi.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				IznajmljivanjePogled prozor = new IznajmljivanjePogled(biblioteka);
+				prozor.setVisible(true);
 			}
 		});
 		
 		FormaDugme btnVrati = new FormaDugme("Vracanje knjige", clrPrimarna, clrForeground, 70, 30);
-		btnClanovi.addActionListener(new ActionListener() {
+		btnVrati.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				VracanjePogled prozor = new VracanjePogled(biblioteka);
+				prozor.setVisible(true);
 			}
 		});
 		

@@ -18,6 +18,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import enumeracije.StanjePrimerka;
 import model.Autor;
 import model.Izdanje;
 import model.Izdavac;
@@ -54,7 +55,7 @@ public class IzdanjaRepo {
 		return izdanja.size() + 1;
 	}
 	
-	public List<Izdavac> nadjiSveIzdavace(){
+	public List<Izdavac> nadjiSveIzdavace() {
 		List<Izdavac> izdavaci = new ArrayList<Izdavac>();
 		for (Izdanje izdanje : izdanja) {
 			if(!izdavaci.contains(izdanje.getIzdavac()))
@@ -152,4 +153,15 @@ public class IzdanjaRepo {
 		sacuvaj();
 	}
 
+	public void promeniStanje(int invBroj, StanjePrimerka stanje) throws IOException {
+		for (Izdanje izd : izdanja) {
+			for (Primerak p : izd.getPrimerci()) {
+				if(p.getInventarniBroj()!=invBroj) continue;
+				p.setStanje(stanje);
+				sacuvaj();
+				return;
+			}
+		}
+		
+	}
 }

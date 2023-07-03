@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import model.Clan;
+import model.Iznajmljivanje;
 
 public class ClanRepo {
 	
@@ -77,5 +78,20 @@ public class ClanRepo {
 	public void dodajClana(Clan clan) throws IOException {
 		clanovi.add(clan);
 		sacuvajClanove();
+	}
+	
+	public List<Clan> getClanovi(){
+		return clanovi;
+	}
+
+	public void dodajIznajmljivanje(String clanskaKarta, Iznajmljivanje iz) throws IOException {
+		for(Clan c : clanovi) {
+			if(c.getBrojClanskeKarte().equals(clanskaKarta)) {
+				c.dodajIznajmljivanje(iz);
+				sacuvajClanove();
+				return;
+			}
+		}
+		
 	}
 }

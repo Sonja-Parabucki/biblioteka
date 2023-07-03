@@ -67,4 +67,12 @@ public class Clan extends Osoba {
 				+ primerci + ", tip=" + tip + "]";
 	}
 	
+	public String naziv() {
+		return brojClanskeKarte + ", " + this.getIme() + " " + this.getPrezime();
+	}
+
+	public void dodajIznajmljivanje(Iznajmljivanje iz) {
+		primerci.add(iz);
+	}
+	
 }

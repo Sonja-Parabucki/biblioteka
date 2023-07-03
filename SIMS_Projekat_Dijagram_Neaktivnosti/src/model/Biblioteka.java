@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import enumeracije.StanjePrimerka;
+
 public class Biblioteka {
 	private Nalog prijavljeniKorisnik = null;
 	private List<Propisi> propisi = new ArrayList<Propisi>();
@@ -93,5 +95,14 @@ public class Biblioteka {
 	public void dodajIzdanje(Izdanje izdanje) {
 		izdanja.add(izdanje);
 	}
-	
+
+	public void promeniStanje(int invBroj, StanjePrimerka stanje) {
+		for (Izdanje izd : izdanja) {
+			for (Primerak p : izd.getPrimerci()) {
+				if(p.getInventarniBroj()!=invBroj) continue;
+				p.setStanje(stanje);
+				return;
+			}
+		}
+	}
 }

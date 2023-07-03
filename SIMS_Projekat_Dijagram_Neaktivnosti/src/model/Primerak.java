@@ -42,6 +42,10 @@ public class Primerak {
 	public String toString() {
 		return "Primerak [inventarniBroj=" + inventarniBroj + ", nabavnaCena=" + nabavnaCena + ", stanje=" + stanje + "]";
 	}
+	
+	public String naziv() {
+		return Integer.toString(inventarniBroj);
+	}
 
 	
 }
