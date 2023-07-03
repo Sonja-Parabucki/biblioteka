@@ -18,6 +18,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import enumeracije.TipKoricenja;
 import model.Autor;
 import model.Izdanje;
 import model.Izdavac;
@@ -39,6 +40,26 @@ public class IzdanjaRepo {
 
 	public void dodajIzdanje(Izdanje izdanje) throws IOException {
 		izdanja.add(izdanje);
+		sacuvaj();
+	}
+	
+	public void izmeni(int id, String naziv, String jezik, List<Zanr> zanrovi, List<Autor> autori, String opis, String udk, String isbn,
+			int godinaIzdanja, TipKoricenja koricenje, Izdavac izdavac) throws IOException {
+		for (Izdanje iz:izdanja) {
+			if (iz.getId() == id) {
+				iz.setNaziv(naziv);
+				iz.setJezik(jezik);
+				iz.setZanrovi(zanrovi);
+				iz.setAutori(autori);
+				iz.setOpis(opis);
+				iz.setUdk(udk);
+				iz.setIsbn(isbn);
+				iz.setGodinaIzdanja(godinaIzdanja);
+				iz.setKoricenje(koricenje);
+				iz.setIzdavac(izdavac);
+				break;
+			}
+		}
 		sacuvaj();
 	}
 	
@@ -114,6 +135,7 @@ public class IzdanjaRepo {
 		}
 		return izd;
 	}
+	
 	
 	public void sacuvaj() throws IOException {
 		File fajlIzdanja = new File("./podaci/izdanja.json");

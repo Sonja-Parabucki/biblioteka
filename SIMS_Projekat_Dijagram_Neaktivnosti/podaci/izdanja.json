@@ -176,7 +176,7 @@
   "opis" : "dfghk",
   "udk" : "123456",
   "isbn" : "123456",
-  "godinaIzdanja" : 2002,
+  "godinaIzdanja" : 2000,
   "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Laguna",
@@ -194,4 +194,34 @@
     "nabavnaCena" : 450.0,
     "stanje" : "DOSTUPAN"
   } ]
+}, {
+  "naziv" : "qq",
+  "jezik" : "q",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 7,
+  "opis" : "qq",
+  "udk" : "q",
+  "isbn" : "qq",
+  "godinaIzdanja" : 78,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ ]
 } ]
