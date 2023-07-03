@@ -68,5 +68,4 @@ public class IzdanjaKontroler {
 	public List<Zanr> nadjiSveZanrove(){
 		return repo.nadjiSveZanrove();
 	}
-
 }

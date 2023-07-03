@@ -39,6 +39,8 @@
   } ],
   "zanrovi" : [ {
     "naziv" : "Triler"
+  }, {
+    "naziv" : "Horor"
   } ],
   "id" : 2,
   "opis" : "PROBA",
@@ -193,6 +195,10 @@
     "inventarniBroj" : 8,
     "nabavnaCena" : 450.0,
     "stanje" : "DOSTUPAN"
+  }, {
+    "inventarniBroj" : 9,
+    "nabavnaCena" : 1.0,
+    "stanje" : "DOSTUPAN"
   } ]
 }, {
   "naziv" : "qq",
@@ -225,7 +231,7 @@
   },
   "primerci" : [ ]
 }, {
-  "naziv" : "w",
+  "naziv" : "ww",
   "jezik" : "w",
   "autori" : [ {
     "ime" : "Ivo",
@@ -241,7 +247,7 @@
   "udk" : "w",
   "isbn" : "w",
   "godinaIzdanja" : 23,
-  "koricenje" : "MEK_POVEZ",
+  "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Vulkan",
     "adresa" : {
@@ -253,5 +259,9 @@
       }
     }
   },
-  "primerci" : [ ]
+  "primerci" : [ {
+    "inventarniBroj" : 10,
+    "nabavnaCena" : 133.0,
+    "stanje" : "DOSTUPAN"
+  } ]
 } ]

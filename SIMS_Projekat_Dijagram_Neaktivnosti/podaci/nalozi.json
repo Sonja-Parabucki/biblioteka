@@ -13,17 +13,17 @@
   "lozinka" : "ddddddD123",
   "tip" : "CLAN",
   "osoba" : {
-    "ime" : "asda",
-    "prezime" : "asd",
+    "ime" : "df",
+    "prezime" : "df",
     "jmbg" : "1231231231231",
-    "imejl" : "312734",
-    "telefon" : "ddd@gmail.com",
+    "imejl" : "4382479",
+    "telefon" : "dfsdfs@gmia.com",
     "adresa" : {
-      "ulica" : "f",
-      "broj" : "f",
+      "ulica" : "dfksj",
+      "broj" : "fjsd",
       "mesto" : {
-        "naziv" : "f",
-        "pptBroj" : 21123
+        "naziv" : "fks",
+        "pptBroj" : 12312
       }
     }
   }
@@ -210,7 +210,7 @@
     "telefon" : "grd@gsd.td",
     "adresa" : {
       "ulica" : "fse",
-      "broj" : "3sfe3",
+      "broj" : "fse",
       "mesto" : {
         "naziv" : "IAWD",
         "pptBroj" : 23543
@@ -222,17 +222,36 @@
   "lozinka" : "Sonja123345",
   "tip" : "CLAN",
   "osoba" : {
-    "ime" : "Sonja",
+    "ime" : "SonjaAAAA",
     "prezime" : "Parabucki",
     "jmbg" : "2357123456789",
     "imejl" : "123456789",
     "telefon" : "sdfs@dfd.fds",
     "adresa" : {
       "ulica" : "fdewf",
-      "broj" : "4",
+      "broj" : "fdewf",
       "mesto" : {
         "naziv" : "ffds",
         "pptBroj" : 21000
+      }
+    }
+  }
+}, {
+  "korisnickoIme" : "testiranje",
+  "lozinka" : "Test123123",
+  "tip" : "CLAN",
+  "osoba" : {
+    "ime" : "Tet",
+    "prezime" : "testic",
+    "jmbg" : "2813723123123",
+    "imejl" : "38497384",
+    "telefon" : "flsjdhfkl@gmial.com",
+    "adresa" : {
+      "ulica" : "Bulevar123",
+      "broj" : "Bulevar",
+      "mesto" : {
+        "naziv" : "Novi Sad",
+        "pptBroj" : 23094
       }
     }
   }

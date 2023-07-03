@@ -12,14 +12,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import enumeracije.TipClana;
-import enumeracije.TipNaloga;
 import izuzeci.BadFormatException;
 import izuzeci.MissingValueException;
 import izuzeci.UniqueValueException;
 import kontroleri.KorisnikKontroler;
 import model.Biblioteka;
+import model.Clan;
+import model.Nalog;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
+import repozitorijumi.NalogRepo;
 
 public class DodavanjeClana extends JFrame {
 
@@ -46,9 +48,12 @@ public class DodavanjeClana extends JFrame {
 	private TekstPolje tfClKarta;
 	private PadajucaLista tfTipClanstva;
 	
+	private String staroKorIme;
+	private String staraClKarta;
+	
 	private KorisnikKontroler korisnikKontroler;
 
-	public DodavanjeClana(Biblioteka biblioteka) {
+	public DodavanjeClana(Biblioteka biblioteka, Clan... clan) throws IOException {
 		setSize(new Dimension(800, 600));
 		setTitle("Dodavanje clana");
 		setLocationRelativeTo(null);
@@ -112,14 +117,23 @@ public class DodavanjeClana extends JFrame {
 			tipoviClana[i] = tipC[i].toString();
 		tfTipClanstva = new PadajucaLista(tipoviClana, clrPrimarna, clrForeground, fntTekstPolje, 120, 20);
 		
+		if (clan.length == 1)
+			prikaziPodatke(clan[0]);
+		
 		FormaDugme btnSacuvaj = new FormaDugme("Sacuvaj", clrPrimarna, clrForeground, 70, 30);
 		btnSacuvaj.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				try {
-					korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
-					JOptionPane.showMessageDialog(null, "Clan je uspesno dodat!");
+					if (clan.length == 1) {
+						korisnikKontroler.azurirajClana(staraClKarta, staroKorIme, tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
+						JOptionPane.showMessageDialog(null, "Clan je uspesno azuriran!");
+					}
+					else {
+						korisnikKontroler.registrujClana(tfIme.getText(), tfPrezime.getText(), tfJMBG.getText(), tfMejl.getText(), tfTelefon.getText(), tfMesto.getText(), tfPTT.getText(), tfBroj.getText(), tfUlica.getText(), tfKorIme.getText(), tfLozinka.getText(), tfClKarta.getText(), tfTipClanstva.getSelectedItem().toString());
+						JOptionPane.showMessageDialog(null, "Clan je uspesno dodat!");
+					}
 					dispose();
 				} catch (MissingValueException e) {
 					// TODO Auto-generated catch block
@@ -173,5 +187,41 @@ public class DodavanjeClana extends JFrame {
 		
 		pnlDodavanjeClana.add(btnSacuvaj, "cell 2 15");
 		add(pnlDodavanjeClana);
+	}
+	
+	public void prikaziPodatke(Clan clan) throws IOException {
+		staraClKarta = clan.getBrojClanskeKarte();
+		
+		tfIme.setText(clan.getIme());
+		tfPrezime.setText(clan.getPrezime());
+		tfJMBG.setText(clan.getJmbg());
+		tfMejl.setText(clan.getImejl());
+		tfTelefon.setText(clan.getTelefon());
+		
+		tfUlica.setText(clan.getAdresa().getUlica());
+		tfBroj.setText(clan.getAdresa().getBroj());
+		tfMesto.setText(clan.getAdresa().getMesto().getNaziv());
+		tfPTT.setText(Integer.toString(clan.getAdresa().getMesto().getPptBroj()));
+		
+		NalogRepo nalogRepo = new NalogRepo();
+		Nalog n = nalogRepo.pronadjiNalog(clan);
+		staroKorIme = n.getKorisnickoIme();
+		tfKorIme.setText(n.getKorisnickoIme());
+		tfLozinka.setText(n.getLozinka());
+		
+		tfClKarta.setText(clan.getBrojClanskeKarte());
+		tfTipClanstva.setSelectedIndex(getIndex(clan.getTip()));
+	}
+	
+	private int getIndex(TipClana t) {
+		if (t == TipClana.DETE)
+			return 0;
+		if (t == TipClana.STUDENT)
+			return 1;
+		if (t == TipClana.PENZIONER)
+			return 2;
+		if (t == TipClana.ODRASLA_OSOBA)
+			return 3;
+		return 4;
 	}
 }
