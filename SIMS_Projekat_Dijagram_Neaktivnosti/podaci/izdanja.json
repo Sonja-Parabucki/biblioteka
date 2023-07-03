@@ -39,6 +39,8 @@
   } ],
   "zanrovi" : [ {
     "naziv" : "Triler"
+  }, {
+    "naziv" : "Horor"
   } ],
   "id" : 2,
   "opis" : "PROBA",
@@ -176,7 +178,7 @@
   "opis" : "dfghk",
   "udk" : "123456",
   "isbn" : "123456",
-  "godinaIzdanja" : 2002,
+  "godinaIzdanja" : 2000,
   "koricenje" : "TVRD_POVEZ",
   "izdavac" : {
     "naziv" : "Laguna",
@@ -196,6 +198,70 @@
   }, {
     "inventarniBroj" : 9,
     "nabavnaCena" : 1.0,
+    "stanje" : "DOSTUPAN"
+  } ]
+}, {
+  "naziv" : "qq",
+  "jezik" : "q",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Triler"
+  } ],
+  "id" : 7,
+  "opis" : "qq",
+  "udk" : "q",
+  "isbn" : "qq",
+  "godinaIzdanja" : 2077,
+  "koricenje" : "MEK_POVEZ",
+  "izdavac" : {
+    "naziv" : "Laguna",
+    "adresa" : {
+      "ulica" : "jchaskdf",
+      "broj" : "djkfs",
+      "mesto" : {
+        "naziv" : "djfhskdhjf",
+        "pptBroj" : 23176
+      }
+    }
+  },
+  "primerci" : [ ]
+}, {
+  "naziv" : "ww",
+  "jezik" : "w",
+  "autori" : [ {
+    "ime" : "Ivo",
+    "prezime" : "Andric",
+    "datumRodjenja" : "1920",
+    "datumSmrti" : "1980"
+  } ],
+  "zanrovi" : [ {
+    "naziv" : "Klasik"
+  } ],
+  "id" : 8,
+  "opis" : "we",
+  "udk" : "w",
+  "isbn" : "w",
+  "godinaIzdanja" : 23,
+  "koricenje" : "TVRD_POVEZ",
+  "izdavac" : {
+    "naziv" : "Vulkan",
+    "adresa" : {
+      "ulica" : "bg",
+      "broj" : "bg",
+      "mesto" : {
+        "naziv" : "bg",
+        "pptBroj" : 12934
+      }
+    }
+  },
+  "primerci" : [ {
+    "inventarniBroj" : 10,
+    "nabavnaCena" : 133.0,
     "stanje" : "DOSTUPAN"
   } ]
 } ]

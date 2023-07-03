@@ -55,8 +55,4 @@ public class PogledUtil {
 		return DateTimeFormatter.ofPattern("dd.MM.yyyy.");
 	}
 	
-	public static String[] getTipoviZaposlenih() {
-		String[] tipoviZaposlenih = { "Vlasnik", "Menadžer", "Šef kuhinje", "Konobar"};
-		return tipoviZaposlenih;
-	}
 }

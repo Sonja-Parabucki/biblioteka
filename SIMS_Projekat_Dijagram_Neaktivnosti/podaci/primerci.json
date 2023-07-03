@@ -34,4 +34,8 @@
   "inventarniBroj" : 9,
   "nabavnaCena" : 1.0,
   "stanje" : "DOSTUPAN"
+}, {
+  "inventarniBroj" : 10,
+  "nabavnaCena" : 133.0,
+  "stanje" : "DOSTUPAN"
 } ]

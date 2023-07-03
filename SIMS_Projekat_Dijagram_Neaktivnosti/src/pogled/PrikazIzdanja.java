@@ -89,21 +89,17 @@ public class PrikazIzdanja  extends JFrame {
 		
 		FormaDugme btnIzmeni = new FormaDugme("Izmeni izdanje", clrPrimarna, clrForeground, 150, 20);
 		btnIzmeni.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				/*
-				   int selectedRow = tabelaKnjiga.getSelectedRow();
+			   int selectedRow = tabelaIzdanja.getSelectedRow();
+               if (selectedRow != -1) {
 
-                   if (selectedRow != -1) {
-
-                	   Izdanje izdanje = tabelaModelKnjiga.getIzdanje(selectedRow);
-                	   PrikazIzdanja prikaz = new PrikazIzdanja(izdanje, biblioteka);
-                	   prikaz.setVisible(true);
-                   } else {
-                       JOptionPane.showMessageDialog(null, "Niste izabrali knjigu.");
-                   }
-                   */
+            	   Izdanje izdanje = tabelaModelIzdanja.getIzdanje(selectedRow);
+            	   FormaIzdanje prozor = new FormaIzdanje(biblioteka, izdanje);
+            	   prozor.setVisible(true);
+               } else {
+                   JOptionPane.showMessageDialog(null, "Niste izabrali izdanje.");
+               }
 			}
 		});
 	
