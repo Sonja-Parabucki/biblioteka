@@ -72,6 +72,14 @@ public class PrikazClanovi extends JFrame {
                 	   Clan clan = tabelaModelClanovi.getClan(selectedRow);
                 	   
                 	   //prozor za izmenu
+                	   DodavanjeClana prikaz;
+						try {
+							prikaz = new DodavanjeClana(biblioteka, clan);
+		       				prikaz.setVisible(true);
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
                 	   
                    } else {
                        JOptionPane.showMessageDialog(null, "Niste izabrali clana.");

@@ -8,7 +8,7 @@ import repozitorijumi.NalogRepo;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Biblioteka biblioteka = new Biblioteka();
 		
 		NalogRepo s = new NalogRepo();
